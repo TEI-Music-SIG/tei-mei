@@ -8,7 +8,7 @@
     
     <!-- Find internal prefixes in an old MEI source and apply them to a new one. -->
     
-    <xsl:param name="oldMEI" select="'../mei/old-mei-source.xml'"/>
+    <xsl:param name="oldMEI" select="'../old-mei-source.xml'"/>
     
     <xsl:template match="*">
         <xsl:copy>
