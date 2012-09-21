@@ -65,24 +65,15 @@
           <p>This webspace hosts the results of the work of some members of the
             TEI Music SIG.</p>
 
-          <p>As part of a project funded by the TEI, the group focussed on using
+          <p>As part of a project funded by the TEI, the group focused on using
             TEI's One Document Does it all (ODD) vocabulary to <hi rend="bold"
               >connect the TEI to music encoding formats</hi>. Specifically,
             first efforts concentrated on the <ref
               target="http://www.music-encoding.org">Music Encoding
               Initiative</ref> (MEI) format. Therefore, these guidelines
-            describe a TEI-with-MEI customisation that introduces
-            &lt;twm:notatedMusic&gt;, a new TEI element to encode music
-            notation. In addition, "best practices" are provided in order to
-            illustrate and standardise the use of &lt;twm:notatedMusic&gt;.</p>
-
-          <p>The &lt;twm:notatedMusic&gt; element has been proposed to enter the
-            TEI specifications and TEI's namespace; however, while waiting for
-            the <ref
-              target="https://sourceforge.net/tracker/?func=detail&amp;aid=3086726&amp;group_id=106328amp;&amp;atid=644065"
-              >feature request</ref> to be considered by the TEI council, this new
-            element is presented here, as requested for TEI conformance, in a
-            namespace mapped to the prefix <hi rend="bold">twm:</hi>.</p>
+            describe a TEI-with-MEI customisation that uses the TEI element
+            <gi>notatedMusic</gi> to embed encoded music
+            notation.</p>
 
           <p>The examples in these guidelines present typical occurrences of
             music within written text. They are taken from a handful of documents that
@@ -90,7 +81,7 @@
             notation within TEI-encoded texts. See the <ref target="twm05.4-bibliography" type="internal">bibliography</ref> for more information.</p>
 
           <p>All the music examples are encoded using MEI; however, it is
-            possible to use &lt;tmw:notatedMusic&gt; to link to external
+            possible to use <gi>notatedMusic</gi> to link to external
             representations of music in any other format. See <ref target="tmw05-notatedMusic" type="internal">below</ref> for an example.</p>
 
           <p>These guidelines do not claim to be comprehensive; however, we
@@ -108,7 +99,7 @@
           <p>The downloadable package contains:</p>
 
           <list type="bulleted">
-            <item>ODD definition of MEI</item>
+            <item>ODD definition of MEI 2012 adapted to avoid conflicts with TEI elements (the resulting schema is not affected)</item>
             <item>TEI-with-MEI customisation (ODD with documentation, RelaxNG)</item>
             <item>TEI Lite with MEI for Common Music Notation (ODD, RelaxNG)</item>
              <item>TEI Lite with MEI for Mensural Notation (ODD, RelaxNG)</item>
@@ -119,9 +110,8 @@
           </list>
 
           <p>These files are distributed under the license included therein and
-            come with no warranty whatsoever. Please remember that this is a <hi
-              rend="bold">*beta*</hi> version. </p>
-           <p>Other customizations and combinations are possible. If you would like to see other customizations on this webspace, please get in touch with the Music SIG.</p>
+            come with no warranty whatsoever.</p>
+          <p>Other customizations and combinations are possible. If you would like to see other customizations on this webspace, please get in touch with the Music SIG. Or <ref target="https://github.com/TEI-Music-SIG/tei-mei/">fork these ODDs on GitHub.</ref></p>
 
           <divGen xml:id="download_button"/>
         </div>
@@ -152,10 +142,10 @@
 etc.</egXML>
 
           <list>
-            <item>Run Roma on the customisation tei-with-mei.xml:</item>
+            <item>Run Roma on the customisation tei_mei.xml:</item>
           </list>
 
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">$ roma2.sh /path/to/tei-with-mei.xml</egXML>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve">$ roma2.sh /path/to/tei_mei.xml</egXML>
         </div>
 
         <div xml:id="tmw04-members">
@@ -196,7 +186,7 @@ etc.</egXML>
           images or graphs. On other occasions, elements of music notation are
           treated as inline characters in running text.</p>
 
-        <p>These guidelines propose a way of signalling the presence of music
+        <p>The TEI element <gi>notatedMusic</gi> provides way of signalling the presence of music
           notation in text, but defer to other representations to describe the
           music notation itself, which is not covered by TEI guidelines. In
           fact, several commercial, academic and standard bodies have developed
@@ -206,8 +196,8 @@ etc.</egXML>
           container element to encode the occurrence of music notation and allow
           linking to the data format preferred by the encoder.</p>
 
-        <p>In addition, the TEI-with-MEI customisation associated with these
-          guidelines provides elements from the <ref
+        <p>The TEI-with-MEI described with these
+          guidelines adds to TEI elements from the <ref
             target="http://www.music-encoding.org/">Music Encoding
             Initiative</ref> (MEI) data format, which is modelled on the TEI,
           aims to be independent from rendering software, and provides encoding
@@ -222,12 +212,14 @@ etc.</egXML>
             while TEI elements have no prefix.</hi>
         </p>
 
-        <p>For encoding music notation, these guidelines describe the following
-          elements:</p>
+        <p>The element <gi>notatedMusic</gi> 
+          is explained in detail in chapter 14 <ref href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/FT.html#FTNM">Tables, 
+            Formulæ, Graphics and Notated Music</ref> of the TEI guidelines. Here we give a brief summary.
+        </p>
 
         <list rend="specList">
           <item>
-            <label>&lt;twm:notatedMusic&gt;</label> groups elements representing
+            <label><gi>notatedMusic</gi></label> groups elements representing
             or containing music notation.</item>
           <item>
             <label>&lt;ptr&gt;</label> can be used to indicate the location of a
@@ -242,32 +234,28 @@ etc.</egXML>
           <item>
             <label>&lt;graphic&gt;</label> can be used to indicate the location
             of a graphical representation of the music notation.</item>
-          <item>
-            <label>&lt;binaryObject&gt;</label> provides encoded binary data
-            representing a graphical representation of the music notation or
-            other object (i.e., audio).</item>
         </list>
 
-         <p>The <ref target="#notatedMusicODD">twm:notatedMusic</ref> element may contain notated music, a
+        <p>The <gi>notatedMusic</gi> element may contain notated music, a
           textual description and various representations of the music notation
           in different media. An external representation of the notated music is
-          specified using the <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-ptr.html">ptr</ref> element, whose @target attribute
+          specified using the <gi>ptr</gi> element, whose @target attribute
           provides its electronically-accessible location. The attribute
-          @mimeType, added specifically for this customisation, supplies the
+          @mimeType supplies the
           MIME type of the data format when available. For example:</p>
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><twm:notatedMusic>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><notatedMusic>
   <ptr target="bar1.xml"/>
-</twm:notatedMusic></egXML>
+</notatedMusic></egXML>
 
         <p>A textual description of the notation can be provided within the
-           element <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-desc.html">desc</ref>, or it is possible to give it a
-           <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-label.html">label</ref>. For example:</p>
+          element <gi>desc</gi>, or it is possible to give it a
+           <gi>label</gi>. For example:</p>
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><twm:notatedMusic>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><notatedMusic>
   <ptr target="bar1.xml"/>
   <desc>First bar of Chopin's Scherzo No.3 Op.39</desc>
-</twm:notatedMusic></egXML>
+</notatedMusic></egXML>
 
         <p>It is possible to link to any kind of music notation data format.
           However, when a MIME type is not available, it is recommended to at
@@ -275,30 +263,29 @@ etc.</egXML>
 
         <p>MIME type available</p>
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><twm:notatedMusic>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><notatedMusic>
   <ptr target="bar1.xml" mimeType="application/vnd.recordare.musicxml"/>
   <desc>First bar of Chopin's Scherzo No.3 Op.39. Encoded in MusicXML</desc>
-</twm:notatedMusic></egXML>
+</notatedMusic></egXML>
 
         <p>MIME type not available</p>
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><twm:notatedMusic>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><notatedMusic>
   <ptr target="bar1.ly"/>
   <desc>First bar of Chopin's Scherzo No.3 Op.39. Encoded in Lilypond</desc>
-</twm:notatedMusic></egXML>
+</notatedMusic></egXML>
 
         <p>Application format</p>
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><twm:notatedMusic>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><notatedMusic>
   <ptr target="bar1.mscz" mimeType="application/x-musescore"/>
   <desc>First bar of Chopin's Scherzo No.3 Op.39. MuseScore Notation Software format.</desc>
-</twm:notatedMusic></egXML>
+</notatedMusic></egXML>
 
         <p>It is possible to specify the location of digital objects
-          representing the notated music in other media such as images or
-          audio-visual files. The encoder's interpretation of the correspondence
+          representing the notated music in other media such as images. The encoder's interpretation of the correspondence
           between the notated music and these digital objects is not encoded
-          explicitly. We recommend the use of graphic and binaryObject mainly as
+          explicitly. We recommend the use of graphic mainly as
           a fallback mechanism when the notated music format is not displayable
           by the application using the encoding. The alignment of encoded
           notated music, images carrying the notation, and audio files is a
@@ -307,17 +294,17 @@ etc.</egXML>
             target="http://www.interactivemusicnetwork.org/mpeg-ahg/"
             >MPEG-SMR</ref>.</p>
 
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><twm:notatedMusic>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><notatedMusic>
   <ptr target="bar1.xml"/>
   <graphic url="bar1.jpg"/>
   <desc>First bar of Chopin's Scherzo No.3 Op.39</desc>
-</twm:notatedMusic></egXML>
+</notatedMusic></egXML>
 
         <div xml:id="twm05.1-MEI">
           <head>Embedding MEI</head>
 
           <p>Using this customisation, it is possible to include some MEI
-             elements directly within <ref target="#notatedMusicODD">twm:notatedMusic</ref>. There are four
+            elements directly within <gi>notatedMusic</gi>. There are four
             "entry points" allowed: <list>
               <item>
                 <label><ref
@@ -356,7 +343,7 @@ etc.</egXML>
             cases, the notated music is often part of the discourse and does not
             break the unity of paragraphs or other similar textual structures.
             To encode such occurrences of music notation,
-             <ref target="#notatedMusicODD">twm:notatedMusic</ref> can be used within any TEI element
+             <gi>notatedMusic</gi> can be used within any TEI element
             containing text.</p>
 
           <p>The following examples present a few cases of inline music excerpts
@@ -372,7 +359,7 @@ etc.</egXML>
 
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><ab>
    <hi rend="italic">Adagio Cantabile</hi> Klawierstimme im (17) Siebzehnten Takt muß statt so wie hier<lb/> 
-   <twm:notatedMusic>
+   <notatedMusic>
       <mei:mdiv>
          <mei:score>
             <mei:scoredef>
@@ -426,9 +413,9 @@ etc.</egXML>
             </mei:section>
          </mei:score>
       </mei:mdiv>
-   </twm:notatedMusic> 
+   </notatedMusic> 
    so heißen bey denen mit x bezeichneten Noten 
-   <twm:notatedMusic>
+   <notatedMusic>
       <mei:mdiv>
          <mei:score>
             <mei:scoredef>
@@ -468,7 +455,7 @@ etc.</egXML>
             </mei:section>
          </mei:score>
       </mei:mdiv>
-   </twm:notatedMusic> 
+   </notatedMusic> 
    nemlich der
 </ab></egXML>
 
@@ -488,7 +475,7 @@ etc.</egXML>
           </figure>
 
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><p>
-   <twm:notatedMusic place="inspace" rend="right">
+   <notatedMusic place="inspace" rend="right">
       <mei:mdiv>                  
          <mei:score>
             <mei:staffgrp>
@@ -528,7 +515,7 @@ etc.</egXML>
             </mei:section>
          </mei:score>
       </mei:mdiv>
-   </twm:notatedMusic>
+   </notatedMusic>
    Quam quidem principijs ligaturarum congruentiam<lb/>
    ueterum auctoritas proprietatem instituit uocitan<lb/>
    dam. Est igitur proprietas conueniens principiis li<lb/>
@@ -557,16 +544,16 @@ etc.</egXML>
               <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><ab>bey 9ten Takt, wo die &amp;#x266F;&amp;#x266F;&amp;#x266F; sich in &amp;#x266E;&amp;#x266E;&amp;#x266E; auflösen</ab></egXML>
             </p>
 
-             <p>2) Using the <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-g.html">g</ref> element when the musical symbol needed
+             <p>2) Using the <gi>g</gi> element when the musical symbol needed
               is not already present in Unicode. For guidance on when and how to
-              use <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-g.html">g</ref>, see chapter 5 of the TEI Guidelines: <ref
+              use <gi>g</gi>, see chapter 5 of the TEI Guidelines: <ref
                 target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html"
                 >Representation of Non-standard Characters and Glyphs.</ref></p>
 
             <p>In some circumstances, however, the encoder might be interested
               in encoding not only the existence of these symbols, but also
               their musical meaning using a specific format for music notation.
-              Examples of how <ref target="#notatedMusicODD">twm:notatedMusic</ref> could be used for this
+              Examples of how <gi>notatedMusic</gi> could be used for this
               purpose follow. In this customisation, the element <ref
                 target="http://music-encoding.org/documentation/tagLibrary/layer"
                 >mei:layer</ref> can be used independently to obtain access to
@@ -583,21 +570,21 @@ etc.</egXML>
 
             <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><ab>
    bey 9ten Takt, wo die 
-   <twm:notatedMusic>
+   <notatedMusic>
       <mei:layer>
          <mei:accid accid="s"/>
          <mei:accid accid="s"/>
          <mei:accid accid="s"/>
       </mei:layer>
-   </twm:notatedMusic>
+   </notatedMusic>
    sich in
-   <twm:notatedMusic>
+   <notatedMusic>
       <mei:layer>
          <mei:accid accid="n"/>
          <mei:accid accid="n"/>
          <mei:accid accid="n"/>
       </mei:layer>
-   </twm:notatedMusic>
+   </notatedMusic>
    auflösen
 </ab></egXML>
              <p><label>Example 1.</label> Common Wester Notation. Beethoven
@@ -612,7 +599,7 @@ etc.</egXML>
 
             <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:space="preserve"><ab>
    la prevalenza nel soggetto iniziale di figurazioni e note ribatutte con il seguente modulo ritmico:<lb/>
-   <twm:notatedMusic>
+   <notatedMusic>
       <mei:layer>
          <mei:note dur="2"/>
          <mei:note dur="4"/>
@@ -620,8 +607,8 @@ etc.</egXML>
          <mei:barline rend="single"/>
          <mei:note dur="2"/>
       </mei:layer>
-   </twm:notatedMusic>; oppure
-   <twm:notatedMusic>
+   </notatedMusic>; oppure
+   <notatedMusic>
      <mei:layer>
         <mei:rest dur="4"/>
         <mei:note dur="4"/>
@@ -630,8 +617,8 @@ etc.</egXML>
         <mei:barline rend="single"/>
         <mei:note dur="2"/>
      </mei:layer>
-   </twm:notatedMusic>;	o ancora
-   <twm:notatedMusic>
+   </notatedMusic>;	o ancora
+   <notatedMusic>
       <mei:layer>
          <mei:note dur="4"/>
          <mei:note dur="8"/>
@@ -639,7 +626,7 @@ etc.</egXML>
          <mei:barline rend="single"/>
          <mei:note dur="4"/>
       </mei:layer>
-   </twm:notatedMusic>
+   </notatedMusic>
 </ab></egXML>
              <p><label>Example 2.</label> Modern printing practice. Riccardo
                 Allorto, Nuova storia della musica (2002)</p>
@@ -655,22 +642,22 @@ etc.</egXML>
    Fit igitur notularum triplex descriptio simplex composita:&amp; mediocris. Sim<lb/>
    plex notula est quae alteri notulae non coniungitur:&amp; quadrato corpore figu<lb rend="hyphen"/>
    atur hoc modo 
-   <twm:notatedMusic>
+   <notatedMusic>
       <mei:layer>
          <mei:uneume name="punctum">
             <mei:note/>
          </mei:uneume>
       </mei:layer>
-   </twm:notatedMusic> 
+   </notatedMusic> 
    quandoque item cum uirgula in latere eius dextro descen<lb/> 
    dente describitur in modum longae mensurabilis Ut hic. 
-   <twm:notatedMusic>
+   <notatedMusic>
       <mei:layer>
          <mei:uneume name="virga">
             <mei:note stem.pos="right" stem.dir="down"/>
          </mei:uneume>
       </mei:layer>
-   </twm:notatedMusic>
+   </notatedMusic>
 </ab></egXML>
              <p><label>Example 3.</label> Older notation. Practica Musicae
                 (1496)</p>
@@ -712,7 +699,7 @@ etc.</egXML>
       <supplied>
          <placeName><settlement>Wien</settlement></placeName>, 1798/99 </supplied>
    </dateline>
-   <twm:notatedMusic>
+   <notatedMusic>
       <mei:mdiv>
          <mei:score>
            <mei:scoredef>
@@ -838,7 +825,7 @@ etc.</egXML>
            </mei:section>
         </mei:score>
      </mei:mdiv>
-  </twm:notatedMusic>
+  </notatedMusic>
 </opener></egXML>
            <p><label>Example 1.</label> Common Western Notation. Beethoven. (1798/99)</p>
           
@@ -858,7 +845,7 @@ etc.</egXML>
    uctionibns consideratur.
 </p>
 
-<twm:notatedMusic>
+<notatedMusic>
    <mei:mdiv>
       <mei:score>
          <mei:section>
@@ -909,7 +896,7 @@ etc.</egXML>
          </mei:section>
       </mei:score>
    </mei:mdiv>
-</twm:notatedMusic>
+</notatedMusic>
 	
 <fw type="catch" rend="right">Sonitus</fw>
 <pb n="10"/>
@@ -923,7 +910,7 @@ etc.</egXML>
             <p>In modern printing, music notation positioned between blocks of
               text for illustrative purposes is usually referred to as a
               "figure" or "example". In this cases, we recommend the inclusion
-              of <ref target="#notatedMusicODD">twm:notatedMusic</ref> in <ref target="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html">figure</ref> in order to
+              of <gi>notatedMusic</gi> in <gi>figure</gi> in order to
               encode possible captions and headers. For example:</p>
 
             <figure>
@@ -939,7 +926,7 @@ etc.</egXML>
 							
    <figure>
       <head><label>Ex. 3</label>SCHUBERT: Symphony in B minor.</head>
-	  <twm:notatedMusic>
+	  <notatedMusic>
          <mei:mdiv>
             <mei:score>
                <mei:scoredef meter.count="3" meter.unit="8" key.sig="4s" key.mode="major">
@@ -1080,7 +1067,7 @@ etc.</egXML>
                </mei:section>
             </mei:score>
          </mei:mdiv>
-      </twm:notatedMusic>
+      </notatedMusic>
    </figure>
 </div></egXML>
           </div>
