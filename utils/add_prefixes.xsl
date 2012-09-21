@@ -21,7 +21,7 @@
         <xsl:sequence select="."/>
     </xsl:template>
     
-    <xsl:template match="tei:*[some $i in document($oldMEI)//tei:*[@prefix]/@ident/string(.) satisfies ($i = @ident)]">
+    <xsl:template match="tei:elementSpec[some $i in document($oldMEI)//tei:*[@prefix]/@ident/lower-case(.) satisfies ($i = lower-case(@ident))]">
         <xsl:element name="{local-name()}" namespace="http://www.tei-c.org/ns/1.0">
             <xsl:sequence select="@*"/>
             <xsl:attribute name="prefix" select="'mei_'"/>
@@ -29,10 +29,26 @@
         </xsl:element>
     </xsl:template>
     
-    <xsl:template match="rng:ref[some $i in document($oldMEI)//tei:*[@prefix]/@ident/string(.) satisfies ($i = @name)]">
+    <xsl:template match="tei:classSpec[some $i in document($oldMEI)//tei:*[starts-with(@ident, 'mei_')]/@ident/lower-case(.) satisfies (substring-after($i, 'mei_') = lower-case(@ident))]">
+        <xsl:element name="{local-name()}" namespace="http://www.tei-c.org/ns/1.0">
+            <xsl:sequence select="@* except @ident"/>
+            <xsl:attribute name="ident" select="concat('mei_', @ident)"/>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="rng:ref[some $i in document($oldMEI)//tei:*[@prefix]/@ident/lower-case(.) satisfies ($i = lower-case(@name))]">
         <xsl:element name="rng:{local-name()}" namespace="http://relaxng.org/ns/structure/1.0">
             <xsl:sequence select="@* except @name"/>
             <xsl:attribute name="name" select="concat('mei_', @name)"/>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="tei:memberOf[some $i in document($oldMEI)//tei:*[starts-with(@ident, 'mei_')]/@ident/lower-case(.) satisfies (substring-after($i, 'mei_') = lower-case(@key))]">
+        <xsl:element name="rng:{local-name()}" namespace="http://relaxng.org/ns/structure/1.0">
+            <xsl:sequence select="@* except @key"/>
+            <xsl:attribute name="name" select="concat('mei_', @key)"/>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
