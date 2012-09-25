@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <grammar xmlns="http://relaxng.org/ns/structure/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="http://www.tei-c.org/ns/1.0">
   <!--
-Schema generated from ODD source 2012-09-25T08:07:14Z. 
+Schema generated from ODD source 2012-09-25T10:37:56Z. 
 Edition: 2.1.0. Last updated on 17th June 2012.
 Edition Location: http://www.tei-c.org/Vault/P5/2.1.0/
 
@@ -10976,7 +10976,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </choice>
   </define>
   <define name="accid">
-    <element name="accid">
+    <element name="accid" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(accidental) – Records a temporary alteration to the pitch of a note.
         </a:documentation>
       <empty/>
@@ -10991,7 +10991,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_actor">
-    <element name="actor">
+    <element name="actor" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Name of an actor appearing within a cast list.</a:documentation>
       <zeroOrMore>
         <choice>
@@ -11006,7 +11006,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_address">
-    <element name="address">
+    <element name="address" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains a postal address, for example of a publisher, an organization, or an
         individual.
         </a:documentation>
@@ -11020,7 +11020,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_addrLine">
-    <element name="addrLine">
+    <element name="addrLine" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(address line) – Single line of a postal address.
         </a:documentation>
       <zeroOrMore>
@@ -11038,7 +11038,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="annot">
-    <element name="annot">
+    <element name="annot" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(annotation) – Provides a short statement explaining the text or indicating the
         basis for an assertion.
         </a:documentation>
@@ -11067,7 +11067,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="artic">
-    <element name="artic">
+    <element name="artic" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(articulation) – An indication of how to play a note or chord.
         </a:documentation>
       <empty/>
@@ -11082,7 +11082,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="barLine">
-    <element name="barLine">
+    <element name="barLine" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Vertical line drawn through one or more staves that divides musical notation
         into metrical units.
         </a:documentation>
@@ -11105,7 +11105,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_bibl">
-    <element name="bibl">
+    <element name="bibl" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(bibliographic reference) – Provides a citation for a published work.
         </a:documentation>
       <zeroOrMore>
@@ -11123,7 +11123,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_body">
-    <element name="body">
+    <element name="body" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains the whole of a single musical text, excluding any front or back matter.
         </a:documentation>
       <oneOrMore>
@@ -11135,7 +11135,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_caption">
-    <element name="caption">
+    <element name="caption" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A label which accompanies an illustration or a table.</a:documentation>
       <zeroOrMore>
         <choice>
@@ -11152,7 +11152,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_castList">
-    <element name="castList">
+    <element name="castList" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains a single cast list or dramatis personae.</a:documentation>
       <optional>
         <ref name="mei_model.headLike"/>
@@ -11170,7 +11170,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_castItem">
-    <element name="castItem">
+    <element name="castItem" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains a single entry within a cast list, describing either a single role or a
         list of non-speaking roles.</a:documentation>
       <oneOrMore>
@@ -11188,7 +11188,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="castGrp">
-    <element name="castGrp">
+    <element name="castGrp" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(cast group) – Groups one or more individual castItem elements within a cast
         list.</a:documentation>
       <oneOrMore>
@@ -11205,7 +11205,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="chord">
-    <element name="chord">
+    <element name="chord" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A simultaneous sounding of two or more notes in the same layer *with the same
         duration*.</a:documentation>
       <zeroOrMore>
@@ -11226,7 +11226,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="clef">
-    <element name="clef">
+    <element name="clef" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Indication of the exact location of a particular note on the staff and,
         therefore, the other notes as well.
         </a:documentation>
@@ -11255,7 +11255,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="clefGrp">
-    <element name="clefGrp">
+    <element name="clefGrp" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(clef group) – A set of simultaneously-occurring clefs.</a:documentation>
       <oneOrMore>
         <ref name="clef"/>
@@ -11271,7 +11271,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="custos">
-    <element name="custos">
+    <element name="custos" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Symbol placed at the end of a line of music to indicate the first note of the
         next line. Sometimes called a "direct".
         </a:documentation>
@@ -11287,7 +11287,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_date">
-    <element name="date">
+    <element name="date" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A string identifying a point in time or the time period between two such
         points.</a:documentation>
       <zeroOrMore>
@@ -11307,7 +11307,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="dir">
-    <element name="dir">
+    <element name="dir" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(directive) – A text expression that is on the score (typically above, below, or
         between staves, but not on the staff) not encoded elsewhere in more specific elements, such
         as &lt;tempo&gt; or &lt;dynam&gt;.
@@ -11339,7 +11339,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="dot">
-    <element name="dot">
+    <element name="dot" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Dot of augmentation or division.
         </a:documentation>
       <empty/>
@@ -11353,7 +11353,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="dynam">
-    <element name="dynam">
+    <element name="dynam" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(dynamic) – Indication of the volume of a note, phrase, or section of music.
         </a:documentation>
       <zeroOrMore>
@@ -11381,7 +11381,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_edition">
-    <element name="edition">
+    <element name="edition" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition designation) – A word or text phrase that indicates a difference in
         either content or form between the item being described and a related item previously issued
         by the same publisher/distributor (e.g. 2nd edition, version 2.0, etc.), or simultaneously
@@ -11400,7 +11400,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="ending">
-    <element name="ending">
+    <element name="ending" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Alternative ending for a repeated passage of music; i.e., prima volta, seconda
         volta, etc.
         </a:documentation>
@@ -11431,7 +11431,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="expansion">
-    <element name="expansion">
+    <element name="expansion" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Indicates how a section may be programmatically expanded into its
         'through-composed' form.
         </a:documentation>
@@ -11444,7 +11444,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_fw">
-    <element name="fw">
+    <element name="fw" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(forme work) – This element is intended for capture of header/footer material that
         is non-repeating; that is, occuring on isolated pages. For recurring headers and footers use
         pgHead* and pgFoot* elements.
@@ -11467,7 +11467,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_group">
-    <element name="group">
+    <element name="group" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains a composite musical text, grouping together a sequence of distinct
         musical texts (or groups of such musical texts) which are regarded as a unit for some
         purpose, for example, the collected works of a composer.
@@ -11488,7 +11488,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="grpSym">
-    <element name="grpSym">
+    <element name="grpSym" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(group symbol) – A brace or bracket used to group two or more staves of a score or
         part.
         </a:documentation>
@@ -11505,7 +11505,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="identifier">
-    <element name="identifier">
+    <element name="identifier" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– An alpha-numeric string that establishes the identity of the described material.
         </a:documentation>
       <zeroOrMore>
@@ -11525,7 +11525,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="incip">
-    <element name="incip">
+    <element name="incip" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(incipit) – The opening music and/or words of a composition.
         </a:documentation>
       <zeroOrMore>
@@ -11543,7 +11543,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="keyAccid">
-    <element name="keyAccid">
+    <element name="keyAccid" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(key accidental) – Accidental in a key signature.
         </a:documentation>
       <empty/>
@@ -11570,7 +11570,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="keySig">
-    <element name="keySig">
+    <element name="keySig" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(key signature) – Written key signature.
         </a:documentation>
       <zeroOrMore>
@@ -11586,7 +11586,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_label">
-    <element name="label">
+    <element name="label" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A text string that identifies a staff, staff group, or contentItem.</a:documentation>
       <zeroOrMore>
         <choice>
@@ -11604,7 +11604,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="layer">
-    <element name="layer">
+    <element name="layer" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– An independent stream of events on a staff.
         </a:documentation>
       <zeroOrMore>
@@ -11637,7 +11637,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="layerDef">
-    <element name="layerDef">
+    <element name="layerDef" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(layer definition) – Container for layer meta-information.</a:documentation>
       <zeroOrMore>
         <ref name="mei_model.labelLike"/>
@@ -11661,7 +11661,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_lb">
-    <element name="lb">
+    <element name="lb" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(line break) – An empty formatting element that forces text to begin on a new
         line.
         </a:documentation>
@@ -11685,7 +11685,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mdiv">
-    <element name="mdiv">
+    <element name="mdiv" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(musical division) – contains a subdivision of the body of a musical text.
         </a:documentation>
       <choice>
@@ -11709,7 +11709,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei">
-    <element name="mei">
+    <element name="mei" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains a single MEI-conformant document, consisting of an MEI header and a
         musical text, either in isolation or as part of an meiCorpus element.
         </a:documentation>
@@ -11728,7 +11728,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_music">
-    <element name="music">
+    <element name="music" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains a single musical text of any kind, whether unitary or composite, for
         example, an etude, opera, song cycle, symphony, or anthology of piano solos.</a:documentation>
       <zeroOrMore>
@@ -11745,7 +11745,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_name">
-    <element name="name">
+    <element name="name" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Proper noun or noun phrase.
         </a:documentation>
       <zeroOrMore>
@@ -11766,7 +11766,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_note">
-    <element name="note">
+    <element name="note" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A single pitched event.
         </a:documentation>
       <zeroOrMore>
@@ -11789,7 +11789,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_num">
-    <element name="num">
+    <element name="num" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(number) – Numeric information in any form.
         </a:documentation>
       <zeroOrMore>
@@ -11808,7 +11808,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_p">
-    <element name="p">
+    <element name="p" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) – One or more text phrases that form a logical prose passage.
         </a:documentation>
       <zeroOrMore>
@@ -11826,7 +11826,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="pad">
-    <element name="pad">
+    <element name="pad" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(padding) – An indication of extra visual space between notational
         elements.</a:documentation>
       <empty/>
@@ -11839,7 +11839,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="parts">
-    <element name="parts">
+    <element name="parts" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Provides a container for performers' parts.</a:documentation>
       <zeroOrMore>
         <ref name="mei_model.partLike"/>
@@ -11855,7 +11855,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="part">
-    <element name="part">
+    <element name="part" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– An alternative visual rendition of the score from a particular performer's (or
         group of performers') point of view.
         </a:documentation>
@@ -11882,7 +11882,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_pb">
-    <element name="pb">
+    <element name="pb" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page break) – An empty formatting element that forces text to begin on a new
         page.
         </a:documentation>
@@ -11899,7 +11899,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="pgDesc">
-    <element name="pgDesc">
+    <element name="pgDesc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page description) – Contains a brief prose description of the appearance or
         description of the content of a physical page.
         </a:documentation>
@@ -11918,7 +11918,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="pgHead">
-    <element name="pgHead">
+    <element name="pgHead" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page header) – A running header on the first page.
         </a:documentation>
       <zeroOrMore>
@@ -11938,7 +11938,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="pgHead2">
-    <element name="pgHead2">
+    <element name="pgHead2" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page header 2) – A running header on the pages following the first.
         </a:documentation>
       <zeroOrMore>
@@ -11958,7 +11958,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="pgFoot">
-    <element name="pgFoot">
+    <element name="pgFoot" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page footer) – A running footer on the first page.
         </a:documentation>
       <zeroOrMore>
@@ -11978,7 +11978,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="pgFoot2">
-    <element name="pgFoot2">
+    <element name="pgFoot2" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page footer 2) – A running footer on the pages following the first.
         </a:documentation>
       <zeroOrMore>
@@ -11998,7 +11998,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="phrase">
-    <element name="phrase">
+    <element name="phrase" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Indication of 1) a "unified melodic idea" or 2) performance technique.
         </a:documentation>
       <empty/>
@@ -12020,7 +12020,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="rend">
-    <element name="rend">
+    <element name="rend" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(render) – A formatting element indicating special visual rendering, e.g., bold or
         italicized, of a text word or phrase.
         </a:documentation>
@@ -12077,7 +12077,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_repository">
-    <element name="repository">
+    <element name="repository" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Institution or agency which holds a bibliographic item.
         </a:documentation>
       <zeroOrMore>
@@ -12096,7 +12096,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="rest">
-    <element name="rest">
+    <element name="rest" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A non-sounding event found in the source being transcribed.
         </a:documentation>
       <empty/>
@@ -12117,7 +12117,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_roleDesc">
-    <element name="roleDesc">
+    <element name="roleDesc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(role description) – Describes a character's role in a drama.</a:documentation>
       <zeroOrMore>
         <choice>
@@ -12132,7 +12132,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="sb">
-    <element name="sb">
+    <element name="sb" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(system break) – An empty formatting element that forces musical notation to begin
         on a new line.
         </a:documentation>
@@ -12150,7 +12150,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="score">
-    <element name="score">
+    <element name="score" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Full score view of the musical content.
         </a:documentation>
       <zeroOrMore>
@@ -12176,7 +12176,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="scoreDef">
-    <element name="scoreDef">
+    <element name="scoreDef" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(score definition) – Container for score meta-information.</a:documentation>
       <zeroOrMore>
         <ref name="mei_model.alignLike"/>
@@ -12209,7 +12209,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="section">
-    <element name="section">
+    <element name="section" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Segment of music data.
         </a:documentation>
       <zeroOrMore>
@@ -12246,7 +12246,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_space">
-    <element name="space">
+    <element name="space" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A placeholder used to fill an incomplete measure, layer, etc. most often so that
         the combined duration of the events equals the number of beats in the measure.</a:documentation>
       <empty/>
@@ -12260,7 +12260,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="stack">
-    <element name="stack">
+    <element name="stack" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(stacked text) – An inline table with a single column.</a:documentation>
       <zeroOrMore>
         <choice>
@@ -12297,7 +12297,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="staff">
-    <element name="staff">
+    <element name="staff" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A group of equidistant horizontal lines on which notes are placed in order to
         represent pitch or a grouping element for individual 'strands' of notes, rests, etc. that
         may or may not actually be rendered on staff lines; that is, both diastematic and
@@ -12333,7 +12333,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="staffDef">
-    <element name="staffDef">
+    <element name="staffDef" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(staff definition) – Container for staff meta-information.</a:documentation>
       <zeroOrMore>
         <ref name="mei_model.labelLike"/>
@@ -12417,7 +12417,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="staffGrp">
-    <element name="staffGrp">
+    <element name="staffGrp" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(staff group) – A group of bracketed or braced staves.
         </a:documentation>
       <zeroOrMore>
@@ -12457,7 +12457,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="syl">
-    <element name="syl">
+    <element name="syl" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(syllable) – Individual lyric syllable.
         </a:documentation>
       <zeroOrMore>
@@ -12478,7 +12478,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="tempo">
-    <element name="tempo">
+    <element name="tempo" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Text and symbols descriptive of tempo, mood, or style, e.g., "allarg.", "a
         tempo", "cantabile", "Moderato", "♩=60", "Moderato ♩ =60").</a:documentation>
       <zeroOrMore>
@@ -12507,7 +12507,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_title">
-    <element name="title">
+    <element name="title" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Title of a bibliographic entity.
         </a:documentation>
       <zeroOrMore>
@@ -12545,7 +12545,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_titlePage">
-    <element name="titlePage">
+    <element name="titlePage" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains a transcription of the title page of a text.
         </a:documentation>
       <oneOrMore>
@@ -12560,8 +12560,30 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
       <empty/>
     </element>
   </define>
+  <define name="mei_att.regularmethod.attributes">
+    <ref name="mei_att.regularmethod.attribute.method"/>
+  </define>
+  <define name="mei_att.regularmethod.attribute.method">
+    <optional>
+      <attribute name="method">
+        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the method employed to mark corrections and normalizations.</a:documentation>
+        <choice>
+          <value>silent</value>
+          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">corrections and normalizations made silently.</a:documentation>
+          <value>tags</value>
+          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">corrections and normalizations indicated using elements.</a:documentation>
+        </choice>
+      </attribute>
+    </optional>
+  </define>
   <define name="mei_model.editorialDeclPart">
-    <notAllowed/>
+    <choice>
+      <ref name="mei_correction"/>
+      <ref name="mei_interpretation"/>
+      <ref name="mei_normalization"/>
+      <ref name="mei_segmentation"/>
+      <ref name="mei_stdVals"/>
+    </choice>
   </define>
   <define name="mei_model.encodingPart_sequenceOptional">
     <optional>
@@ -12620,7 +12642,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </choice>
   </define>
   <define name="key">
-    <element name="key">
+    <element name="key" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Key captures information about tonal center and mode.
         </a:documentation>
       <text/>
@@ -12631,7 +12653,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="meiHead">
-    <element name="meiHead">
+    <element name="meiHead" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(MEI header) – Supplies the descriptive and declarative metadata prefixed to every
         MEI-conformant text.
         </a:documentation>
@@ -12663,7 +12685,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="accessRestrict">
-    <element name="accessRestrict">
+    <element name="accessRestrict" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(access restriction) – Describes the conditions that affect the accessibility of
         material.
         </a:documentation>
@@ -12680,7 +12702,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="acqSource">
-    <element name="acqSource">
+    <element name="acqSource" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(acquisition source) – Post-publication source, such as a vendor or distributor,
         from which access to a bibliographic item may be obtained, including electronic access.
         </a:documentation>
@@ -12697,7 +12719,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="altId">
-    <element name="altId">
+    <element name="altId" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(alternative identifier) – May contain a bibliographic identifier that does not
         fit within the meiHead element's id attribute, for example because the id does not fit the
         definition of an XML id or because multiple identifiers are needed.
@@ -12716,7 +12738,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_appInfo">
-    <element name="appInfo">
+    <element name="appInfo" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(application information) – Groups information about applications which have acted
         upon the MEI file.
         </a:documentation>
@@ -12728,7 +12750,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_application">
-    <element name="application">
+    <element name="application" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Provides information about an application which has acted upon the current
         document.
         </a:documentation>
@@ -12757,7 +12779,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_availability">
-    <element name="availability">
+    <element name="availability" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Groups elements that describe the availability of and access to a bibliographic
         item, including an MEI-encoded document.
         </a:documentation>
@@ -12769,7 +12791,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_change">
-    <element name="change">
+    <element name="change" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Individual change within the revision description.
         </a:documentation>
       <ref name="mei_respStmt"/>
@@ -12783,7 +12805,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="changeDesc">
-    <element name="changeDesc">
+    <element name="changeDesc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(change description) – Description of a revision of the MEI file.</a:documentation>
       <oneOrMore>
         <ref name="mei_model.pLike"/>
@@ -12795,7 +12817,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_classCode">
-    <element name="classCode">
+    <element name="classCode" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(classification code) – Holds a citation to the source of controlled-vocabulary
         terms used in the &lt;termList&gt; element; for example, Library of Congress Subject
         Headings (LCSH), Library of Congress Classification (LCC), Library of Congress Name
@@ -12815,7 +12837,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="classification">
-    <element name="classification">
+    <element name="classification" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Groups information which describes the nature or topic of an entity.
         </a:documentation>
       <oneOrMore>
@@ -12831,7 +12853,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_condition">
-    <element name="condition">
+    <element name="condition" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– The physical condition of an item, particularly any variances between the
         physical makeup of the item and that of other copies of the same item (e.g., missing pages,
         plates, etc.).
@@ -12848,8 +12870,38 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
       <empty/>
     </element>
   </define>
+  <define name="mei_correction">
+    <element name="correction" ns="http://www.music-encoding.org/ns/mei">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– States how and under what circumstances corrections have been made in the text.
+        </a:documentation>
+      <oneOrMore>
+        <ref name="mei_model.pLike"/>
+      </oneOrMore>
+      <ref name="mei_att.common.attributes"/>
+      <ref name="mei_att.bibl.attributes"/>
+      <ref name="mei_att.datapointing.attributes"/>
+      <ref name="mei_att.lang.attributes"/>
+      <ref name="mei_att.regularmethod.attributes"/>
+      <optional>
+        <attribute name="corrlevel">
+          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the degree of correction applied to the text.</a:documentation>
+          <choice>
+            <value>high</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the text has been thoroughly checked and proofread.</a:documentation>
+            <value>medium</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the text has been checked at least once.</a:documentation>
+            <value>low</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the text has not been checked.</a:documentation>
+            <value>unknown</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the correction status of the text is unknown.</a:documentation>
+          </choice>
+        </attribute>
+      </optional>
+      <empty/>
+    </element>
+  </define>
   <define name="contents">
-    <element name="contents">
+    <element name="contents" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Description of the material contained within a resource.</a:documentation>
       <optional>
         <ref name="mei_model.headLike"/>
@@ -12872,7 +12924,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="contentItem">
-    <element name="contentItem">
+    <element name="contentItem" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains a single entry within a content description element.</a:documentation>
       <zeroOrMore>
         <text/>
@@ -12883,7 +12935,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_creation">
-    <element name="creation">
+    <element name="creation" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Non-bibliographic details of the creation of an intellectual entity, in
         narrative form, such as the date, place, and circumstances of its composition.
         </a:documentation>
@@ -12901,7 +12953,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_dimensions">
-    <element name="dimensions">
+    <element name="dimensions" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Information about the physical size of a bibliographic source; usually includes
         numerical data.
         </a:documentation>
@@ -12918,7 +12970,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_editionStmt">
-    <element name="editionStmt">
+    <element name="editionStmt" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(edition statement) – Container for meta-data pertaining to a particular edition
         of the material being described.
         </a:documentation>
@@ -12935,7 +12987,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_editorialDecl">
-    <element name="editorialDecl">
+    <element name="editorialDecl" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(editorial declaration) – Used to provide details of editorial principles and
         practices applied during the encoding of musical text.
         </a:documentation>
@@ -12960,7 +13012,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_encodingDesc">
-    <element name="encodingDesc">
+    <element name="encodingDesc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(encoding description) – Documents the relationship between an electronic file and
         the source or sources from which it was derived as well as applications used in the
         encoding/editing process.
@@ -12972,7 +13024,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="exhibHist">
-    <element name="exhibHist">
+    <element name="exhibHist" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(exhibition history) – A record of public exhibitions, including dates, venues,
         etc.
         </a:documentation>
@@ -12989,7 +13041,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_extent">
-    <element name="extent">
+    <element name="extent" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Used to express size in terms other than physical dimensions, such as number of
         pages, number of records in file, number of bytes, performance duration for music, audio
         recordings and visual projections, etc.
@@ -13007,7 +13059,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_fileDesc">
-    <element name="fileDesc">
+    <element name="fileDesc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(file description) – Contains a full bibliographic description of the MEI file.
         </a:documentation>
       <ref name="mei_titleStmt"/>
@@ -13033,7 +13085,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_hand">
-    <element name="hand">
+    <element name="hand" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Defines a distinct scribe or handwriting style.
         </a:documentation>
       <zeroOrMore>
@@ -13057,7 +13109,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="handList">
-    <element name="handList">
+    <element name="handList" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Container for one or more hand elements.
         </a:documentation>
       <oneOrMore>
@@ -13069,7 +13121,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="mei_history">
-    <element name="history">
+    <element name="history" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Provides a container for information about the creation and history of a
         resource.</a:documentation>
       <optional>
@@ -13090,7 +13142,7 @@ Suggested values include: 1] cm; 2] mm; 3] in; 4] px; 5] pt; 6] pc</a:documentat
     </element>
   </define>
   <define name="incipCode">
-    <element name="incipCode">
+    <element name="incipCode" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Incipit coded in a non-XML, plain text format, such as Plaine &amp; Easie
         Code.</a:documentation>
       <text/>
@@ -13137,7 +13189,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="incipText">
-    <element name="incipText">
+    <element name="incipText" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Opening words of a musical composition.</a:documentation>
       <zeroOrMore>
         <choice>
@@ -13154,7 +13206,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="inscription">
-    <element name="inscription">
+    <element name="inscription" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– An inscription added to an item, such as a bookplate, a note designating the
         item as a gift, and/or the author's signature.</a:documentation>
       <zeroOrMore>
@@ -13171,8 +13223,23 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
       <empty/>
     </element>
   </define>
+  <define name="mei_interpretation">
+    <element name="interpretation" ns="http://www.music-encoding.org/ns/mei">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Describes the scope of any analytic or interpretive information added to the
+        transcription of the music.
+        </a:documentation>
+      <oneOrMore>
+        <ref name="mei_model.pLike"/>
+      </oneOrMore>
+      <ref name="mei_att.common.attributes"/>
+      <ref name="mei_att.bibl.attributes"/>
+      <ref name="mei_att.datapointing.attributes"/>
+      <ref name="mei_att.lang.attributes"/>
+      <empty/>
+    </element>
+  </define>
   <define name="mensuration">
-    <element name="mensuration">
+    <element name="mensuration" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Captures information about mensuration within bibliographic descriptions.</a:documentation>
       <text/>
       <ref name="mei_att.common.attributes"/>
@@ -13182,7 +13249,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="meter">
-    <element name="meter">
+    <element name="meter" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Captures information about the time signature within bibliographic descriptions.
         </a:documentation>
       <text/>
@@ -13193,7 +13260,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="termList">
-    <element name="termList">
+    <element name="termList" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Collection of text phrases which describe a resource.</a:documentation>
       <oneOrMore>
         <ref name="mei_term"/>
@@ -13212,7 +13279,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_language">
-    <element name="language">
+    <element name="language" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Description of a language used in the document.
         </a:documentation>
       <zeroOrMore>
@@ -13228,7 +13295,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_langUsage">
-    <element name="langUsage">
+    <element name="langUsage" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(language usage) – Groups elements describing the languages, sub-languages,
         dialects, etc., represented within the encoded resource.
         </a:documentation>
@@ -13241,8 +13308,24 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
       <empty/>
     </element>
   </define>
+  <define name="mei_normalization">
+    <element name="normalization" ns="http://www.music-encoding.org/ns/mei">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Indicates the extent of normalization or regularization of the original source
+        carried out in converting it to electronic form.
+        </a:documentation>
+      <oneOrMore>
+        <ref name="mei_model.pLike"/>
+      </oneOrMore>
+      <ref name="mei_att.common.attributes"/>
+      <ref name="mei_att.bibl.attributes"/>
+      <ref name="mei_att.datapointing.attributes"/>
+      <ref name="mei_att.lang.attributes"/>
+      <ref name="mei_att.regularmethod.attributes"/>
+      <empty/>
+    </element>
+  </define>
   <define name="mei_notesStmt">
-    <element name="notesStmt">
+    <element name="notesStmt" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(notes statement)– Collects any notes providing information about a text
         additional to that recorded in other parts of the bibliographic description.
         </a:documentation>
@@ -13255,7 +13338,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="perfMedium">
-    <element name="perfMedium">
+    <element name="perfMedium" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(performance medium) – Indicates the number and character of the performing forces
         used in a musical composition.
         </a:documentation>
@@ -13275,7 +13358,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="instrumentation">
-    <element name="instrumentation">
+    <element name="instrumentation" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Instrumental and non-dramatic vocal resources.</a:documentation>
       <optional>
         <ref name="mei_head"/>
@@ -13298,7 +13381,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="ensemble">
-    <element name="ensemble">
+    <element name="ensemble" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– The name of a standard instrumental or vocal grouping, such as 'orchestra' or
         'marching band'.
         </a:documentation>
@@ -13315,7 +13398,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="instrVoice">
-    <element name="instrVoice">
+    <element name="instrVoice" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(instrument or voice) – Name of an instrument on which a performer plays or a
         performer's voice range.</a:documentation>
       <zeroOrMore>
@@ -13350,7 +13433,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="instrVoiceGrp">
-    <element name="instrVoiceGrp">
+    <element name="instrVoiceGrp" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Several instrumental or vocal resources treated as a group.</a:documentation>
       <zeroOrMore>
         <choice>
@@ -13366,7 +13449,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_physDesc">
-    <element name="physDesc">
+    <element name="physDesc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(physical description) – Container for information about the location, appearance,
         construction, or handling of physical materials, such as their dimension, quantity, color,
         style, and technique of creation.
@@ -13380,7 +13463,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="physLoc">
-    <element name="physLoc">
+    <element name="physLoc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(physical location) – Location of the source within a repository, e.g., shelf mark
         or other locational information.
         </a:documentation>
@@ -13396,7 +13479,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="physMedium">
-    <element name="physMedium">
+    <element name="physMedium" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(physical medium) – Records the physical materials used in the source, such as ink
         and paper.
         </a:documentation>
@@ -13414,7 +13497,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="plateNum">
-    <element name="plateNum">
+    <element name="plateNum" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(plate number) – Designation assigned to a resource by a music publisher, usually
         printed at the bottom of each page, and sometimes appearing also on the title page.
         </a:documentation>
@@ -13431,7 +13514,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="price">
-    <element name="price">
+    <element name="price" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– The cost of access to a bibliographic item.</a:documentation>
       <zeroOrMore>
         <choice>
@@ -13446,7 +13529,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_projectDesc">
-    <element name="projectDesc">
+    <element name="projectDesc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(project description) – Project-level meta-data describing the aim or purpose for
         which the electronic file was encoded, funding agencies, etc. together with any other
         relevant information concerning the process by which it was assembled or collected.
@@ -13462,7 +13545,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_provenance">
-    <element name="provenance">
+    <element name="provenance" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– The record of ownership or custodianship of an item.
         </a:documentation>
       <choice>
@@ -13483,7 +13566,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="pubStmt">
-    <element name="pubStmt">
+    <element name="pubStmt" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(publication statement) – Container for information regarding the publication or
         distribution of a bibliographic item, including the publisher's name and address, the date
         of publication, and other relevant details.
@@ -13502,7 +13585,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_relatedItem">
-    <element name="relatedItem">
+    <element name="relatedItem" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(related item) – contains or references another bibliographic item which is
         related to the present one in some specified manner, for example as a constituent or
         alternative version of it.
@@ -13571,7 +13654,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_resp">
-    <element name="resp">
+    <element name="resp" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsibility) – A phrase describing the nature of a person's intellectual
         responsibility.
         </a:documentation>
@@ -13581,7 +13664,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_respStmt">
-    <element name="respStmt">
+    <element name="respStmt" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(responsibility statement) – Names one or more individuals, groups, or in rare
         cases, mechanical processes, responsible for creation or realization of the intellectual or
         artistic content.
@@ -13599,7 +13682,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_revisionDesc">
-    <element name="revisionDesc">
+    <element name="revisionDesc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(revision description) – Container for information about alterations that have
         been made to an MEI file.
         </a:documentation>
@@ -13612,7 +13695,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_samplingDecl">
-    <element name="samplingDecl">
+    <element name="samplingDecl" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(sampling declaration) – Contains a prose description of the rationale and methods
         used in sampling texts in the creation of a corpus or collection.
         </a:documentation>
@@ -13626,8 +13709,23 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
       <empty/>
     </element>
   </define>
+  <define name="mei_segmentation">
+    <element name="segmentation" ns="http://www.music-encoding.org/ns/mei">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Describes the principles according to which the musical text has been segmented,
+        for example into movements, sections, etc.
+        </a:documentation>
+      <oneOrMore>
+        <ref name="mei_model.pLike"/>
+      </oneOrMore>
+      <ref name="mei_att.common.attributes"/>
+      <ref name="mei_att.bibl.attributes"/>
+      <ref name="mei_att.datapointing.attributes"/>
+      <ref name="mei_att.lang.attributes"/>
+      <empty/>
+    </element>
+  </define>
   <define name="mei_seriesStmt">
-    <element name="seriesStmt">
+    <element name="seriesStmt" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(series statement) – Groups information about the series, if any, to which a
         publication belongs.
         </a:documentation>
@@ -13652,7 +13750,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_source">
-    <element name="source">
+    <element name="source" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A bibliographic description of a source used in the creation of the electronic
         file.
         </a:documentation>
@@ -13687,7 +13785,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_sourceDesc">
-    <element name="sourceDesc">
+    <element name="sourceDesc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(source description) – A container for the descriptions of the source(s) used in
         the creation of the electronic file.
         </a:documentation>
@@ -13698,8 +13796,23 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
       <empty/>
     </element>
   </define>
+  <define name="mei_stdVals">
+    <element name="stdVals" ns="http://www.music-encoding.org/ns/mei">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(standard values) – Specifies the format used when standardized date or number
+        values are supplied.
+        </a:documentation>
+      <oneOrMore>
+        <ref name="mei_model.pLike"/>
+      </oneOrMore>
+      <ref name="mei_att.common.attributes"/>
+      <ref name="mei_att.bibl.attributes"/>
+      <ref name="mei_att.datapointing.attributes"/>
+      <ref name="mei_att.lang.attributes"/>
+      <empty/>
+    </element>
+  </define>
   <define name="sysReq">
-    <element name="sysReq">
+    <element name="sysReq" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(system requirements) – System requirements for using the electronic item.</a:documentation>
       <zeroOrMore>
         <choice>
@@ -13714,7 +13827,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_term">
-    <element name="term">
+    <element name="term" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Keyword or phrase which describes a resource.
         </a:documentation>
       <zeroOrMore>
@@ -13738,7 +13851,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_titleStmt">
-    <element name="titleStmt">
+    <element name="titleStmt" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(title statement) – Container for title and responsibility meta-data.
         </a:documentation>
       <oneOrMore>
@@ -13753,7 +13866,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="treatHist">
-    <element name="treatHist">
+    <element name="treatHist" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(treatment history) – A record of the treatment the item has undergone (e.g.,
         de-acidification, restoration, etc.).
         </a:documentation>
@@ -13769,7 +13882,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="treatSched">
-    <element name="treatSched">
+    <element name="treatSched" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(treatment scheduled) – Scheduled treatment, e.g. de-acidification, restoration,
         etc., for an item.
         </a:documentation>
@@ -13785,7 +13898,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="unpub">
-    <element name="unpub">
+    <element name="unpub" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(unpublished) – Used to explicitly indicate that a bibliographic resource is
         unpublished.
         </a:documentation>
@@ -13796,7 +13909,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="useRestrict">
-    <element name="useRestrict">
+    <element name="useRestrict" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(usage restrictions) – Container for information about the conditions that affect
         use of a bibliographic item after access has been granted.
         </a:documentation>
@@ -13812,7 +13925,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_watermark">
-    <element name="watermark">
+    <element name="watermark" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains a description of a watermark or similar device.
         </a:documentation>
       <zeroOrMore>
@@ -13828,7 +13941,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="workDesc">
-    <element name="workDesc">
+    <element name="workDesc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(work description) – Grouping mechanism for information describing
         non-bibliographic aspects of a text.</a:documentation>
       <oneOrMore>
@@ -13839,7 +13952,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="work">
-    <element name="work">
+    <element name="work" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Provides a detailed description of the non-bibliographic aspects of a text,
         specifically its history, language use, and high-level musical attributes: key, tempo,
         meter, and medium of performance.</a:documentation>
@@ -13872,7 +13985,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="eventList">
-    <element name="eventList">
+    <element name="eventList" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains historical information given as a sequence of significant past events.
         </a:documentation>
       <optional>
@@ -13888,7 +14001,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_event">
-    <element name="event">
+    <element name="event" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains a description of an event, including the dates and locations of its
         occurrence and prominent participants.
         </a:documentation>
@@ -14241,7 +14354,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </choice>
   </define>
   <define name="mensur">
-    <element name="mensur">
+    <element name="mensur" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(mensuration) – Collects information about the metrical relationship between a
         note value and the next smaller value; that is, either triple or duple.
         </a:documentation>
@@ -14256,7 +14369,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="proport">
-    <element name="proport">
+    <element name="proport" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(proportion) – Description of note duration as arithmetic ratio.
         </a:documentation>
       <empty/>
@@ -14270,7 +14383,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="ligature">
-    <element name="ligature">
+    <element name="ligature" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A mensural notation symbol that combines two or more notes into a single sign.
         </a:documentation>
       <zeroOrMore>
@@ -14435,7 +14548,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </optional>
   </define>
   <define name="meiCorpus">
-    <element name="meiCorpus">
+    <element name="meiCorpus" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(MEI corpus) – A group of related MEI documents, consisting of a header for the
         group, and one or more &lt;mei&gt; elements, each with its own complete header.
         </a:documentation>
@@ -14512,7 +14625,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </choice>
   </define>
   <define name="mei_app">
-    <element name="app">
+    <element name="app" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(apparatus) – Contains one or more alternative encodings.
         </a:documentation>
       <optional>
@@ -14528,7 +14641,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_lem">
-    <element name="lem">
+    <element name="lem" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(lemma) – Contains the lemma, or base text, of a textual variation.
         </a:documentation>
       <zeroOrMore>
@@ -14561,7 +14674,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_rdg">
-    <element name="rdg">
+    <element name="rdg" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reading) – Contains a single reading within a textual variation.
         </a:documentation>
       <zeroOrMore>
@@ -14690,7 +14803,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </choice>
   </define>
   <define name="mei_abbr">
-    <element name="abbr">
+    <element name="abbr" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(abbreviation) – A generic element for 1) a shortened form of a word, including an
         acronym or 2) a shorthand notation.</a:documentation>
       <zeroOrMore>
@@ -14727,7 +14840,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_expan">
-    <element name="expan">
+    <element name="expan" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(expansion) – Contains the expansion of an abbreviation.</a:documentation>
       <zeroOrMore>
         <choice>
@@ -14763,7 +14876,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_add">
-    <element name="add">
+    <element name="add" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(addition) – Marks an addition to the text.
         </a:documentation>
       <zeroOrMore>
@@ -14792,7 +14905,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_choice">
-    <element name="choice">
+    <element name="choice" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Groups a number of alternative encodings for the same point in a text.
         </a:documentation>
       <zeroOrMore>
@@ -14803,7 +14916,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_corr">
-    <element name="corr">
+    <element name="corr" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(correction) – Contains the correct form of an apparent erroneous passage.
         </a:documentation>
       <zeroOrMore>
@@ -14831,7 +14944,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_damage">
-    <element name="damage">
+    <element name="damage" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains an area of damage to the physical medium.</a:documentation>
       <zeroOrMore>
         <choice>
@@ -14867,7 +14980,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_del">
-    <element name="del">
+    <element name="del" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(deletion) – Contains information deleted, marked as deleted, or otherwise
         indicated as superfluous or spurious in the copy text by an author, scribe, annotator, or
         corrector.
@@ -14903,7 +15016,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_gap">
-    <element name="gap">
+    <element name="gap" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Indicates a point where material has been omitted in a transcription, whether as
         part of sampling practice or for editorial reasons described in the MEI header.
         </a:documentation>
@@ -14918,7 +15031,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_handShift">
-    <element name="handShift">
+    <element name="handShift" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Marks the beginning of a passage written in a new hand, or of a change in the
         scribe, writing style, ink or character of the document hand.
         </a:documentation>
@@ -14951,7 +15064,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_orig">
-    <element name="orig">
+    <element name="orig" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(original) – Contains material which is marked as following the original, rather
         than being normalized or corrected.
         </a:documentation>
@@ -14981,7 +15094,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_reg">
-    <element name="reg">
+    <element name="reg" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(regularization) – Contains material which has been regularized or normalized in
         some sense.
         </a:documentation>
@@ -15010,7 +15123,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_restore">
-    <element name="restore">
+    <element name="restore" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Indicates restoration of material to an earlier state by cancellation of an
         editorial or authorial marking or instruction.
         </a:documentation>
@@ -15047,7 +15160,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_sic">
-    <element name="sic">
+    <element name="sic" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains apparently incorrect or inaccurate material.
         </a:documentation>
       <zeroOrMore>
@@ -15074,7 +15187,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_subst">
-    <element name="subst">
+    <element name="subst" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(substitution) – Groups transcriptional elements when the combination is to be
         regarded as a single intervention in the text.
         </a:documentation>
@@ -15089,7 +15202,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_supplied">
-    <element name="supplied">
+    <element name="supplied" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains material supplied by the transcriber or editor in place of text which
         cannot be read, either because of physical damage or loss in the original or because it is
         illegible for any reason.
@@ -15121,7 +15234,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_unclear">
-    <element name="unclear">
+    <element name="unclear" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains material that cannot be transcribed with certainty because it is
         illegible or inaudible in the source.
         </a:documentation>
@@ -15169,7 +15282,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </optional>
   </define>
   <define name="mei_facsimile">
-    <element name="facsimile">
+    <element name="facsimile" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains a representation of some written source in the form of a set of images
         rather than as transcribed or encoded text.
         </a:documentation>
@@ -15182,7 +15295,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_surface">
-    <element name="surface">
+    <element name="surface" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Defines a writing surface in terms of a rectangular coordinate space, optionally
         grouping one or more graphic representations of that space, and rectangular zones of
         interest within it.
@@ -15205,7 +15318,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_zone">
-    <element name="zone">
+    <element name="zone" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Defines an area of interest within a surface or graphic file.
         </a:documentation>
       <zeroOrMore>
@@ -15307,7 +15420,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </oneOrMore>
   </define>
   <define name="mei_graphic">
-    <element name="graphic">
+    <element name="graphic" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Indicates the location of an inline graphic, illustration, or figure.
         </a:documentation>
       <zeroOrMore>
@@ -15337,7 +15450,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_fig">
-    <element name="fig">
+    <element name="fig" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(figure) – groups elements representing or containing graphic information such as
         an illustration or figure.
         </a:documentation>
@@ -15355,7 +15468,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_figDesc">
-    <element name="figDesc">
+    <element name="figDesc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(figure description) – Contains a brief prose description of the appearance or
         content of a graphic figure, for use when documenting an image without displaying it.
         </a:documentation>
@@ -15373,7 +15486,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_table">
-    <element name="table">
+    <element name="table" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains text displayed in tabular form.
         </a:documentation>
       <optional>
@@ -15393,7 +15506,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="td">
-    <element name="td">
+    <element name="td" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(table data) – Designates a table cell that contains data as opposed to a cell
         that contains column or row heading information.
         </a:documentation>
@@ -15415,7 +15528,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="th">
-    <element name="th">
+    <element name="th" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(table header) – Designates a table cell containing column or row heading
         information as opposed to one containing data.
         </a:documentation>
@@ -15437,7 +15550,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="tr">
-    <element name="tr">
+    <element name="tr" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(table row) – A formatting element that contains one or more cells (intersection
         of a row and a column) in a &lt;table&gt;.
         </a:documentation>
@@ -15591,7 +15704,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </oneOrMore>
   </define>
   <define name="barre">
-    <element name="barre">
+    <element name="barre" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– An indication of fingering in a chord tablature grid.
         </a:documentation>
       <empty/>
@@ -15602,7 +15715,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="chordDef">
-    <element name="chordDef">
+    <element name="chordDef" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(chord definition) – Chord tablature definition.
         </a:documentation>
       <zeroOrMore>
@@ -15622,7 +15735,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="chordMember">
-    <element name="chordMember">
+    <element name="chordMember" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– An individual pitch in a chord defined by a &lt;chordDef&gt; element.
         </a:documentation>
       <empty/>
@@ -15642,7 +15755,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="chordTable">
-    <element name="chordTable">
+    <element name="chordTable" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Chord/tablature look-up table.
         </a:documentation>
       <oneOrMore>
@@ -15653,7 +15766,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_f">
-    <element name="f">
+    <element name="f" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(figure) – Single element of a figured bass indication.</a:documentation>
       <zeroOrMore>
         <choice>
@@ -15679,7 +15792,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="fb">
-    <element name="fb">
+    <element name="fb" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(figured bass) – Symbols added to a bass line that indicate harmony. Used to
         improvise a chordal accompaniment. Sometimes called Generalbass, thoroughbass, or basso
         continuo.</a:documentation>
@@ -15697,7 +15810,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="harm">
-    <element name="harm">
+    <element name="harm" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(harmony) – An indication of harmony, e.g., chord names, tablature grids, harmonic
         analysis, figured bass.</a:documentation>
       <zeroOrMore>
@@ -15738,7 +15851,100 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </optional>
   </define>
   <define name="mei_model.alignLike">
-    <notAllowed/>
+    <choice>
+      <ref name="mei_timeline"/>
+    </choice>
+  </define>
+  <define name="mei_timeline">
+    <element name="timeline" ns="http://www.music-encoding.org/ns/mei">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Provides a set of ordered points in time to which musical elements can be linked
+        in order to create a temporal alignment of those elements.
+        </a:documentation>
+      <zeroOrMore>
+        <ref name="mei_when"/>
+      </zeroOrMore>
+      <ref name="mei_att.common.attributes"/>
+      <optional>
+        <attribute name="avref">
+          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">holds the identifier of an &lt;avFile&gt; element that references an external
+            digital media file.</a:documentation>
+          <ref name="data.URI"/>
+        </attribute>
+      </optional>
+      <attribute name="origin">
+        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">designates the origin of the timeline, i.e. the &lt;when&gt; element associated with
+            the beginning of the timeline.</a:documentation>
+        <ref name="data.URI"/>
+      </attribute>
+      <empty/>
+    </element>
+  </define>
+  <define name="mei_when">
+    <element name="when" ns="http://www.music-encoding.org/ns/mei">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Indicates a point in time either absolutely (using the absolute attribute), or
+        relative to other elements in the same timeline element (using the interval and since
+        attributes).
+        </a:documentation>
+      <empty/>
+      <ref name="mei_att.common.attributes"/>
+      <ref name="mei_att.datapointing.attributes"/>
+      <optional>
+        <attribute name="absolute">
+          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides an absolute value for the time associated with a point on a timeline. This
+            attribute is required for the element designated as the origin by the parent
+            timeline.</a:documentation>
+          <ref name="data.ISOTIME"/>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="interval">
+          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the time interval between this time point and the one designated by the
+            since attribute. This attribute can only be interpreted meaningfully in conjunction with
+            the inttype attribute.</a:documentation>
+          <text/>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="inttype">
+          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the kind of values used in the interval attribute.</a:documentation>
+          <choice>
+            <value>byte</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">byte value.</a:documentation>
+            <value>smil</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Synchronized Multimedia Integration Language.</a:documentation>
+            <value>midi</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">MIDI time code.</a:documentation>
+            <value>smpte-25</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">SMPTE 25 EBU.</a:documentation>
+            <value>smpte-24</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">SMPTE 24 Film Sync.</a:documentation>
+            <value>smpte-df30</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">SMPTE 30 Drop.</a:documentation>
+            <value>smpte-ndf30</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">SMPTE 30 Non-Drop.</a:documentation>
+            <value>smpte-df29.97</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">SMPTE 29.97 Drop.</a:documentation>
+            <value>smpte-ndf29.97</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">SMPTE 29.97 Non-Drop.</a:documentation>
+            <value>tcf</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">AES Time-code character format.</a:documentation>
+            <value>time</value>
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">ISO 24-hour time format: HH:MM:SS.ss.</a:documentation>
+          </choice>
+        </attribute>
+      </optional>
+      <optional>
+        <attribute name="since">
+          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies the reference point for determining the time of the current when element,
+            which is obtained by adding the interval to the time of the reference point. The value
+            should be the ID of another when element in the same timeline. If the since attribute is
+            omitted and the absolute attribute is not specified, then the reference point is
+            understood to be the immediately preceding when element.</a:documentation>
+          <ref name="data.URI"/>
+        </attribute>
+      </optional>
+      <empty/>
+    </element>
   </define>
   <define name="mei_att.lyrics.anl.attributes">
     <ref name="mei_att.common.anl.attributes"/>
@@ -15827,7 +16033,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </choice>
   </define>
   <define name="lyrics">
-    <element name="lyrics">
+    <element name="lyrics" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Vocally performed 'text' of a musical composition, such as a song or opera.
         </a:documentation>
       <oneOrMore>
@@ -15844,7 +16050,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="verse">
-    <element name="verse">
+    <element name="verse" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Lyric verse.
         </a:documentation>
       <zeroOrMore>
@@ -16022,7 +16228,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </oneOrMore>
   </define>
   <define name="instrGrp">
-    <element name="instrGrp">
+    <element name="instrGrp" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(instrument group) – Collects MIDI instrument definitions.</a:documentation>
       <oneOrMore>
         <ref name="mei_model.instrDefLike"/>
@@ -16032,7 +16238,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="instrDef">
-    <element name="instrDef">
+    <element name="instrDef" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(instrument definition) – MIDI instrument declaration.
         </a:documentation>
       <empty/>
@@ -16043,7 +16249,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="cc">
-    <element name="cc">
+    <element name="cc" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(control change) – MIDI parameter/control change.
         </a:documentation>
       <empty/>
@@ -16056,7 +16262,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="chan">
-    <element name="chan">
+    <element name="chan" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(channel) – MIDI channel assignment.</a:documentation>
       <empty/>
       <ref name="mei_att.common.anl.attributes"/>
@@ -16070,7 +16276,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="chanPr">
-    <element name="chanPr">
+    <element name="chanPr" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(channel pressure) – MIDI channel pressure/after touch.
         </a:documentation>
       <empty/>
@@ -16082,7 +16288,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="cue">
-    <element name="cue">
+    <element name="cue" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– MIDI cue point.</a:documentation>
       <text/>
       <ref name="mei_att.common.anl.attributes"/>
@@ -16092,7 +16298,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="hex">
-    <element name="hex">
+    <element name="hex" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Arbitrary MIDI data in hexadecimal form.
         </a:documentation>
       <text/>
@@ -16103,7 +16309,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="marker">
-    <element name="marker">
+    <element name="marker" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– MIDI marker meta-event.</a:documentation>
       <text/>
       <ref name="mei_att.common.anl.attributes"/>
@@ -16113,7 +16319,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="metaText">
-    <element name="metaText">
+    <element name="metaText" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– MIDI text meta-event.</a:documentation>
       <text/>
       <ref name="mei_att.common.anl.attributes"/>
@@ -16123,7 +16329,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="midi">
-    <element name="midi">
+    <element name="midi" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Container for elements that contain information useful when generating MIDI
         output.
         </a:documentation>
@@ -16154,7 +16360,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="noteOff">
-    <element name="noteOff">
+    <element name="noteOff" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– MIDI note-off event.</a:documentation>
       <empty/>
       <ref name="mei_att.common.anl.attributes"/>
@@ -16165,7 +16371,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="noteOn">
-    <element name="noteOn">
+    <element name="noteOn" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– MIDI note-on event.</a:documentation>
       <empty/>
       <ref name="mei_att.common.anl.attributes"/>
@@ -16176,7 +16382,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="port">
-    <element name="port">
+    <element name="port" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– MIDI port. </a:documentation>
       <empty/>
       <ref name="mei_att.common.anl.attributes"/>
@@ -16187,7 +16393,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="prog">
-    <element name="prog">
+    <element name="prog" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(program) – MIDI program change.
         </a:documentation>
       <empty/>
@@ -16199,7 +16405,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="seqNum">
-    <element name="seqNum">
+    <element name="seqNum" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(sequence number) – MIDI sequence number.</a:documentation>
       <empty/>
       <ref name="mei_att.common.anl.attributes"/>
@@ -16215,7 +16421,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="trkName">
-    <element name="trkName">
+    <element name="trkName" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(track name) – MIDI track/sequence name.</a:documentation>
       <text/>
       <ref name="mei_att.common.anl.attributes"/>
@@ -16225,7 +16431,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="vel">
-    <element name="vel">
+    <element name="vel" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(velocity) – MIDI Note-on/off velocity.
         </a:documentation>
       <empty/>
@@ -16394,7 +16600,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </oneOrMore>
   </define>
   <define name="corpName">
-    <element name="corpName">
+    <element name="corpName" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(corporate name) – Identifies an organization or group of people that acts as a
         single entity.
         </a:documentation>
@@ -16418,7 +16624,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_geogName">
-    <element name="geogName">
+    <element name="geogName" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(geographic name) – The proper noun designation for a place, natural feature, or
         political jurisdiction.
         </a:documentation>
@@ -16441,7 +16647,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="periodName">
-    <element name="periodName">
+    <element name="periodName" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(period name) – A label that describes a period of time, such as 'Baroque' or '3rd
         Style period'.
         </a:documentation>
@@ -16465,7 +16671,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_persName">
-    <element name="persName">
+    <element name="persName" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(personal name) – Designation for an individual, including any or all of that
         individual's forenames, surnames, honorific titles, and added names
         </a:documentation>
@@ -16489,7 +16695,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="styleName">
-    <element name="styleName">
+    <element name="styleName" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(style name) – A label for a characteristic style of writing or performance, such
         as 'bebop' or 'rock-n-roll'.
         </a:documentation>
@@ -16512,16 +16718,36 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_performance">
-    <element name="performance">
+    <element name="performance" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A presentation of one or more musical works.
         </a:documentation>
+      <zeroOrMore>
+        <ref name="mei_recording"/>
+      </zeroOrMore>
       <ref name="mei_att.common.attributes"/>
       <ref name="mei_att.declaring.attributes"/>
       <empty/>
     </element>
   </define>
+  <define name="mei_recording">
+    <element name="recording" ns="http://www.music-encoding.org/ns/mei">
+      <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A recorded performance.
+        </a:documentation>
+      <zeroOrMore>
+        <ref name="avFile"/>
+      </zeroOrMore>
+      <zeroOrMore>
+        <ref name="clip"/>
+      </zeroOrMore>
+      <ref name="mei_att.common.attributes"/>
+      <ref name="mei_att.declaring.attributes"/>
+      <ref name="mei_att.mediabounds.attributes"/>
+      <ref name="mei_att.startid.attributes"/>
+      <empty/>
+    </element>
+  </define>
   <define name="clip">
-    <element name="clip">
+    <element name="clip" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Defines a time segment of interest within a recording or within a digital audio
         or video file.
         </a:documentation>
@@ -16536,7 +16762,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="avFile">
-    <element name="avFile">
+    <element name="avFile" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(audio/video file) – References an external digital audio or video file.
         </a:documentation>
       <zeroOrMore>
@@ -16598,7 +16824,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </oneOrMore>
   </define>
   <define name="mei_ptr">
-    <element name="ptr">
+    <element name="ptr" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(pointer) – Defines a pointer to another location, using only attributes to
         describe the destination.
         </a:documentation>
@@ -16610,7 +16836,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_ref">
-    <element name="ref">
+    <element name="ref" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) – Defines a reference to another location that may contain text and
         sub-elements to describe the destination.
         </a:documentation>
@@ -16774,7 +17000,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </oneOrMore>
   </define>
   <define name="mei_back">
-    <element name="back">
+    <element name="back" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(back matter) – Contains any appendixes, advertisements, indexes, etc. following
         the main body of a musical text.
         </a:documentation>
@@ -16798,7 +17024,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_quote">
-    <element name="quote">
+    <element name="quote" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(block quote) – A formatting element that designates an extended quotation; that
         is, a passage attributed to a source external to the text and normally set off from the text
         by spacing or other typographic distinction.
@@ -16817,7 +17043,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_div">
-    <element name="div">
+    <element name="div" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(division) – Major structural division of text, such as a preface, chapter or
         section.
         </a:documentation>
@@ -16845,7 +17071,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_front">
-    <element name="front">
+    <element name="front" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(front matter) – Bundles prefatory text found before the start of the musical
         text.
         </a:documentation>
@@ -16869,7 +17095,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_head">
-    <element name="head">
+    <element name="head" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(heading) – Contains any heading, for example, the title of a section of text, or
         the heading of a list.
         </a:documentation>
@@ -16889,7 +17115,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_item">
-    <element name="item">
+    <element name="item" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Single item in a &lt;list&gt;.
         </a:documentation>
       <zeroOrMore>
@@ -16907,7 +17133,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_l">
-    <element name="l">
+    <element name="l" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(line of text) – Contains a single line of text within a line group.
         </a:documentation>
       <zeroOrMore>
@@ -16925,7 +17151,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_lg">
-    <element name="lg">
+    <element name="lg" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(line group) – May be used for any section of text that is organized as a group of
         lines; however, it is most often used for a group of verse lines functioning as a formal
         unit, e.g. a stanza, refrain, verse paragraph, etc.
@@ -16952,7 +17178,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_list">
-    <element name="list">
+    <element name="list" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A formatting element that contains a series of items separated from one another
         and arranged in a linear, often vertical, sequence.
         </a:documentation>
@@ -17001,7 +17227,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </choice>
   </define>
   <define name="anchoredText">
-    <element name="anchoredText">
+    <element name="anchoredText" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Container for text that is fixed to a particular location, regardless of changes
         made to the layout of the measures around it.
         </a:documentation>
@@ -17025,7 +17251,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="curve">
-    <element name="curve">
+    <element name="curve" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A curved line that cannot be represented by a more specific element, such as a
         &lt;slur&gt;.
         </a:documentation>
@@ -17046,7 +17272,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_line">
-    <element name="line">
+    <element name="line" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A line that cannot be represented by a more specific element.
         </a:documentation>
       <zeroOrMore>
@@ -17070,7 +17296,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="mei_symbol">
-    <element name="symbol">
+    <element name="symbol" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– A reference to a previously defined symbol.
         </a:documentation>
       <empty/>
@@ -17091,7 +17317,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="symbolDef">
-    <element name="symbolDef">
+    <element name="symbolDef" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(symbol definition) – Declaration of an individual symbol in a symbolTable.</a:documentation>
       <oneOrMore>
         <ref name="mei_model.graphicprimitiveLike"/>
@@ -17102,7 +17328,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern</a:documentation>
     </element>
   </define>
   <define name="symbolTable">
-    <element name="symbolTable">
+    <element name="symbolTable" ns="http://www.music-encoding.org/ns/mei">
       <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">– Contains individual, user-defined symbols.
         </a:documentation>
       <oneOrMore>

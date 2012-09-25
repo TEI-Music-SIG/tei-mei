@@ -7,7 +7,7 @@ namespace rng = "http://relaxng.org/ns/structure/1.0"
 namespace sch = "http://purl.oclc.org/dsdl/schematron"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2012-09-25T08:06:50Z. 
+# Schema generated from ODD source 2012-09-25T10:37:37Z. 
 # Edition: 2.1.0. Last updated on 17th June 2012.
 # Edition Location: http://www.tei-c.org/Vault/P5/2.1.0/
 #
@@ -5812,6 +5812,23 @@ mei_att.layerDef.vis.attributes =
   mei_att.beaming.vis.attributes,
   mei_att.textstyle.attributes,
   mei_att.visibility.attributes
+mei_att.measure.anl.attributes =
+  mei_att.common.anl.attributes, mei_att.joined.attributes
+mei_att.measure.ges.attributes = mei_att.timestamp.performed.attributes
+mei_att.measure.log.attributes =
+  mei_att.meterconformance.bar.attributes,
+  mei_att.measure.log.attribute.left,
+  mei_att.measure.log.attribute.right
+mei_att.measure.log.attribute.left =
+  
+  ## indicates the visual rendition of the left bar line. It is present here only for
+  ##             facilitation of translation from legacy encodings which use it. Usually, it can be
+  ##             safely ignored.
+  attribute left { data.BARRENDITION }?
+mei_att.measure.log.attribute.right =
+  
+  ## indicates the function of the right bar line and is structurally important.
+  attribute right { data.BARRENDITION }?
 mei_att.meterSig.anl.attributes = mei_att.common.anl.attributes
 mei_att.meterSig.ges.attributes = empty
 mei_att.meterSig.log.attributes =
@@ -6624,7 +6641,7 @@ accid =
   
   ## (accidental) – Records a temporary alteration to the pitch of a note.
   ##         
-  element ns2:accid {
+  element ns3:accid {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -6638,7 +6655,7 @@ accid =
 mei_actor =
   
   ## – Name of an actor appearing within a cast list.
-  element ns2:actor {
+  element ns3:actor {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -6650,7 +6667,7 @@ mei_address =
   ## – Contains a postal address, for example of a publisher, an organization, or an
   ##         individual.
   ##         
-  element ns2:address {
+  element ns3:address {
     mei_addrLine+,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -6661,7 +6678,7 @@ mei_addrLine =
   
   ## (address line) – Single line of a postal address.
   ##         
-  element ns2:addrLine {
+  element ns3:addrLine {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -6676,7 +6693,7 @@ annot =
   ## (annotation) – Provides a short statement explaining the text or indicating the
   ##         basis for an assertion.
   ##         
-  element ns2:annot {
+  element ns3:annot {
     (text
      | mei_model.textcomponentLike
      | mei_model.textphraseLike
@@ -6700,7 +6717,7 @@ artic =
   
   ## (articulation) – An indication of how to play a note or chord.
   ##         
-  element ns2:artic {
+  element ns3:artic {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -6716,7 +6733,7 @@ barLine =
   ## – Vertical line drawn through one or more staves that divides musical notation
   ##         into metrical units.
   ##         
-  element ns2:barLine {
+  element ns3:barLine {
     empty
     >> sch:pattern [
          id = "barLine-constraint-Check_barLinetaktplace"
@@ -6759,7 +6776,7 @@ mei_bibl =
   
   ## (bibliographic reference) – Provides a citation for a published work.
   ##         
-  element ns2:bibl {
+  element ns3:bibl {
     (text | mei_model.biblPart | mei_model.textphraseLike)*,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -6771,7 +6788,7 @@ mei_body =
   
   ## – Contains the whole of a single musical text, excluding any front or back matter.
   ##         
-  element ns2:body {
+  element ns3:body {
     mei_model.mdivLike+,
     mei_att.common.attributes,
     mei_att.declaring.attributes,
@@ -6780,7 +6797,7 @@ mei_body =
 mei_caption =
   
   ## – A label which accompanies an illustration or a table.
-  element ns2:caption {
+  element ns3:caption {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -6793,7 +6810,7 @@ mei_caption =
 mei_castList =
   
   ## – Contains a single cast list or dramatis personae.
-  element ns2:castList {
+  element ns3:castList {
     mei_model.headLike?,
     (mei_castItem | castGrp)+,
     mei_att.common.attributes,
@@ -6805,7 +6822,7 @@ mei_castItem =
   
   ## – Contains a single entry within a cast list, describing either a single role or a
   ##         list of non-speaking roles.
-  element ns2:castItem {
+  element ns3:castItem {
     (text | mei_roleDesc | mei_actor | instrVoice)+,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -6816,7 +6833,7 @@ castGrp =
   
   ## (cast group) – Groups one or more individual castItem elements within a cast
   ##         list.
-  element ns2:castGrp {
+  element ns3:castGrp {
     (mei_castItem | castGrp | mei_roleDesc)+,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -6827,7 +6844,7 @@ chord =
   
   ## – A simultaneous sounding of two or more notes in the same layer *with the same
   ##         duration*.
-  element ns2:chord {
+  element ns3:chord {
     (mei_note
      | artic
      | mei_model.editLike
@@ -6845,7 +6862,7 @@ clef =
   ## – Indication of the exact location of a particular note on the staff and,
   ##         therefore, the other notes as well.
   ##         
-  element ns2:clef {
+  element ns3:clef {
     empty
     >> sch:pattern [
          id = "clef-constraint-Check_clef_position_clef"
@@ -6910,7 +6927,7 @@ clef =
 clefGrp =
   
   ## (clef group) – A set of simultaneously-occurring clefs.
-  element ns2:clefGrp {
+  element ns3:clefGrp {
     clef+,
     mei_att.common.attributes,
     mei_att.event.attributes,
@@ -6926,7 +6943,7 @@ custos =
   ## – Symbol placed at the end of a line of music to indicate the first note of the
   ##         next line. Sometimes called a "direct".
   ##         
-  element ns2:custos {
+  element ns3:custos {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -6941,7 +6958,7 @@ mei_date =
   
   ## – A string identifying a point in time or the time period between two such
   ##         points.
-  element ns2:date {
+  element ns3:date {
     (text | mei_model.textphraseLike)*,
     mei_att.bibl.attributes,
     mei_att.calendared.attributes,
@@ -6958,7 +6975,7 @@ dir =
   ##         between staves, but not on the staff) not encoded elsewhere in more specific elements, such
   ##         as <tempo> or <dynam>.
   ##         
-  element ns2:dir {
+  element ns3:dir {
     ((text
       | mei_model.textphraseLike.limited
       | mei_model.graphicprimitiveLike
@@ -6998,7 +7015,7 @@ dot =
   
   ## – Dot of augmentation or division.
   ##         
-  element ns2:dot {
+  element ns3:dot {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -7012,7 +7029,7 @@ dynam =
   
   ## (dynamic) – Indication of the volume of a note, phrase, or section of music.
   ##         
-  element ns2:dynam {
+  element ns3:dynam {
     ((text
       | mei_model.textphraseLike.limited
       | mei_model.editLike
@@ -7054,7 +7071,7 @@ mei_edition =
   ##         issued by either the same publisher/distributor or another publisher/distributor (e.g. large
   ##         print edition, British edition, etc.).
   ##         
-  element ns2:edition {
+  element ns3:edition {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -7065,7 +7082,7 @@ ending =
   ## – Alternative ending for a repeated passage of music; i.e., prima volta, seconda
   ##         volta, etc.
   ##         
-  element ns2:ending {
+  element ns3:ending {
     expansion*,
     (mei_model.appLike
      | mei_model.divLike
@@ -7090,7 +7107,7 @@ expansion =
   ## – Indicates how a section may be programmatically expanded into its
   ##         'through-composed' form.
   ##         
-  element ns2:expansion {
+  element ns3:expansion {
     empty,
     mei_att.common.attributes,
     mei_att.source.attributes,
@@ -7104,7 +7121,7 @@ mei_fw =
   ##         is non-repeating; that is, occuring on isolated pages. For recurring headers and footers use
   ##         pgHead* and pgFoot* elements.
   ##         
-  element ns2:fw {
+  element ns3:fw {
     (text
      | mei_model.textcomponentLike
      | mei_model.textphraseLike.limited
@@ -7123,7 +7140,7 @@ mei_group =
   ##         musical texts (or groups of such musical texts) which are regarded as a unit for some
   ##         purpose, for example, the collected works of a composer.
   ##         
-  element ns2:group {
+  element ns3:group {
     (mei_music | mei_group),
     (mei_music | mei_group)*,
     mei_att.common.attributes,
@@ -7135,7 +7152,7 @@ grpSym =
   ## (group symbol) – A brace or bracket used to group two or more staves of a score or
   ##         part.
   ##         
-  element ns2:grpSym {
+  element ns3:grpSym {
     mei_model.labelLike*,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -7149,7 +7166,7 @@ identifier =
   
   ## – An alpha-numeric string that establishes the identity of the described material.
   ##         
-  element ns2:identifier {
+  element ns3:identifier {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -7165,7 +7182,7 @@ incip =
   
   ## (incipit) – The opening music and/or words of a composition.
   ##         
-  element ns2:incip {
+  element ns3:incip {
     (incipCode
      | incipText
      | mei_model.scoreLike
@@ -7179,7 +7196,7 @@ keyAccid =
   
   ## (key accidental) – Accidental in a key signature.
   ##         
-  element ns2:keyAccid {
+  element ns3:keyAccid {
     empty,
     mei_att.accidental.attributes,
     mei_att.common.attributes,
@@ -7205,7 +7222,7 @@ keySig =
   
   ## (key signature) – Written key signature.
   ##         
-  element ns2:keySig {
+  element ns3:keySig {
     mei_model.keyAccidLike*,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -7218,7 +7235,7 @@ keySig =
 mei_label =
   
   ## – A text string that identifies a staff, staff group, or contentItem.
-  element ns2:label {
+  element ns3:label {
     (text
      | mei_model.textphraseLike.limited
      | mei_model.editLike
@@ -7233,7 +7250,7 @@ layer =
   
   ## – An independent stream of events on a staff.
   ##         
-  element ns2:layer {
+  element ns3:layer {
     ((mei_model.appLike
       | mei_model.divLike
       | mei_model.milestoneLike.music
@@ -7274,7 +7291,7 @@ layer =
 layerDef =
   
   ## (layer definition) – Container for layer meta-information.
-  element ns2:layerDef {
+  element ns3:layerDef {
     mei_model.labelLike*,
     (mei_model.instrDefLike*)
     >> sch:pattern [
@@ -7309,7 +7326,7 @@ mei_lb =
   ## (line break) – An empty formatting element that forces text to begin on a new
   ##         line.
   ##         
-  element ns2:lb {
+  element ns3:lb {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -7331,7 +7348,7 @@ mdiv =
   
   ## (musical division) – contains a subdivision of the body of a musical text.
   ##         
-  element ns2:mdiv {
+  element ns3:mdiv {
     ((mei_model.scoreLike?, mei_model.partsLike?)
      | mei_model.mdivLike*),
     mei_att.common.attributes,
@@ -7345,7 +7362,7 @@ mei =
   ## – Contains a single MEI-conformant document, consisting of an MEI header and a
   ##         musical text, either in isolation or as part of an meiCorpus element.
   ##         
-  element ns2:mei {
+  element ns3:mei {
     meiHead,
     mei_music
     >> sch:ns [
@@ -7380,7 +7397,7 @@ mei_music =
   
   ## – Contains a single musical text of any kind, whether unitary or composite, for
   ##         example, an etude, opera, song cycle, symphony, or anthology of piano solos.
-  element ns2:music {
+  element ns3:music {
     mei_model.alignLike*,
     mei_model.resourceLike*,
     macro.musicPart,
@@ -7393,7 +7410,7 @@ mei_name =
   
   ## – Proper noun or noun phrase.
   ##         
-  element ns2:name {
+  element ns3:name {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -7410,7 +7427,7 @@ mei_note =
   
   ## – A single pitched event.
   ##         
-  element ns2:note {
+  element ns3:note {
     (mei_model.noteModifierLike
      | mei_model.verseLike
      | mei_model.sylLike
@@ -7429,7 +7446,7 @@ mei_num =
   
   ## (number) – Numeric information in any form.
   ##         
-  element ns2:num {
+  element ns3:num {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -7444,7 +7461,7 @@ mei_p =
   
   ## (paragraph) – One or more text phrases that form a logical prose passage.
   ##         
-  element ns2:p {
+  element ns3:p {
     (text | mei_model.paracontentPart)*,
     mei_att.common.attributes,
     mei_att.declaring.attributes,
@@ -7457,7 +7474,7 @@ pad =
   
   ## (padding) – An indication of extra visual space between notational
   ##         elements.
-  element ns2:pad {
+  element ns3:pad {
     empty,
     mei_att.common.attributes,
     mei_att.pad.log.attributes,
@@ -7469,7 +7486,7 @@ pad =
 parts =
   
   ## – Provides a container for performers' parts.
-  element ns2:parts {
+  element ns3:parts {
     mei_model.partLike*,
     mei_att.common.attributes,
     mei_att.declaring.attributes,
@@ -7485,7 +7502,7 @@ part =
   ## – An alternative visual rendition of the score from a particular performer's (or
   ##         group of performers') point of view.
   ##         
-  element ns2:part {
+  element ns3:part {
     (mei_model.appLike
      | mei_model.divLike
      | mei_model.milestoneLike.music
@@ -7508,7 +7525,7 @@ mei_pb =
   ## (page break) – An empty formatting element that forces text to begin on a new
   ##         page.
   ##         
-  element ns2:pb {
+  element ns3:pb {
     macro.metaLike.page,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -7525,7 +7542,7 @@ pgDesc =
   ## (page description) – Contains a brief prose description of the appearance or
   ##         description of the content of a physical page.
   ##         
-  element ns2:pgDesc {
+  element ns3:pgDesc {
     (text
      | mei_model.graphicprimitiveLike
      | mei_model.textcomponentLike
@@ -7539,7 +7556,7 @@ pgHead =
   
   ## (page header) – A running header on the first page.
   ##         
-  element ns2:pgHead {
+  element ns3:pgHead {
     (text
      | mei_model.textcomponentLike
      | mei_model.textphraseLike.limited
@@ -7555,7 +7572,7 @@ pgHead2 =
   
   ## (page header 2) – A running header on the pages following the first.
   ##         
-  element ns2:pgHead2 {
+  element ns3:pgHead2 {
     (text
      | mei_model.textcomponentLike
      | mei_model.textphraseLike.limited
@@ -7571,7 +7588,7 @@ pgFoot =
   
   ## (page footer) – A running footer on the first page.
   ##         
-  element ns2:pgFoot {
+  element ns3:pgFoot {
     (text
      | mei_model.textcomponentLike
      | mei_model.textphraseLike.limited
@@ -7587,7 +7604,7 @@ pgFoot2 =
   
   ## (page footer 2) – A running footer on the pages following the first.
   ##         
-  element ns2:pgFoot2 {
+  element ns3:pgFoot2 {
     (text
      | mei_model.textcomponentLike
      | mei_model.textphraseLike.limited
@@ -7603,7 +7620,7 @@ phrase =
   
   ## – Indication of 1) a "unified melodic idea" or 2) performance technique.
   ##         
-  element ns2:phrase {
+  element ns3:phrase {
     empty
     >> sch:pattern [
          id =
@@ -7645,7 +7662,7 @@ rend =
   ## (render) – A formatting element indicating special visual rendering, e.g., bold or
   ##         italicized, of a text word or phrase.
   ##         
-  element ns2:rend {
+  element ns3:rend {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -7689,7 +7706,7 @@ mei_repository =
   
   ## – Institution or agency which holds a bibliographic item.
   ##         
-  element ns2:repository {
+  element ns3:repository {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.bibl.attributes,
     mei_att.common.attributes,
@@ -7703,7 +7720,7 @@ rest =
   
   ## – A non-sounding event found in the source being transcribed.
   ##         
-  element ns2:rest {
+  element ns3:rest {
     empty
     >> sch:pattern [
          id = "rest-constraint-Check_restline"
@@ -7742,7 +7759,7 @@ rest =
 mei_roleDesc =
   
   ## (role description) – Describes a character's role in a drama.
-  element ns2:roleDesc {
+  element ns3:roleDesc {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -7754,7 +7771,7 @@ sb =
   ## (system break) – An empty formatting element that forces musical notation to begin
   ##         on a new line.
   ##         
-  element ns2:sb {
+  element ns3:sb {
     custos?,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -7769,7 +7786,7 @@ score =
   
   ## – Full score view of the musical content.
   ##         
-  element ns2:score {
+  element ns3:score {
     (mei_model.appLike
      | mei_model.divLike
      | mei_model.milestoneLike.music
@@ -7790,7 +7807,7 @@ score =
 scoreDef =
   
   ## (score definition) – Container for score meta-information.
-  element ns2:scoreDef {
+  element ns3:scoreDef {
     mei_model.alignLike*,
     mei_model.chordTableLike?,
     mei_model.symbolTableLike?,
@@ -7810,7 +7827,7 @@ section =
   
   ## – Segment of music data.
   ##         
-  element ns2:section {
+  element ns3:section {
     expansion*,
     ((mei_model.appLike
       | mei_model.divLike
@@ -7855,7 +7872,7 @@ mei_space =
   
   ## – A placeholder used to fill an incomplete measure, layer, etc. most often so that
   ##         the combined duration of the events equals the number of beats in the measure.
-  element ns2:space {
+  element ns3:space {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -7868,7 +7885,7 @@ mei_space =
 stack =
   
   ## (stacked text) – An inline table with a single column.
-  element ns2:stack {
+  element ns3:stack {
     (text | mei_model.textphraseLike)*,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -7902,7 +7919,7 @@ staff =
   ##         may or may not actually be rendered on staff lines; that is, both diastematic and
   ##         non-diastematic signs.
   ##         
-  element ns2:staff {
+  element ns3:staff {
     ((mei_model.appLike
       | mei_model.divLike
       | mei_model.milestoneLike.music
@@ -7943,7 +7960,7 @@ staff =
 staffDef =
   
   ## (staff definition) – Container for staff meta-information.
-  element ns2:staffDef {
+  element ns3:staffDef {
     mei_model.labelLike*,
     ((mei_model.instrDefLike
       | mei_model.layerDefLike
@@ -8175,7 +8192,7 @@ staffGrp =
   
   ## (staff group) – A group of bracketed or braced staves.
   ##         
-  element ns2:staffGrp {
+  element ns3:staffGrp {
     grpSym*,
     mei_model.labelLike*,
     mei_model.instrDefLike*,
@@ -8226,7 +8243,7 @@ syl =
   
   ## (syllable) – Individual lyric syllable.
   ##         
-  element ns2:syl {
+  element ns3:syl {
     (text
      | mei_model.textphraseLike.limited
      | mei_model.editLike
@@ -8243,7 +8260,7 @@ tempo =
   
   ## – Text and symbols descriptive of tempo, mood, or style, e.g., "allarg.", "a
   ##         tempo", "cantabile", "Moderato", "♩=60", "Moderato ♩ =60").
-  element ns2:tempo {
+  element ns3:tempo {
     ((text
       | mei_model.textphraseLike.limited
       | mei_model.graphicprimitiveLike
@@ -8282,7 +8299,7 @@ mei_title =
   
   ## – Title of a bibliographic entity.
   ##         
-  element ns2:title {
+  element ns3:title {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -8318,14 +8335,32 @@ mei_titlePage =
   
   ## – Contains a transcription of the title page of a text.
   ##         
-  element ns2:titlePage {
+  element ns3:titlePage {
     (mei_model.textcomponentLike | mei_model.milestoneLike.text)+,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
     mei_att.lang.attributes,
     empty
   }
-mei_model.editorialDeclPart = notAllowed
+mei_att.regularmethod.attributes =
+  mei_att.regularmethod.attribute.method
+mei_att.regularmethod.attribute.method =
+  
+  ## indicates the method employed to mark corrections and normalizations.
+  attribute method {
+    
+    ## corrections and normalizations made silently.
+    "silent"
+    | 
+      ## corrections and normalizations indicated using elements.
+      "tags"
+  }?
+mei_model.editorialDeclPart =
+  mei_correction
+  | mei_interpretation
+  | mei_normalization
+  | mei_segmentation
+  | mei_stdVals
 mei_model.encodingPart_sequenceOptional =
   mei_appInfo?, mei_editorialDecl?, mei_projectDesc?, mei_samplingDecl?
 mei_model.frontPart = mei_titlePage
@@ -8357,7 +8392,7 @@ key =
   
   ## – Key captures information about tonal center and mode.
   ##         
-  element ns2:key {
+  element ns3:key {
     text,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8369,7 +8404,7 @@ meiHead =
   ## (MEI header) – Supplies the descriptive and declarative metadata prefixed to every
   ##         MEI-conformant text.
   ##         
-  element ns2:meiHead {
+  element ns3:meiHead {
     altId*,
     mei_fileDesc,
     mei_model.headerPart_sequenceOptional,
@@ -8396,7 +8431,7 @@ accessRestrict =
   ## (access restriction) – Describes the conditions that affect the accessibility of
   ##         material.
   ##         
-  element ns2:accessRestrict {
+  element ns3:accessRestrict {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8408,7 +8443,7 @@ acqSource =
   ## (acquisition source) – Post-publication source, such as a vendor or distributor,
   ##         from which access to a bibliographic item may be obtained, including electronic access.
   ##         
-  element ns2:acqSource {
+  element ns3:acqSource {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.bibl.attributes,
     mei_att.common.attributes,
@@ -8421,7 +8456,7 @@ altId =
   ##         fit within the meiHead element's id attribute, for example because the id does not fit the
   ##         definition of an XML id or because multiple identifiers are needed.
   ##         
-  element ns2:altId {
+  element ns3:altId {
     (text | mei_model.lbLike | mei_model.rendLike)*,
     mei_att.bibl.attributes,
     mei_att.common.attributes,
@@ -8433,7 +8468,7 @@ mei_appInfo =
   ## (application information) – Groups information about applications which have acted
   ##         upon the MEI file.
   ##         
-  element ns2:appInfo {
+  element ns3:appInfo {
     mei_application*, mei_att.common.attributes, empty
   }
 mei_application =
@@ -8441,7 +8476,7 @@ mei_application =
   ## – Provides information about an application which has acted upon the current
   ##         document.
   ##         
-  element ns2:application {
+  element ns3:application {
     mei_model.nameLike+,
     (mei_model.locrefLike* | mei_model.pLike*),
     mei_att.common.attributes,
@@ -8458,7 +8493,7 @@ mei_availability =
   ## – Groups elements that describe the availability of and access to a bibliographic
   ##         item, including an MEI-encoded document.
   ##         
-  element ns2:availability {
+  element ns3:availability {
     macro.availabilityPart,
     mei_att.bibl.attributes,
     mei_att.common.attributes,
@@ -8469,7 +8504,7 @@ mei_change =
   
   ## – Individual change within the revision description.
   ##         
-  element ns2:change {
+  element ns3:change {
     mei_respStmt,
     changeDesc,
     mei_model.dateLike,
@@ -8482,7 +8517,7 @@ mei_change =
 changeDesc =
   
   ## (change description) – Description of a revision of the MEI file.
-  element ns2:changeDesc {
+  element ns3:changeDesc {
     mei_model.pLike+,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8496,7 +8531,7 @@ mei_classCode =
   ##         Headings (LCSH), Library of Congress Classification (LCC), Library of Congress Name
   ##         Authority File (LCNAF), or other thesaurus or ontology.
   ##         
-  element ns2:classCode {
+  element ns3:classCode {
     (text | mei_model.lbLike | mei_model.rendLike)*,
     mei_att.common.attributes,
     mei_att.authorized.attributes,
@@ -8507,7 +8542,7 @@ classification =
   
   ## – Groups information which describes the nature or topic of an entity.
   ##         
-  element ns2:classification {
+  element ns3:classification {
     (mei_classCode | termList)+,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8520,17 +8555,46 @@ mei_condition =
   ##         physical makeup of the item and that of other copies of the same item (e.g., missing pages,
   ##         plates, etc.).
   ##         
-  element ns2:condition {
+  element ns3:condition {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
     mei_att.lang.attributes,
     empty
   }
+mei_correction =
+  
+  ## – States how and under what circumstances corrections have been made in the text.
+  ##         
+  element ns3:correction {
+    mei_model.pLike+,
+    mei_att.common.attributes,
+    mei_att.bibl.attributes,
+    mei_att.datapointing.attributes,
+    mei_att.lang.attributes,
+    mei_att.regularmethod.attributes,
+    
+    ## indicates the degree of correction applied to the text.
+    attribute corrlevel {
+      
+      ## the text has been thoroughly checked and proofread.
+      "high"
+      | 
+        ## the text has been checked at least once.
+        "medium"
+      | 
+        ## the text has not been checked.
+        "low"
+      | 
+        ## the correction status of the text is unknown.
+        "unknown"
+    }?,
+    empty
+  }
 contents =
   
   ## – Description of the material contained within a resource.
-  element ns2:contents {
+  element ns3:contents {
     mei_model.headLike?,
     (mei_model.pLike? | (mei_model.labelLike?, contentItem)+),
     mei_att.common.attributes,
@@ -8541,7 +8605,7 @@ contents =
 contentItem =
   
   ## – Contains a single entry within a content description element.
-  element ns2:contentItem {
+  element ns3:contentItem {
     text*, mei_att.bibl.attributes, mei_att.common.attributes, empty
   }
 mei_creation =
@@ -8549,7 +8613,7 @@ mei_creation =
   ## – Non-bibliographic details of the creation of an intellectual entity, in
   ##         narrative form, such as the date, place, and circumstances of its composition.
   ##         
-  element ns2:creation {
+  element ns3:creation {
     (text | mei_date | mei_geogName)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8561,7 +8625,7 @@ mei_dimensions =
   ## – Information about the physical size of a bibliographic source; usually includes
   ##         numerical data.
   ##         
-  element ns2:dimensions {
+  element ns3:dimensions {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8573,7 +8637,7 @@ mei_editionStmt =
   ## (edition statement) – Container for meta-data pertaining to a particular edition
   ##         of the material being described.
   ##         
-  element ns2:editionStmt {
+  element ns3:editionStmt {
     (mei_model.editionLike, mei_respStmt*)+,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8585,7 +8649,7 @@ mei_editorialDecl =
   ## (editorial declaration) – Used to provide details of editorial principles and
   ##         practices applied during the encoding of musical text.
   ##         
-  element ns2:editorialDecl {
+  element ns3:editorialDecl {
     (mei_model.pLike+
      | (mei_model.editorialDeclPart+, mei_model.pLike*)),
     mei_att.common.attributes,
@@ -8600,7 +8664,7 @@ mei_encodingDesc =
   ##         the source or sources from which it was derived as well as applications used in the
   ##         encoding/editing process.
   ##         
-  element ns2:encodingDesc {
+  element ns3:encodingDesc {
     mei_model.encodingPart_sequenceOptional,
     mei_att.bibl.attributes,
     mei_att.common.attributes,
@@ -8611,7 +8675,7 @@ exhibHist =
   ## (exhibition history) – A record of public exhibitions, including dates, venues,
   ##         etc.
   ##         
-  element ns2:exhibHist {
+  element ns3:exhibHist {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8624,7 +8688,7 @@ mei_extent =
   ##         pages, number of records in file, number of bytes, performance duration for music, audio
   ##         recordings and visual projections, etc.
   ##         
-  element ns2:extent {
+  element ns3:extent {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8635,7 +8699,7 @@ mei_fileDesc =
   
   ## (file description) – Contains a full bibliographic description of the MEI file.
   ##         
-  element ns2:fileDesc {
+  element ns3:fileDesc {
     mei_titleStmt,
     mei_editionStmt?,
     mei_extent?,
@@ -8651,7 +8715,7 @@ mei_hand =
   
   ## – Defines a distinct scribe or handwriting style.
   ##         
-  element ns2:hand {
+  element ns3:hand {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8667,14 +8731,14 @@ handList =
   
   ## – Container for one or more hand elements.
   ##         
-  element ns2:handList {
+  element ns3:handList {
     mei_hand+, mei_att.common.attributes, mei_att.bibl.attributes, empty
   }
 mei_history =
   
   ## – Provides a container for information about the creation and history of a
   ##         resource.
-  element ns2:history {
+  element ns3:history {
     mei_model.headLike?,
     mei_creation?,
     (eventList | mei_p)*,
@@ -8686,7 +8750,7 @@ incipCode =
   
   ## – Incipit coded in a non-XML, plain text format, such as Plaine & Easie
   ##         Code.
-  element ns2:incipCode {
+  element ns3:incipCode {
     text
     >> sch:pattern [
          id = "incipCode-constraint-Check_incipCode_form_mimetype"
@@ -8743,7 +8807,7 @@ incipCode =
 incipText =
   
   ## – Opening words of a musical composition.
-  element ns2:incipText {
+  element ns3:incipText {
     (mei_model.pLike | mei_model.lgLike)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8756,7 +8820,7 @@ inscription =
   
   ## – An inscription added to an item, such as a bookplate, a note designating the
   ##         item as a gift, and/or the author's signature.
-  element ns2:inscription {
+  element ns3:inscription {
     (text
      | mei_model.textphraseLike.limited
      | mei_model.editLike
@@ -8766,10 +8830,23 @@ inscription =
     mei_att.lang.attributes,
     empty
   }
+mei_interpretation =
+  
+  ## – Describes the scope of any analytic or interpretive information added to the
+  ##         transcription of the music.
+  ##         
+  element ns3:interpretation {
+    mei_model.pLike+,
+    mei_att.common.attributes,
+    mei_att.bibl.attributes,
+    mei_att.datapointing.attributes,
+    mei_att.lang.attributes,
+    empty
+  }
 mensuration =
   
   ## – Captures information about mensuration within bibliographic descriptions.
-  element ns2:mensuration {
+  element ns3:mensuration {
     text,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8780,7 +8857,7 @@ meter =
   
   ## – Captures information about the time signature within bibliographic descriptions.
   ##         
-  element ns2:meter {
+  element ns3:meter {
     text,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8790,7 +8867,7 @@ meter =
 termList =
   
   ## – Collection of text phrases which describe a resource.
-  element ns2:termList {
+  element ns3:termList {
     mei_term+,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8805,7 +8882,7 @@ mei_language =
   
   ## – Description of a language used in the document.
   ##         
-  element ns2:language {
+  element ns3:language {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8817,11 +8894,25 @@ mei_langUsage =
   ## (language usage) – Groups elements describing the languages, sub-languages,
   ##         dialects, etc., represented within the encoded resource.
   ##         
-  element ns2:langUsage {
+  element ns3:langUsage {
     mei_language+,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
     mei_att.datapointing.attributes,
+    empty
+  }
+mei_normalization =
+  
+  ## – Indicates the extent of normalization or regularization of the original source
+  ##         carried out in converting it to electronic form.
+  ##         
+  element ns3:normalization {
+    mei_model.pLike+,
+    mei_att.common.attributes,
+    mei_att.bibl.attributes,
+    mei_att.datapointing.attributes,
+    mei_att.lang.attributes,
+    mei_att.regularmethod.attributes,
     empty
   }
 mei_notesStmt =
@@ -8829,7 +8920,7 @@ mei_notesStmt =
   ## (notes statement)– Collects any notes providing information about a text
   ##         additional to that recorded in other parts of the bibliographic description.
   ##         
-  element ns2:notesStmt {
+  element ns3:notesStmt {
     mei_model.annotLike+,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8840,7 +8931,7 @@ perfMedium =
   ## (performance medium) – Indicates the number and character of the performing forces
   ##         used in a musical composition.
   ##         
-  element ns2:perfMedium {
+  element ns3:perfMedium {
     mei_model.headLike?,
     mei_castList?,
     instrumentation?,
@@ -8852,7 +8943,7 @@ perfMedium =
 instrumentation =
   
   ## – Instrumental and non-dramatic vocal resources.
-  element ns2:instrumentation {
+  element ns3:instrumentation {
     mei_head?,
     (ensemble? | (instrVoice | instrVoiceGrp)*),
     mei_att.common.attributes,
@@ -8865,7 +8956,7 @@ ensemble =
   ## – The name of a standard instrumental or vocal grouping, such as 'orchestra' or
   ##         'marching band'.
   ##         
-  element ns2:ensemble {
+  element ns3:ensemble {
     text,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8878,7 +8969,7 @@ instrVoice =
   
   ## (instrument or voice) – Name of an instrument on which a performer plays or a
   ##         performer's voice range.
-  element ns2:instrVoice {
+  element ns3:instrVoice {
     (text | instrVoice)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8898,7 +8989,7 @@ instrVoice =
 instrVoiceGrp =
   
   ## – Several instrumental or vocal resources treated as a group.
-  element ns2:instrVoiceGrp {
+  element ns3:instrVoiceGrp {
     (text | mei_model.headLike | instrVoice | instrVoiceGrp)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8910,7 +9001,7 @@ mei_physDesc =
   ##         construction, or handling of physical materials, such as their dimension, quantity, color,
   ##         style, and technique of creation.
   ##         
-  element ns2:physDesc {
+  element ns3:physDesc {
     mei_model.physDescPart+,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8921,7 +9012,7 @@ physLoc =
   ## (physical location) – Location of the source within a repository, e.g., shelf mark
   ##         or other locational information.
   ##         
-  element ns2:physLoc {
+  element ns3:physLoc {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8932,7 +9023,7 @@ physMedium =
   ## (physical medium) – Records the physical materials used in the source, such as ink
   ##         and paper.
   ##         
-  element ns2:physMedium {
+  element ns3:physMedium {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8945,7 +9036,7 @@ plateNum =
   ## (plate number) – Designation assigned to a resource by a music publisher, usually
   ##         printed at the bottom of each page, and sometimes appearing also on the title page.
   ##         
-  element ns2:plateNum {
+  element ns3:plateNum {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8955,7 +9046,7 @@ plateNum =
 price =
   
   ## – The cost of access to a bibliographic item.
-  element ns2:price {
+  element ns3:price {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8968,7 +9059,7 @@ mei_projectDesc =
   ##         which the electronic file was encoded, funding agencies, etc. together with any other
   ##         relevant information concerning the process by which it was assembled or collected.
   ##         
-  element ns2:projectDesc {
+  element ns3:projectDesc {
     mei_model.pLike+,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8980,7 +9071,7 @@ mei_provenance =
   
   ## – The record of ownership or custodianship of an item.
   ##         
-  element ns2:provenance {
+  element ns3:provenance {
     (eventList? | (text | mei_model.textphraseLike.limited)*),
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -8993,7 +9084,7 @@ pubStmt =
   ##         distribution of a bibliographic item, including the publisher's name and address, the date
   ##         of publication, and other relevant details.
   ##         
-  element ns2:pubStmt {
+  element ns3:pubStmt {
     (unpub? | mei_model.pubStmtPart*),
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -9005,7 +9096,7 @@ mei_relatedItem =
   ##         related to the present one in some specified manner, for example as a constituent or
   ##         alternative version of it.
   ##         
-  element ns2:relatedItem {
+  element ns3:relatedItem {
     mei_model.identifierLike*,
     mei_titleStmt?,
     macro.bibldescPart,
@@ -9067,14 +9158,14 @@ mei_resp =
   ## (responsibility) – A phrase describing the nature of a person's intellectual
   ##         responsibility.
   ##         
-  element ns2:resp { text, mei_att.authorized.attributes, empty }
+  element ns3:resp { text, mei_att.authorized.attributes, empty }
 mei_respStmt =
   
   ## (responsibility statement) – Names one or more individuals, groups, or in rare
   ##         cases, mechanical processes, responsible for creation or realization of the intellectual or
   ##         artistic content.
   ##         
-  element ns2:respStmt {
+  element ns3:respStmt {
     (mei_resp | mei_model.nameLike | mei_model.nameLike.agent)*,
     mei_att.bibl.attributes,
     mei_att.common.attributes,
@@ -9085,7 +9176,7 @@ mei_revisionDesc =
   ## (revision description) – Container for information about alterations that have
   ##         been made to an MEI file.
   ##         
-  element ns2:revisionDesc {
+  element ns3:revisionDesc {
     mei_change+,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -9096,7 +9187,20 @@ mei_samplingDecl =
   ## (sampling declaration) – Contains a prose description of the rationale and methods
   ##         used in sampling texts in the creation of a corpus or collection.
   ##         
-  element ns2:samplingDecl {
+  element ns3:samplingDecl {
+    mei_model.pLike+,
+    mei_att.common.attributes,
+    mei_att.bibl.attributes,
+    mei_att.datapointing.attributes,
+    mei_att.lang.attributes,
+    empty
+  }
+mei_segmentation =
+  
+  ## – Describes the principles according to which the musical text has been segmented,
+  ##         for example into movements, sections, etc.
+  ##         
+  element ns3:segmentation {
     mei_model.pLike+,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -9109,7 +9213,7 @@ mei_seriesStmt =
   ## (series statement) – Groups information about the series, if any, to which a
   ##         publication belongs.
   ##         
-  element ns2:seriesStmt {
+  element ns3:seriesStmt {
     mei_model.titleLike+,
     mei_respStmt*,
     mei_model.identifierLike*,
@@ -9124,7 +9228,7 @@ mei_source =
   ## – A bibliographic description of a source used in the creation of the electronic
   ##         file.
   ##         
-  element ns2:source {
+  element ns3:source {
     mei_model.identifierLike*,
     mei_titleStmt?,
     macro.bibldescPart,
@@ -9145,13 +9249,26 @@ mei_sourceDesc =
   ## (source description) – A container for the descriptions of the source(s) used in
   ##         the creation of the electronic file.
   ##         
-  element ns2:sourceDesc {
+  element ns3:sourceDesc {
     mei_source+, mei_att.common.attributes, empty
+  }
+mei_stdVals =
+  
+  ## (standard values) – Specifies the format used when standardized date or number
+  ##         values are supplied.
+  ##         
+  element ns3:stdVals {
+    mei_model.pLike+,
+    mei_att.common.attributes,
+    mei_att.bibl.attributes,
+    mei_att.datapointing.attributes,
+    mei_att.lang.attributes,
+    empty
   }
 sysReq =
   
   ## (system requirements) – System requirements for using the electronic item.
-  element ns2:sysReq {
+  element ns3:sysReq {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -9162,7 +9279,7 @@ mei_term =
   
   ## – Keyword or phrase which describes a resource.
   ##         
-  element ns2:term {
+  element ns3:term {
     (text | mei_term | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -9177,7 +9294,7 @@ mei_titleStmt =
   
   ## (title statement) – Container for title and responsibility meta-data.
   ##         
-  element ns2:titleStmt {
+  element ns3:titleStmt {
     mei_model.titleLike+,
     mei_respStmt*,
     mei_att.bibl.attributes,
@@ -9189,7 +9306,7 @@ treatHist =
   ## (treatment history) – A record of the treatment the item has undergone (e.g.,
   ##         de-acidification, restoration, etc.).
   ##         
-  element ns2:treatHist {
+  element ns3:treatHist {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -9200,7 +9317,7 @@ treatSched =
   ## (treatment scheduled) – Scheduled treatment, e.g. de-acidification, restoration,
   ##         etc., for an item.
   ##         
-  element ns2:treatSched {
+  element ns3:treatSched {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -9211,7 +9328,7 @@ unpub =
   ## (unpublished) – Used to explicitly indicate that a bibliographic resource is
   ##         unpublished.
   ##         
-  element ns2:unpub {
+  element ns3:unpub {
     text, mei_att.common.attributes, mei_att.bibl.attributes, empty
   }
 useRestrict =
@@ -9219,7 +9336,7 @@ useRestrict =
   ## (usage restrictions) – Container for information about the conditions that affect
   ##         use of a bibliographic item after access has been granted.
   ##         
-  element ns2:useRestrict {
+  element ns3:useRestrict {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -9229,7 +9346,7 @@ mei_watermark =
   
   ## – Contains a description of a watermark or similar device.
   ##         
-  element ns2:watermark {
+  element ns3:watermark {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.attributes,
     mei_att.bibl.attributes,
@@ -9240,13 +9357,13 @@ workDesc =
   
   ## (work description) – Grouping mechanism for information describing
   ##         non-bibliographic aspects of a text.
-  element ns2:workDesc { work+, mei_att.common.attributes, empty }
+  element ns3:workDesc { work+, mei_att.common.attributes, empty }
 work =
   
   ## – Provides a detailed description of the non-bibliographic aspects of a text,
   ##         specifically its history, language use, and high-level musical attributes: key, tempo,
   ##         meter, and medium of performance.
-  element ns2:work {
+  element ns3:work {
     mei_model.identifierLike*,
     mei_titleStmt?,
     macro.workPart,
@@ -9264,7 +9381,7 @@ eventList =
   
   ## – Contains historical information given as a sequence of significant past events.
   ##         
-  element ns2:eventList {
+  element ns3:eventList {
     mei_model.headLike?,
     mei_event+,
     mei_att.bibl.attributes,
@@ -9277,7 +9394,7 @@ mei_event =
   ## – Contains a description of an event, including the dates and locations of its
   ##         occurrence and prominent participants.
   ##         
-  element ns2:event {
+  element ns3:event {
     ((text | mei_model.textphraseLike.limited)*
      | (mei_model.tableLike | mei_model.listLike)*),
     mei_att.bibl.attributes,
@@ -9379,6 +9496,10 @@ mei_att.lvpresent.attribute.lv =
   
   ## indicates the attachment of an l.v. (laissez vibrer) sign to this element.
   attribute lv { data.BOOLEAN }?
+mei_att.measure.vis.attributes =
+  mei_att.barplacement.attributes,
+  mei_att.measurement.attributes,
+  mei_att.width.attributes
 mei_att.numbered.attributes = mei_att.numbered.attribute.num
 mei_att.numbered.attribute.num =
   
@@ -10202,12 +10323,18 @@ mei_model.eventLike.measureFilling_sequenceOptionalRepeatable =
   mRest*, mRpt*, mRpt2*, mSpace*, multiRest*, multiRpt*
 mei_model.eventLike.measureFilling_sequenceRepeatable =
   mRest+, mRpt+, mRpt2+, mSpace+, multiRest+, multiRpt+
-mei_model.measureLike = notAllowed
-mei_model.measureLike_alternation = notAllowed
-mei_model.measureLike_sequence = empty
-mei_model.measureLike_sequenceOptional = empty
-mei_model.measureLike_sequenceOptionalRepeatable = empty
-mei_model.measureLike_sequenceRepeatable = notAllowed
+mei_model.measureLike = mei_measure
+mei_model.measureLike_alternation = mei_measure
+mei_model.measureLike_sequence = mei_measure
+mei_model.measureLike_sequenceOptional = mei_measure?
+mei_model.measureLike_sequenceOptionalRepeatable = mei_measure*
+mei_model.measureLike_sequenceRepeatable = mei_measure+
+mei_model.measurePart =
+  mei_model.controleventLike
+  | mei_model.staffLike
+  | mei_model.ossiaLike
+  | mei_model.lyricsLike
+  | mei_model.midiLike
 mei_model.ossiaLike = ossia
 mei_model.sectionPart.cmn = mei_model.measureLike
 mei_model.sectionPart.cmn_alternation =
@@ -10222,7 +10349,7 @@ mei_model.sectionPart.cmn_sequenceRepeatable =
 meterSig =
   
   ## (meter signature) – Written meter signature.
-  element ns2:meterSig {
+  element ns3:meterSig {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10238,7 +10365,7 @@ arpeg =
   ##         successively rather than simultaneously, usually from lowest to highest. Sometimes called a
   ##         "roll".
   ##         
-  element ns2:arpeg {
+  element ns3:arpeg {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10253,7 +10380,7 @@ beam =
   ## – A container for a series of explicitly beamed events that begins and ends
   ##         entirely within a measure.
   ##         
-  element ns2:beam {
+  element ns3:beam {
     (mei_model.eventLike
      | mei_model.appLike
      | mei_model.editLike
@@ -10271,7 +10398,7 @@ beamSpan =
   ## (beam span) – Alternative element for explicitly encoding beams, particularly
   ##         those which extend across bar lines.
   ##         
-  element ns2:beamSpan {
+  element ns3:beamSpan {
     empty
     >> sch:pattern [
          id =
@@ -10313,7 +10440,7 @@ beatRpt =
   ## (beat repeat) – An indication that material on a preceding beat should be
   ##         repeated.
   ##         
-  element ns2:beatRpt {
+  element ns3:beatRpt {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10327,7 +10454,7 @@ bend =
   
   ## – A variation in pitch (often micro-tonal) upwards or downwards during the course
   ##         of a note.
-  element ns2:bend {
+  element ns3:bend {
     empty
     >> sch:pattern [
          id =
@@ -10369,7 +10496,7 @@ breath =
   ## (breath mark) – A indication of a point at which the performer on an instrument
   ##         requiring breath (including the voice) may breathe.
   ##         
-  element ns2:breath {
+  element ns3:breath {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10382,7 +10509,7 @@ breath =
 bTrem =
   
   ## (bowed tremolo) – A rapid alternation on a single pitch or chord.
-  element ns2:bTrem {
+  element ns3:bTrem {
     (chord | mei_note),
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10398,7 +10525,7 @@ fermata =
   ##         longer than its written value. May also occur over a bar line to indicate the end of a
   ##         phrase or section. Sometimes called a 'hold' or 'pause'.
   ##         
-  element ns2:fermata {
+  element ns3:fermata {
     empty
     >> sch:pattern [
          id =
@@ -10433,7 +10560,7 @@ fTrem =
   ## (fingered tremolo) – A rapid alternation between a pair of notes (or chords or
   ##         perhaps between a note and a chord) that are (usually) farther apart than a major
   ##         second.
-  element ns2:fTrem {
+  element ns3:fTrem {
     ((chord, (chord | mei_note))
      | (mei_note, (chord | mei_note))),
     mei_att.common.attributes,
@@ -10449,7 +10576,7 @@ hairpin =
   ## – Indicates continuous dynamics expressed on the score as wedge-shaped graphics,
   ##         e.g. < and >.
   ##         
-  element ns2:hairpin {
+  element ns3:hairpin {
     empty
     >> sch:pattern [
          id =
@@ -10490,7 +10617,7 @@ harpPedal =
   
   ## (harp pedal) – Harp pedal diagram.
   ##         
-  element ns2:harpPedal {
+  element ns3:harpPedal {
     empty
     >> sch:pattern [
          id =
@@ -10525,7 +10652,7 @@ gliss =
   ## (glissando) – A continuous or sliding movement from one pitch to another, usually
   ##         indicated by a straight or wavy line.
   ##         
-  element ns2:gliss {
+  element ns3:gliss {
     empty
     >> sch:pattern [
          id =
@@ -10565,7 +10692,7 @@ gliss =
 halfmRpt =
   
   ## (half-measure repeat) – A half-measure repeat in any meter.
-  element ns2:halfmRpt {
+  element ns3:halfmRpt {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10575,11 +10702,38 @@ halfmRpt =
     mei_att.halfmRpt.anl.attributes,
     empty
   }
+mei_measure =
+  
+  ## – Unit of musical time consisting of a fixed number of note-values of a given
+  ##         type, as determined by the prevailing meter, and delimited in musical notation by two bar
+  ##         lines.
+  ##         
+  element ns3:measure {
+    (mei_model.appLike
+     | mei_model.divLike
+     | mei_model.milestoneLike.music
+     | mei_model.staffDefLike
+     | mei_model.annotLike
+     | mei_model.graphicprimitiveLike
+     | mei_model.editLike
+     | mei_model.transcriptionLike
+     | mei_model.measurePart)*,
+    mei_att.common.attributes,
+    mei_att.declaring.attributes,
+    mei_att.facsimile.attributes,
+    mei_att.typed.attributes,
+    mei_att.pointing.attributes,
+    mei_att.measure.log.attributes,
+    mei_att.measure.vis.attributes,
+    mei_att.measure.ges.attributes,
+    mei_att.measure.anl.attributes,
+    empty
+  }
 mRest =
   
   ## (measure rest) – Complete measure rest in any meter.
   ##         
-  element ns2:mRest {
+  element ns3:mRest {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10593,7 +10747,7 @@ mRpt =
   
   ## (measure repeat) – An indication that the previous measure should be repeated.
   ##         
-  element ns2:mRpt {
+  element ns3:mRpt {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10607,7 +10761,7 @@ mRpt2 =
   
   ## (2-measure repeat) – An indication that the previous two measures should be
   ##         repeated.
-  element ns2:mRpt2 {
+  element ns3:mRpt2 {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10621,7 +10775,7 @@ mSpace =
   
   ## (measure space) – A measure containing only empty space in any meter.
   ##         
-  element ns2:mSpace {
+  element ns3:mSpace {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10636,7 +10790,7 @@ multiRest =
   ## (multiple rest) – Multiple measures of rest compressed into a single symbol,
   ##         frequently found in performer parts.
   ##         
-  element ns2:multiRest {
+  element ns3:multiRest {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10650,7 +10804,7 @@ multiRpt =
   
   ## (multiple repeat) – Multiple repeated measures.
   ##         
-  element ns2:multiRpt {
+  element ns3:multiRpt {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10665,7 +10819,7 @@ octave =
   ## – An indication that a passage should be performed one or more octaves above or
   ##         below its written pitch.
   ##         
-  element ns2:octave {
+  element ns3:octave {
     empty
     >> sch:pattern [
          id =
@@ -10706,7 +10860,7 @@ ossia =
   
   ## – An alternate notational version *present in the source being transcribed*.
   ##         
-  element ns2:ossia {
+  element ns3:ossia {
     ((mei_model.staffLike, mei_model.staffLike+)
      | (mei_model.layerLike, mei_model.layerLike+))
     >> sch:pattern [
@@ -10753,7 +10907,7 @@ pedal =
   
   ## – Piano pedal mark.
   ##         
-  element ns2:pedal {
+  element ns3:pedal {
     empty
     >> sch:pattern [
          id =
@@ -10788,7 +10942,7 @@ reh =
   ## (rehearsal mark) – In an orchestral score and its corresponding parts, a mark
   ##         indicating a convenient point from which to resume rehearsal after a break.
   ##         
-  element ns2:reh {
+  element ns3:reh {
     (text | mei_model.lbLike | mei_model.rendLike)*,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -10802,7 +10956,7 @@ slur =
   
   ## – Indication of 1) a "unified melodic idea" or 2) performance technique.
   ##         
-  element ns2:slur {
+  element ns3:slur {
     empty
     >> sch:pattern [
          id =
@@ -10845,7 +10999,7 @@ tie =
   ## – An indication that two notes of the same pitch form a single note with their
   ##         combined rhythmic values.
   ##         
-  element ns2:tie {
+  element ns3:tie {
     empty
     >> sch:pattern [
          id =
@@ -10889,7 +11043,7 @@ tuplet =
   ##         values, for example, three notes in the time normally occupied by two or nine in the time of
   ##         five.
   ##         
-  element ns2:tuplet {
+  element ns3:tuplet {
     (mei_model.eventLike
      | mei_model.appLike
      | mei_model.editLike
@@ -10907,7 +11061,7 @@ tupletSpan =
   ## (tuplet span) – Alternative element for encoding tuplets, especially useful for
   ##         tuplets that extend across bar lines.
   ##         
-  element ns2:tupletSpan {
+  element ns3:tupletSpan {
     empty
     >> sch:pattern [
          id =
@@ -11133,7 +11287,7 @@ mordent =
   ## – An ornament indicating rapid alternation of the main note with a secondary note,
   ##         usually a step below, but sometimes a step above.
   ##         
-  element ns2:mordent {
+  element ns3:mordent {
     empty
     >> sch:pattern [
          id =
@@ -11168,7 +11322,7 @@ trill =
   ## – Rapid alternation of a note with one (usually at the interval of a second)
   ##         above.
   ##         
-  element ns2:trill {
+  element ns3:trill {
     empty
     >> sch:pattern [
          id =
@@ -11203,7 +11357,7 @@ turn =
   ## – An ornament consisting of four notes — the upper neighbor of the written note,
   ##         the written note, the lower neighbor, and the written note.
   ##         
-  element ns2:turn {
+  element ns3:turn {
     empty,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -11218,7 +11372,7 @@ meiCorpus =
   ## (MEI corpus) – A group of related MEI documents, consisting of a header for the
   ##         group, and one or more <mei> elements, each with its own complete header.
   ##         
-  element ns2:meiCorpus {
+  element ns3:meiCorpus {
     meiHead,
     mei*,
     mei_att.common.attributes,
@@ -11265,7 +11419,7 @@ mei_app =
   
   ## (apparatus) – Contains one or more alternative encodings.
   ##         
-  element ns2:app {
+  element ns3:app {
     mei_lem?,
     mei_rdg,
     mei_rdg*,
@@ -11277,7 +11431,7 @@ mei_lem =
   
   ## (lemma) – Contains the lemma, or base text, of a textual variation.
   ##         
-  element ns2:lem {
+  element ns3:lem {
     expansion*,
     (mei_model.appLike
      | mei_model.divLike
@@ -11304,7 +11458,7 @@ mei_rdg =
   
   ## (reading) – Contains a single reading within a textual variation.
   ##         
-  element ns2:rdg {
+  element ns3:rdg {
     expansion*,
     (mei_model.appLike
      | mei_model.divLike
@@ -11387,7 +11541,7 @@ mei_abbr =
   
   ## (abbreviation) – A generic element for 1) a shortened form of a word, including an
   ##         acronym or 2) a shorthand notation.
-  element ns2:abbr {
+  element ns3:abbr {
     (text
      | mei_model.textphraseLike
      | mei_model.eventLike
@@ -11418,7 +11572,7 @@ mei_abbr =
 mei_expan =
   
   ## (expansion) – Contains the expansion of an abbreviation.
-  element ns2:expan {
+  element ns3:expan {
     (text
      | mei_model.textphraseLike
      | mei_model.eventLike
@@ -11450,7 +11604,7 @@ mei_add =
   
   ## (addition) – Marks an addition to the text.
   ##         
-  element ns2:add {
+  element ns3:add {
     (text
      | mei_model.textphraseLike
      | mei_model.eventLike
@@ -11477,14 +11631,14 @@ mei_choice =
   
   ## – Groups a number of alternative encodings for the same point in a text.
   ##         
-  element ns2:choice {
+  element ns3:choice {
     mei_model.choicePart*, mei_att.common.attributes, empty
   }
 mei_corr =
   
   ## (correction) – Contains the correct form of an apparent erroneous passage.
   ##         
-  element ns2:corr {
+  element ns3:corr {
     (text
      | mei_model.textphraseLike
      | mei_model.eventLike
@@ -11509,7 +11663,7 @@ mei_corr =
 mei_damage =
   
   ## – Contains an area of damage to the physical medium.
-  element ns2:damage {
+  element ns3:damage {
     (text
      | mei_model.textphraseLike
      | mei_model.eventLike
@@ -11543,7 +11697,7 @@ mei_del =
   ##         indicated as superfluous or spurious in the copy text by an author, scribe, annotator, or
   ##         corrector.
   ##         
-  element ns2:del {
+  element ns3:del {
     (text
      | mei_model.textphraseLike
      | mei_model.eventLike
@@ -11573,7 +11727,7 @@ mei_gap =
   ## – Indicates a point where material has been omitted in a transcription, whether as
   ##         part of sampling practice or for editorial reasons described in the MEI header.
   ##         
-  element ns2:gap {
+  element ns3:gap {
     empty,
     mei_att.common.attributes,
     mei_att.edit.attributes,
@@ -11588,7 +11742,7 @@ mei_handShift =
   ## – Marks the beginning of a passage written in a new hand, or of a change in the
   ##         scribe, writing style, ink or character of the document hand.
   ##         
-  element ns2:handShift {
+  element ns3:handShift {
     empty,
     mei_att.common.attributes,
     mei_att.edit.attributes,
@@ -11612,7 +11766,7 @@ mei_orig =
   ## (original) – Contains material which is marked as following the original, rather
   ##         than being normalized or corrected.
   ##         
-  element ns2:orig {
+  element ns3:orig {
     (text
      | mei_model.textphraseLike
      | mei_model.eventLike
@@ -11640,7 +11794,7 @@ mei_reg =
   ## (regularization) – Contains material which has been regularized or normalized in
   ##         some sense.
   ##         
-  element ns2:reg {
+  element ns3:reg {
     (text
      | mei_model.textphraseLike
      | mei_model.eventLike
@@ -11667,7 +11821,7 @@ mei_restore =
   ## – Indicates restoration of material to an earlier state by cancellation of an
   ##         editorial or authorial marking or instruction.
   ##         
-  element ns2:restore {
+  element ns3:restore {
     (text
      | mei_model.textphraseLike
      | mei_model.eventLike
@@ -11698,7 +11852,7 @@ mei_sic =
   
   ## – Contains apparently incorrect or inaccurate material.
   ##         
-  element ns2:sic {
+  element ns3:sic {
     (text
      | mei_model.textphraseLike
      | mei_model.eventLike
@@ -11724,7 +11878,7 @@ mei_subst =
   ## (substitution) – Groups transcriptional elements when the combination is to be
   ##         regarded as a single intervention in the text.
   ##         
-  element ns2:subst {
+  element ns3:subst {
     mei_model.transcriptionLike,
     mei_model.transcriptionLike+,
     mei_att.common.attributes,
@@ -11738,7 +11892,7 @@ mei_supplied =
   ##         cannot be read, either because of physical damage or loss in the original or because it is
   ##         illegible for any reason.
   ##         
-  element ns2:supplied {
+  element ns3:supplied {
     (text
      | mei_model.textphraseLike
      | mei_model.eventLike
@@ -11767,7 +11921,7 @@ mei_unclear =
   ## – Contains material that cannot be transcribed with certainty because it is
   ##         illegible or inaudible in the source.
   ##         
-  element ns2:unclear {
+  element ns3:unclear {
     (text
      | mei_model.textphraseLike
      | mei_model.eventLike
@@ -11805,7 +11959,7 @@ mei_facsimile =
   ## – Contains a representation of some written source in the form of a set of images
   ##         rather than as transcribed or encoded text.
   ##         
-  element ns2:facsimile {
+  element ns3:facsimile {
     mei_surface*,
     mei_att.common.attributes,
     mei_att.declaring.attributes,
@@ -11817,7 +11971,7 @@ mei_surface =
   ##         grouping one or more graphic representations of that space, and rectangular zones of
   ##         interest within it.
   ##         
-  element ns2:surface {
+  element ns3:surface {
     mei_model.figDescLike*,
     mei_model.graphicLike*,
     mei_zone*,
@@ -11832,7 +11986,7 @@ mei_zone =
   
   ## – Defines an area of interest within a surface or graphic file.
   ##         
-  element ns2:zone {
+  element ns3:zone {
     mei_model.figDescLike*,
     mei_model.graphicLike*,
     mei_att.common.attributes,
@@ -11868,7 +12022,7 @@ mei_graphic =
   
   ## – Indicates the location of an inline graphic, illustration, or figure.
   ##         
-  element ns2:graphic {
+  element ns3:graphic {
     (mei_zone*)
     >> sch:pattern [
          id = "graphic-constraint-graphic_child_of_zone"
@@ -11907,7 +12061,7 @@ mei_fig =
   ## (figure) – groups elements representing or containing graphic information such as
   ##         an illustration or figure.
   ##         
-  element ns2:fig {
+  element ns3:fig {
     (mei_model.captionLike | mei_figDesc | mei_model.graphicLike)*,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -11919,7 +12073,7 @@ mei_figDesc =
   ## (figure description) – Contains a brief prose description of the appearance or
   ##         content of a graphic figure, for use when documenting an image without displaying it.
   ##         
-  element ns2:figDesc {
+  element ns3:figDesc {
     (text
      | mei_model.graphicprimitiveLike
      | mei_model.textcomponentLike
@@ -11932,7 +12086,7 @@ mei_table =
   
   ## – Contains text displayed in tabular form.
   ##         
-  element ns2:table {
+  element ns3:table {
     mei_model.captionLike?,
     tr+,
     mei_model.captionLike?,
@@ -11947,7 +12101,7 @@ td =
   ## (table data) – Designates a table cell that contains data as opposed to a cell
   ##         that contains column or row heading information.
   ##         
-  element ns2:td {
+  element ns3:td {
     (text
      | mei_model.textcomponentLike
      | mei_model.textphraseLike
@@ -11965,7 +12119,7 @@ th =
   ## (table header) – Designates a table cell containing column or row heading
   ##         information as opposed to one containing data.
   ##         
-  element ns2:th {
+  element ns3:th {
     (text
      | mei_model.textcomponentLike
      | mei_model.textphraseLike
@@ -11983,7 +12137,7 @@ tr =
   ## (table row) – A formatting element that contains one or more cells (intersection
   ##         of a row and a column) in a <table>.
   ##         
-  element ns2:tr {
+  element ns3:tr {
     (th | td)+,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -12059,7 +12213,7 @@ barre =
   
   ## – An indication of fingering in a chord tablature grid.
   ##         
-  element ns2:barre {
+  element ns3:barre {
     empty,
     mei_att.common.attributes,
     mei_att.fretlocation.attributes,
@@ -12070,7 +12224,7 @@ chordDef =
   
   ## (chord definition) – Chord tablature definition.
   ##         
-  element ns2:chordDef {
+  element ns3:chordDef {
     chordMember*,
     barre*,
     mei_att.common.attributes,
@@ -12083,7 +12237,7 @@ chordMember =
   
   ## – An individual pitch in a chord defined by a <chordDef> element.
   ##         
-  element ns2:chordMember {
+  element ns3:chordMember {
     empty,
     mei_att.common.attributes,
     mei_att.accidental.performed.attributes,
@@ -12100,11 +12254,11 @@ chordTable =
   
   ## – Chord/tablature look-up table.
   ##         
-  element ns2:chordTable { chordDef+, mei_att.common.attributes, empty }
+  element ns3:chordTable { chordDef+, mei_att.common.attributes, empty }
 mei_f =
   
   ## (figure) – Single element of a figured bass indication.
-  element ns2:f {
+  element ns3:f {
     (text
      | mei_model.textphraseLike.limited
      | mei_model.editLike
@@ -12125,7 +12279,7 @@ fb =
   ## (figured bass) – Symbols added to a bass line that indicate harmony. Used to
   ##         improvise a chordal accompaniment. Sometimes called Generalbass, thoroughbass, or basso
   ##         continuo.
-  element ns2:fb {
+  element ns3:fb {
     (mei_model.fLike
      | mei_model.editLike
      | mei_model.transcriptionLike)*,
@@ -12138,7 +12292,7 @@ harm =
   
   ## (harmony) – An indication of harmony, e.g., chord names, tablature grids, harmonic
   ##         analysis, figured bass.
-  element ns2:harm {
+  element ns3:harm {
     ((text
       | mei_model.textphraseLike.limited
       | mei_model.graphicprimitiveLike
@@ -12179,7 +12333,91 @@ mei_att.alignment.attribute.when =
   ## indicates the point of occurrence of this feature along a time line. Its value must
   ##             be the ID of a <when> element.
   attribute when { data.URI }?
-mei_model.alignLike = notAllowed
+mei_model.alignLike = mei_timeline
+mei_timeline =
+  
+  ## – Provides a set of ordered points in time to which musical elements can be linked
+  ##         in order to create a temporal alignment of those elements.
+  ##         
+  element ns3:timeline {
+    mei_when*,
+    mei_att.common.attributes,
+    
+    ## holds the identifier of an <avFile> element that references an external
+    ##             digital media file.
+    attribute avref { data.URI }?,
+    
+    ## designates the origin of the timeline, i.e. the <when> element associated with
+    ##             the beginning of the timeline.
+    attribute origin { data.URI },
+    empty
+  }
+mei_when =
+  
+  ## – Indicates a point in time either absolutely (using the absolute attribute), or
+  ##         relative to other elements in the same timeline element (using the interval and since
+  ##         attributes).
+  ##         
+  element ns3:when {
+    empty,
+    mei_att.common.attributes,
+    mei_att.datapointing.attributes,
+    
+    ## provides an absolute value for the time associated with a point on a timeline. This
+    ##             attribute is required for the element designated as the origin by the parent
+    ##             timeline.
+    attribute absolute { data.ISOTIME }?,
+    
+    ## specifies the time interval between this time point and the one designated by the
+    ##             since attribute. This attribute can only be interpreted meaningfully in conjunction with
+    ##             the inttype attribute.
+    attribute interval { text }?,
+    
+    ## specifies the kind of values used in the interval attribute.
+    attribute inttype {
+      
+      ## byte value.
+      "byte"
+      | 
+        ## Synchronized Multimedia Integration Language.
+        "smil"
+      | 
+        ## MIDI time code.
+        "midi"
+      | 
+        ## SMPTE 25 EBU.
+        "smpte-25"
+      | 
+        ## SMPTE 24 Film Sync.
+        "smpte-24"
+      | 
+        ## SMPTE 30 Drop.
+        "smpte-df30"
+      | 
+        ## SMPTE 30 Non-Drop.
+        "smpte-ndf30"
+      | 
+        ## SMPTE 29.97 Drop.
+        "smpte-df29.97"
+      | 
+        ## SMPTE 29.97 Non-Drop.
+        "smpte-ndf29.97"
+      | 
+        ## AES Time-code character format.
+        "tcf"
+      | 
+        ## ISO 24-hour time format: HH:MM:SS.ss.
+        "time"
+    }?,
+    
+    ## identifies the reference point for determining the time of the current when element,
+    ##             which is obtained by adding the interval to the time of the reference point. The value
+    ##             should be the ID of another when element in the same timeline. If the since attribute is
+    ##             omitted and the absolute attribute is not specified, then the reference point is
+    ##             understood to be the immediately preceding when element.
+    attribute since { data.URI }?,
+    empty
+  }
 mei_att.lyrics.anl.attributes = mei_att.common.anl.attributes
 mei_att.lyrics.ges.attributes = empty
 mei_att.lyrics.log.attributes =
@@ -12213,7 +12451,7 @@ lyrics =
   
   ## – Vocally performed 'text' of a musical composition, such as a song or opera.
   ##         
-  element ns2:lyrics {
+  element ns3:lyrics {
     mei_model.verseLike+,
     mei_att.common.attributes,
     mei_att.facsimile.attributes,
@@ -12228,7 +12466,7 @@ verse =
   
   ## – Lyric verse.
   ##         
-  element ns2:verse {
+  element ns3:verse {
     (dir | dynam | tempo | mei_space)*,
     mei_model.sylLike+,
     mei_model.lbLike*,
@@ -12315,14 +12553,14 @@ mei_model.midiLike_sequenceRepeatable = midi+
 instrGrp =
   
   ## (instrument group) – Collects MIDI instrument definitions.
-  element ns2:instrGrp {
+  element ns3:instrGrp {
     mei_model.instrDefLike+, mei_att.common.attributes, empty
   }
 instrDef =
   
   ## (instrument definition) – MIDI instrument declaration.
   ##         
-  element ns2:instrDef {
+  element ns3:instrDef {
     empty,
     mei_att.common.attributes,
     mei_att.channelized.attributes,
@@ -12333,7 +12571,7 @@ cc =
   
   ## (control change) – MIDI parameter/control change.
   ##         
-  element ns2:cc {
+  element ns3:cc {
     empty,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12345,7 +12583,7 @@ cc =
 chan =
   
   ## (channel) – MIDI channel assignment.
-  element ns2:chan {
+  element ns3:chan {
     empty,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12359,7 +12597,7 @@ chanPr =
   
   ## (channel pressure) – MIDI channel pressure/after touch.
   ##         
-  element ns2:chanPr {
+  element ns3:chanPr {
     empty,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12370,7 +12608,7 @@ chanPr =
 cue =
   
   ## – MIDI cue point.
-  element ns2:cue {
+  element ns3:cue {
     text,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12381,7 +12619,7 @@ hex =
   
   ## – Arbitrary MIDI data in hexadecimal form.
   ##         
-  element ns2:hex {
+  element ns3:hex {
     text,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12391,7 +12629,7 @@ hex =
 marker =
   
   ## – MIDI marker meta-event.
-  element ns2:marker {
+  element ns3:marker {
     text,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12401,7 +12639,7 @@ marker =
 metaText =
   
   ## – MIDI text meta-event.
-  element ns2:metaText {
+  element ns3:metaText {
     text,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12413,7 +12651,7 @@ midi =
   ## – Container for elements that contain information useful when generating MIDI
   ##         output.
   ##         
-  element ns2:midi {
+  element ns3:midi {
     (cc
      | chan
      | chanPr
@@ -12438,7 +12676,7 @@ midi =
 noteOff =
   
   ## – MIDI note-off event.
-  element ns2:noteOff {
+  element ns3:noteOff {
     empty,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12449,7 +12687,7 @@ noteOff =
 noteOn =
   
   ## – MIDI note-on event.
-  element ns2:noteOn {
+  element ns3:noteOn {
     empty,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12460,7 +12698,7 @@ noteOn =
 port =
   
   ## – MIDI port. 
-  element ns2:port {
+  element ns3:port {
     empty,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12472,7 +12710,7 @@ prog =
   
   ## (program) – MIDI program change.
   ##         
-  element ns2:prog {
+  element ns3:prog {
     empty,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12483,7 +12721,7 @@ prog =
 seqNum =
   
   ## (sequence number) – MIDI sequence number.
-  element ns2:seqNum {
+  element ns3:seqNum {
     empty,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12498,7 +12736,7 @@ seqNum =
 trkName =
   
   ## (track name) – MIDI track/sequence name.
-  element ns2:trkName {
+  element ns3:trkName {
     text,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12509,7 +12747,7 @@ vel =
   
   ## (velocity) – MIDI Note-on/off velocity.
   ##         
-  element ns2:vel {
+  element ns3:vel {
     empty,
     mei_att.common.anl.attributes,
     mei_att.common.attributes,
@@ -12569,7 +12807,7 @@ corpName =
   ## (corporate name) – Identifies an organization or group of people that acts as a
   ##         single entity.
   ##         
-  element ns2:corpName {
+  element ns3:corpName {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -12589,7 +12827,7 @@ mei_geogName =
   ## (geographic name) – The proper noun designation for a place, natural feature, or
   ##         political jurisdiction.
   ##         
-  element ns2:geogName {
+  element ns3:geogName {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -12608,7 +12846,7 @@ periodName =
   ## (period name) – A label that describes a period of time, such as 'Baroque' or '3rd
   ##         Style period'.
   ##         
-  element ns2:periodName {
+  element ns3:periodName {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -12628,7 +12866,7 @@ mei_persName =
   ## (personal name) – Designation for an individual, including any or all of that
   ##         individual's forenames, surnames, honorific titles, and added names
   ##         
-  element ns2:persName {
+  element ns3:persName {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -12648,7 +12886,7 @@ styleName =
   ## (style name) – A label for a characteristic style of writing or performance, such
   ##         as 'bebop' or 'rock-n-roll'.
   ##         
-  element ns2:styleName {
+  element ns3:styleName {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -12666,15 +12904,31 @@ mei_performance =
   
   ## – A presentation of one or more musical works.
   ##         
-  element ns2:performance {
-    mei_att.common.attributes, mei_att.declaring.attributes, empty
+  element ns3:performance {
+    mei_recording*,
+    mei_att.common.attributes,
+    mei_att.declaring.attributes,
+    empty
+  }
+mei_recording =
+  
+  ## – A recorded performance.
+  ##         
+  element ns3:recording {
+    avFile*,
+    clip*,
+    mei_att.common.attributes,
+    mei_att.declaring.attributes,
+    mei_att.mediabounds.attributes,
+    mei_att.startid.attributes,
+    empty
   }
 clip =
   
   ## – Defines a time segment of interest within a recording or within a digital audio
   ##         or video file.
   ##         
-  element ns2:clip {
+  element ns3:clip {
     avFile*,
     mei_att.common.attributes,
     mei_att.declaring.attributes,
@@ -12686,7 +12940,7 @@ avFile =
   
   ## (audio/video file) – References an external digital audio or video file.
   ##         
-  element ns2:avFile {
+  element ns3:avFile {
     (clip*)
     >> sch:pattern [
          id = "avFile-constraint-avFile_child_of_clip"
@@ -12726,7 +12980,7 @@ mei_ptr =
   ## (pointer) – Defines a pointer to another location, using only attributes to
   ##         describe the destination.
   ##         
-  element ns2:ptr {
+  element ns3:ptr {
     empty,
     mei_att.common.attributes,
     mei_att.internetmedia.attributes,
@@ -12738,7 +12992,7 @@ mei_ref =
   ## (reference) – Defines a reference to another location that may contain text and
   ##         sub-elements to describe the destination.
   ##         
-  element ns2:ref {
+  element ns3:ref {
     (text | mei_model.textphraseLike)*,
     mei_att.common.attributes,
     mei_att.internetmedia.attributes,
@@ -12795,7 +13049,7 @@ mei_back =
   ## (back matter) – Contains any appendixes, advertisements, indexes, etc. following
   ##         the main body of a musical text.
   ##         
-  element ns2:back {
+  element ns3:back {
     mei_model.milestoneLike.text*,
     (mei_model.divLike | mei_model.frontPart)+,
     mei_model.milestoneLike.text*,
@@ -12811,7 +13065,7 @@ mei_quote =
   ##         is, a passage attributed to a source external to the text and normally set off from the text
   ##         by spacing or other typographic distinction.
   ##         
-  element ns2:quote {
+  element ns3:quote {
     mei_model.textcomponentLike+,
     mei_model.biblLike?,
     mei_att.common.attributes,
@@ -12825,7 +13079,7 @@ mei_div =
   ## (division) – Major structural division of text, such as a preface, chapter or
   ##         section.
   ##         
-  element ns2:div {
+  element ns3:div {
     mei_model.milestoneLike.text*,
     mei_model.headLike?,
     (mei_model.divLike | mei_model.textcomponentLike)+,
@@ -12842,7 +13096,7 @@ mei_front =
   ## (front matter) – Bundles prefatory text found before the start of the musical
   ##         text.
   ##         
-  element ns2:front {
+  element ns3:front {
     mei_model.milestoneLike.text*,
     (mei_model.divLike | mei_model.frontPart)+,
     mei_model.milestoneLike.text*,
@@ -12857,7 +13111,7 @@ mei_head =
   ## (heading) – Contains any heading, for example, the title of a section of text, or
   ##         the heading of a list.
   ##         
-  element ns2:head {
+  element ns3:head {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -12872,7 +13126,7 @@ mei_item =
   
   ## – Single item in a <list>.
   ##         
-  element ns2:item {
+  element ns3:item {
     (text
      | mei_model.textcomponentLike
      | mei_model.textphraseLike
@@ -12886,7 +13140,7 @@ mei_l =
   
   ## (line of text) – Contains a single line of text within a line group.
   ##         
-  element ns2:l {
+  element ns3:l {
     (text
      | mei_model.textphraseLike
      | mei_model.editLike
@@ -12902,7 +13156,7 @@ mei_lg =
   ##         lines; however, it is most often used for a group of verse lines functioning as a formal
   ##         unit, e.g. a stanza, refrain, verse paragraph, etc.
   ##         
-  element ns2:lg {
+  element ns3:lg {
     mei_model.headLike?,
     (mei_model.lLike | mei_model.lgLike),
     (mei_model.lLike | mei_model.lgLike)*,
@@ -12918,7 +13172,7 @@ mei_list =
   ## – A formatting element that contains a series of items separated from one another
   ##         and arranged in a linear, often vertical, sequence.
   ##         
-  element ns2:list {
+  element ns3:list {
     mei_model.headLike?,
     mei_item+,
     mei_att.common.attributes,
@@ -12953,7 +13207,7 @@ anchoredText =
   ## – Container for text that is fixed to a particular location, regardless of changes
   ##         made to the layout of the measures around it.
   ##         
-  element ns2:anchoredText {
+  element ns3:anchoredText {
     (text
      | mei_model.textphraseLike.limited
      | mei_model.editLike
@@ -12973,7 +13227,7 @@ curve =
   ## – A curved line that cannot be represented by a more specific element, such as a
   ##         <slur>.
   ##         
-  element ns2:curve {
+  element ns3:curve {
     empty,
     mei_att.common.anl.attributes,
     mei_att.color.attributes,
@@ -12993,7 +13247,7 @@ mei_line =
   
   ## – A line that cannot be represented by a more specific element.
   ##         
-  element ns2:line {
+  element ns3:line {
     (text | mei_model.textphraseLike.limited)*,
     mei_att.common.anl.attributes,
     mei_att.color.attributes,
@@ -13012,7 +13266,7 @@ mei_symbol =
   
   ## – A reference to a previously defined symbol.
   ##         
-  element ns2:symbol {
+  element ns3:symbol {
     empty,
     mei_att.common.anl.attributes,
     mei_att.color.attributes,
@@ -13031,7 +13285,7 @@ mei_symbol =
 symbolDef =
   
   ## (symbol definition) – Declaration of an individual symbol in a symbolTable.
-  element ns2:symbolDef {
+  element ns3:symbolDef {
     mei_model.graphicprimitiveLike+,
     mei_att.common.attributes,
     mei_att.coordinated.attributes,
@@ -13041,7 +13295,7 @@ symbolTable =
   
   ## – Contains individual, user-defined symbols.
   ##         
-  element ns2:symbolTable {
+  element ns3:symbolTable {
     symbolDef+, mei_att.common.attributes, empty
   }
 start = TEI | teiCorpus
