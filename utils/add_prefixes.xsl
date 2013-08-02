@@ -24,6 +24,7 @@
     <xsl:template match="tei:elementSpec[some $i in document($oldMEI)//tei:*[@prefix]/@ident/lower-case(.) satisfies ($i = lower-case(@ident))]">
         <xsl:element name="{local-name()}" namespace="http://www.tei-c.org/ns/1.0">
             <xsl:sequence select="@*"/>
+            <xsl:attribute name="ns" select="'http://www.music-encoding.org/ns/mei'"/>
             <xsl:attribute name="prefix" select="'mei_'"/>
             <xsl:apply-templates/>
         </xsl:element>
@@ -38,6 +39,14 @@
     </xsl:template>
     
     <xsl:template match="rng:ref[some $i in document($oldMEI)//tei:*[@prefix]/@ident/lower-case(.) satisfies ($i = lower-case(@name))]">
+        <xsl:element name="rng:{local-name()}" namespace="http://relaxng.org/ns/structure/1.0">
+            <xsl:sequence select="@* except @name"/>
+            <xsl:attribute name="name" select="concat('mei_', @name)"/>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="rng:ref[some $i in document($oldMEI)//tei:*[starts-with(@ident, 'mei_')]/@ident/lower-case(.) satisfies (substring-after($i, 'mei_') = lower-case(@name))]">
         <xsl:element name="rng:{local-name()}" namespace="http://relaxng.org/ns/structure/1.0">
             <xsl:sequence select="@* except @name"/>
             <xsl:attribute name="name" select="concat('mei_', @name)"/>
