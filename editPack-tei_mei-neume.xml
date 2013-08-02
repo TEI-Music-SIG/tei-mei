@@ -291,6 +291,7 @@
                     <moduleRef key="MEI.edittrans" source="mei-source.xml"/>
                     <moduleRef key="MEI.facsimile" source="mei-source.xml"/>
                     <moduleRef key="MEI.figtable" source="mei-source.xml"/>
+                    <moduleRef key="MEI.frbr" source="mei-source.xml"/>
                     <!--<moduleRef key="MEI.harmony" source="mei-source.xml"/>-->
                     <moduleRef key="MEI.linkalign" source="mei-source.xml"/>
                     <moduleRef key="MEI.lyrics" source="mei-source.xml"/>
@@ -303,6 +304,33 @@
                     <moduleRef key="MEI.usersymbols" source="mei-source.xml"/>
                     
                     <!-- Changes to MEI components -->
+                    
+                    <!-- Remove dur attribute -->
+                    <classSpec ident="att.duration.musical" module="MEI.shared" type="atts" mode="delete"/>
+                    
+                    <!-- Disable CMN-specific model classes in the shared module -->
+                    <classSpec ident="model.sectionPart.cmn" module="MEI.shared" type="model" mode="delete"/>
+                    <classSpec ident="model.layerPart.cmn" module="MEI.shared" type="model" mode="delete"/>
+                    
+                    <!-- Disallow events within layer -->
+                    <classSpec ident="model.eventLike" module="MEI.shared" type="model" mode="replace">
+                        <desc>groups event elements that occur in all notational repertoires.</desc>
+                        <classes>
+                            <!--<memberOf key="model.layerPart"/>-->
+                            <memberOf key="model.syllablePart"/>
+                            <memberOf key="model.rdgPart.critapp"/>
+                        </classes>
+                    </classSpec>
+                    
+                    <!-- Disallow neume events within layer; only permitted in mei-all customization -->
+                    <classSpec ident="model.eventLike.neumes" module="MEI.neumes" type="model" mode="replace">
+                        <desc>groups event elements that occur in the neume repertoire.</desc>
+                        <classes>
+                            <!--<memberOf key="model.layerPart.neumes"/>-->
+                            <memberOf key="model.syllablePart"/>
+                            <memberOf key="model.rdgPart.critapp"/>
+                        </classes>
+                    </classSpec>
                     
                     <!-- Make @source mandatory when applicable. -->
                     

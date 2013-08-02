@@ -291,6 +291,7 @@
                     <moduleRef key="MEI.edittrans" source="mei-source.xml"/>
                     <moduleRef key="MEI.facsimile" source="mei-source.xml"/>
                     <moduleRef key="MEI.figtable" source="mei-source.xml"/>
+                    <moduleRef key="MEI.frbr" source="mei-source.xml"/>
                     <!--<moduleRef key="MEI.harmony" source="mei-source.xml"/>-->
                     <moduleRef key="MEI.linkalign" source="mei-source.xml"/>
                     <moduleRef key="MEI.lyrics" source="mei-source.xml"/>
