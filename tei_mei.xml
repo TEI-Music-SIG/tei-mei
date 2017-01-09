@@ -1223,10 +1223,10 @@ etc.</egXML>
               </zeroOrMore>
               <rng:optional>
                 <rng:choice>
-                  <rng:ref name="mei"/>
-                  <rng:ref name="music"/>
-                  <rng:ref name="mdiv"/>
-                  <rng:ref name="layer"/>
+                  <rng:ref name="mei_mei"/>
+                  <rng:ref name="mei_music"/>
+                  <rng:ref name="mei_mdiv"/>
+                  <rng:ref name="mei_layer"/>
                 </rng:choice>
               </rng:optional>
             </content>
