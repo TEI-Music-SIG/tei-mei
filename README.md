@@ -12,11 +12,11 @@ For more information visit:
 
 # Generating Schemata
 
-To generate a new schema, you will need to use command-line Roma, beacuse the ODDs look for mei-source.xml to load MEI modules.
+To generate a new schema, you will need to use the [TEI Stylesheets](github.com/TEIC/Stylesheets).
 
-Copy (or link to) mei-source.xml in Roma's directory, then run command-line Roma normally:
+If you have a Unix machine, use the `teitorelaxng` script provided with the stylesheets:
 
-`$ roma2.sh tei-lite_mei-cmn.xml`
+`$ bin/teitorelaxng PATH_TO/tei-mei/tei_mei.xml PATH_TO/tei-mei/schemata/tei_mei.rng`
 
 # Creating new ODDs
 
@@ -28,13 +28,12 @@ There are two things to keep in mind:
 
 * the elementSpec for notatedMusic must be changed to include MEI at various levels. See any of the ODDs as an example.
 
-If you create a new ODD, please fork this repo and send a pull request! :)
+If you create a new ODD, please consider forking this repo and sending a pull request!
 
 ## Updating MEI version
 
-The process to update to another MEI version is a bit fiddly, but here are the steps:
+The process to update to another MEI version, elements and classes in the MEI ODD must be prefixed to avoid conflicts
+with TEI elements and classes.
 
-* Canonicalize new MEI source from MEI's [subversion](https://code.google.com/p/music-encoding/)
-* Rename mei-source.xml to old-mei-source.xml
-* Run utils/add_prefixes.xsl to generate a new mei-source.xml. This applies all prefixes from the previous version to the new one.
-* Test through command line Roma, if there are new errors, add missing prefixes manually (that's right... though they're usually very few!)
+* Get the [MEI source](https://github.com/music-encoding/music-encoding/tree/develop/source/specs) from GitHub.
+* Run utils/add_prefixes.xsl to generate a new mei-source.xml with prefixes.
