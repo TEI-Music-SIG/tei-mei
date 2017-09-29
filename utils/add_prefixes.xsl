@@ -20,20 +20,13 @@
         </xsl:element>                
     </xsl:template>
     
-    <xsl:template match="tei:classSpec">
-        <xsl:element name="{local-name()}" namespace="http://www.tei-c.org/ns/1.0">
-            <xsl:attribute name="prefix">mei_</xsl:attribute>
-            <xsl:apply-templates select="@*|node()"/>
-        </xsl:element>                
-    </xsl:template>
-    
     <xsl:template match="rng:ref">
         <rng:ref name="mei_{@name}">
             <xsl:apply-templates select="@* except @name|node()"/>
         </rng:ref>
     </xsl:template>
     
-    <xsl:template match="@*[starts-with(., 'model.') or starts-with(., 'att.')]">
+    <xsl:template match="@*[starts-with(., 'model.') or starts-with(., 'att.') or starts-with(., 'macro.')]">
         <xsl:attribute name="{local-name()}"><xsl:value-of select="concat('mei_', .)"/></xsl:attribute>
     </xsl:template>
     
