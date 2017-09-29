@@ -64,7 +64,7 @@
             <div>
                 <head>Appendix</head>
                 <p>This is the ODD customzation.</p>
-                <schemaSpec ident="tei-lite_mei-cmn" start="TEI teiCorpus">
+                <schemaSpec ident="tei-lite_mei-cmn" start="TEI teiCorpus" defaultExceptions="http://www.tei-c.org/ns/1.0 teix:egXML http://www.music-encoding.org/ns/mei">
 
                     <!-- == TEI modules == -->
 
@@ -294,6 +294,43 @@
                     <moduleRef key="MEI.usersymbols" source="mei-source.xml"/>
 
                     <!-- == Changes to MEI components == -->
+                    
+                    <!-- Declare MEI and XLink namespaces for use in Schematron -->
+                    <constraintSpec ident="set_ns" scheme="isoschematron" mode="add">
+                        <constraint>
+                            <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="mei"
+                                uri="http://www.music-encoding.org/ns/mei"/>
+                            <sch:ns xmlns:sch="http://purl.oclc.org/dsdl/schematron" prefix="xlink"
+                                uri="http://www.w3.org/1999/xlink"/>
+                        </constraint>
+                    </constraintSpec>
+                    
+                    <!-- Add TEI and TEI-ex namespace to macro.anyXML -->
+                    <macroSpec ident="mei_macro.anyXML" module="MEI.shared" type="pe" mode="change">
+                        <content>
+                            <rng:element>
+                                <rng:anyName>
+                                    <rng:except>
+                                        <rng:nsName ns="http://www.music-encoding.org/ns/mei"/>
+                                        <rng:nsName ns="http://www.w3.org/2000/svg"/>
+                                        <rng:nsName ns="http://www.tei-c.org/ns/1.0"/>
+                                        <rng:name ns="http://www.tei-c.org/ns/Examples">egXML</rng:name>
+                                    </rng:except>
+                                </rng:anyName>
+                                <rng:zeroOrMore>
+                                    <rng:attribute>
+                                        <rng:anyName/>
+                                    </rng:attribute>
+                                </rng:zeroOrMore>
+                                <rng:zeroOrMore>
+                                    <rng:choice>
+                                        <rng:text/>
+                                        <rng:ref name="mei_macro.anyXML"/>
+                                    </rng:choice>
+                                </rng:zeroOrMore>
+                            </rng:element>
+                        </content>
+                    </macroSpec>
 
                     <!-- Make @source mandatory when applicable. -->
 
