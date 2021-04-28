@@ -5,13 +5,13 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Editorial Pack for TEI with MEI for Common Music Notation</title>
+                <title>Early Modern Songscapes</title>
                 <author>Raffaele Viglianti</author>
             </titleStmt>
             <publicationStmt>
-                <authority>TEI Special Interest Group in Music</authority>
+                <authority>University of Maryland</authority>
                 <availability>
-                    <p><hi>Copyright 2010 TEI Consortium.</hi></p>
+                    <p><hi>Copyright 2017 University of Maryland</hi></p>
                     <p>This is free software; you can redistribute it and/or modify it under the
                         terms of the GNU General Public License as published by the Free Software
                         Foundation; either version 2 of the License, or (at your option) any later
@@ -24,39 +24,18 @@
                         with this file; you can also contact the Free Software Foundation, Inc., 59
                         Temple Place, Suite 330, Boston, MA 02111-1307, USA, for a copy.</p>
 
-                    <p>Copyright (c) 2010 by the Music Encoding Initiative (MEI) Council.</p>
-
-                    <p>Licensed under the Educational Community License, Version 2.0 (the
-                        "License"); you may not use this file except in compliance with the License.
-                        You may obtain a copy of the License at
-                        http://www.osedu.org/licenses/ECL-2.0.</p>
-
-                    <p>Unless required by applicable law or agreed to in writing, software
-                        distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-                        WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-                        License for the specific language governing permissions and limitations
-                        under the License.</p>
-
-                    <p>This is a derivative work based on earlier versions of the schema copyright
-                        (c) 2001-2006 Perry Roland and the Rector and Visitors of the University of
-                        Virginia; licensed under the Educational Community License version 1.0.</p>
                 </availability>
             </publicationStmt>
             <sourceDesc>
-                <bibl>TEI U5 (derived from TEI U1: An Introduction to TEI Tagging (derived from TEI
-                    ED W21: Living with the Guidelines)</bibl>
-                <bibl>TEI Lite Customization, downloaded from http://www.tei-c.org/Roma</bibl>
+                <p>Born digital</p>
             </sourceDesc>
         </fileDesc>
     </teiHeader>
     <text>
         <body>
             <div>
-                <head><title>Editorial Pack for TEI with MEI for Common Music Notation</title></head>
-                <p>This customization combines the TEI Lite customization and the MEI modules for
-                    Common Music Notation. Moreover, it builds upon the TEI with Music Notation
-                    customization distributed on the Music SIG webspace at
-                    http://www.tei-c.org/SIG/Music</p>
+                <head><title>Early Modern Songscapes</title></head>
+                <p>This customization customizes TEI for the Early Modern Songscapes project, as well as allowing MEI as content of <gi>notatedMusic</gi>.</p>
             </div>
         </body>
         <back>

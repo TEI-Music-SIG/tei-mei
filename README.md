@@ -35,5 +35,5 @@ If you create a new ODD, please consider forking this repo and sending a pull re
 The process to update to another MEI version, elements and classes in the MEI ODD must be prefixed to avoid conflicts
 with TEI elements and classes.
 
-* Get the [MEI source](https://github.com/music-encoding/music-encoding/tree/develop/source/specs) from GitHub.
+* Get the [MEI source](https://github.com/music-encoding/music-encoding/tree/develop/source) from GitHub.
 * Run utils/add_prefixes.xsl to generate a new mei-source.xml with prefixes.
