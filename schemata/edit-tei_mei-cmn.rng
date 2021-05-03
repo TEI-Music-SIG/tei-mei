@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2021-05-03T14:01:33Z. .
+Schema generated from ODD source 2021-05-03T14:51:25Z. .
 TEI Edition: Version 4.3.0a. Last updated on
 	29th March 2021, revision ac70ae112
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.3.0a./
@@ -1732,6 +1732,131 @@ TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.3.0a./
          <value>isTranslationOf</value>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Reciprocal relationship of hasTranslation.</a:documentation>
       </choice>
+   </define>
+   <define name="mei_macro.availabilityPart">
+      <choice>
+         <group>
+            <zeroOrMore>
+               <ref name="mei_model.headLike"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <choice>
+                  <ref name="mei_accessRestrict"/>
+                  <ref name="mei_distributor"/>
+                  <ref name="mei_price"/>
+                  <ref name="mei_sysReq"/>
+                  <ref name="mei_useRestrict"/>
+                  <ref name="mei_model.addressLike"/>
+                  <ref name="mei_model.dateLike"/>
+                  <ref name="mei_model.identifierLike"/>
+               </choice>
+            </zeroOrMore>
+         </group>
+         <text/>
+      </choice>
+   </define>
+   <define name="mei_macro.bibldescPart">
+      <optional>
+         <ref name="mei_editionStmt"/>
+      </optional>
+      <optional>
+         <ref name="mei_pubStmt"/>
+      </optional>
+      <zeroOrMore>
+         <ref name="mei_physDesc"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_physLoc"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="mei_seriesStmt"/>
+      </zeroOrMore>
+   </define>
+   <define name="mei_macro.anyXML">
+      <element>
+         <anyName>
+            <except>
+               <nsName ns="http://www.music-encoding.org/ns/mei"/>
+               <nsName ns="http://www.w3.org/2000/svg"/>
+            </except>
+         </anyName>
+         <zeroOrMore>
+            <attribute>
+               <anyName/>
+            </attribute>
+         </zeroOrMore>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="mei_macro.anyXML"/>
+            </choice>
+         </zeroOrMore>
+      </element>
+   </define>
+   <define name="mei_macro.metaLike.page">
+      <optional>
+         <ref name="mei_pgHead"/>
+      </optional>
+      <optional>
+         <ref name="mei_pgFoot"/>
+      </optional>
+      <optional>
+         <ref name="mei_pgDesc"/>
+      </optional>
+   </define>
+   <define name="mei_macro.musicPart">
+      <optional>
+         <ref name="mei_model.frontLike"/>
+      </optional>
+      <optional>
+         <choice>
+            <ref name="mei_body"/>
+            <ref name="mei_group"/>
+         </choice>
+      </optional>
+      <optional>
+         <ref name="mei_model.backLike"/>
+      </optional>
+   </define>
+   <define name="mei_macro.struc-unstrucContent">
+      <choice>
+         <group>
+            <zeroOrMore>
+               <ref name="mei_model.headLike"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <ref name="mei_model.pLike"/>
+            </zeroOrMore>
+         </group>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="mei_model.textPhraseLike.limited"/>
+            </choice>
+         </zeroOrMore>
+      </choice>
+   </define>
+   <define name="mei_macro.titlePart">
+      <zeroOrMore>
+         <choice>
+            <ref name="mei_model.addressLike"/>
+            <ref name="mei_model.addressPart"/>
+            <ref name="mei_model.annotLike"/>
+            <ref name="mei_model.biblLike"/>
+            <ref name="mei_model.dateLike"/>
+            <ref name="mei_model.editorialLike"/>
+            <ref name="mei_model.figureLike"/>
+            <ref name="mei_model.identifierLike"/>
+            <ref name="mei_model.lbLike"/>
+            <ref name="mei_model.locrefLike"/>
+            <ref name="mei_model.measurementLike"/>
+            <ref name="mei_model.nameLike"/>
+            <ref name="mei_model.nameLike.label"/>
+            <ref name="mei_model.pbLike"/>
+            <ref name="mei_model.rendLike"/>
+            <ref name="mei_symbol"/>
+         </choice>
+      </zeroOrMore>
    </define>
    <define name="anyElement-xenoData">
       <element>
@@ -16796,6 +16921,7 @@ Suggested values include: 1] smufl</a:documentation>
          <optional>
             <ref name="mei_titleStmt"/>
          </optional>
+         <ref name="mei_macro.bibldescPart"/>
          <optional>
             <ref name="mei_creation"/>
          </optional>
@@ -17741,6 +17867,7 @@ Suggested values include: 1] smufl</a:documentation>
    <define name="mei_accessRestrict">
       <element name="accessRestrict" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(access restriction) – Describes the conditions that affect the accessibility of material.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.authorized.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
@@ -17751,6 +17878,7 @@ Suggested values include: 1] smufl</a:documentation>
    <define name="mei_acquisition">
       <element name="acquisition" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Records information concerning the process by which an item was acquired by the holding institution.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.datable.attributes"/>
@@ -17846,6 +17974,7 @@ Suggested values include: 1] smufl</a:documentation>
    <define name="mei_audience">
       <element name="audience" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Defines the class of user for which the work is intended, as defined by age group (e.g., children, young adults, adults, etc.), educational level (e.g., primary, secondary, etc.), or other categorization.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.authorized.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
@@ -17856,6 +17985,7 @@ Suggested values include: 1] smufl</a:documentation>
    <define name="mei_availability">
       <element name="availability" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Groups elements that describe the availability of and access to a bibliographic item, including an MEI-encoded document.</a:documentation>
+         <ref name="mei_macro.availabilityPart"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.dataPointing.attributes"/>
@@ -17904,6 +18034,7 @@ Suggested values include: 1] smufl</a:documentation>
    <define name="mei_captureMode">
       <element name="captureMode" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(capture mode) – The means used to record notation, sound, or images in the production of a source/manifestation (e.g., analogue, acoustic, electric, digital, optical etc.).</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.authorized.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
@@ -17914,6 +18045,7 @@ Suggested values include: 1] smufl</a:documentation>
    <define name="mei_carrierForm">
       <element name="carrierForm" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(carrier form) – The specific class of material to which the physical carrier of the source/manifestation belongs (e.g., sound cassette, videodisc, microfilm cartridge, transparency, etc.). The carrier for a manifestation comprising multiple physical components may include more than one form (e.g., a filmstrip with an accompanying booklet, a separate sound disc carrying the sound track for a film, etc.).</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.authorized.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
@@ -18064,6 +18196,7 @@ Suggested values include: 1] smufl</a:documentation>
    <define name="mei_condition">
       <element name="condition" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The physical condition of an item, particularly any variances between the physical make-up of the item and that of other copies of the same item (e.g., missing pages or plates, brittleness, faded images, etc.).</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.lang.attributes"/>
@@ -18124,6 +18257,7 @@ Suggested values include: 1] smufl</a:documentation>
    <define name="mei_context">
       <element name="context" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The historical, social, intellectual, artistic, or other context within which the work was originally conceived (e.g., the 17th century restoration of the monarchy in England, the aesthetic movement of the late 19th century, etc.) or the historical, social, intellectual, artistic, or other context within which the expression was realized.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.authorized.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
@@ -18340,6 +18474,7 @@ Suggested values include: 1] cut; 2] rip</a:documentation>
    <define name="mei_exhibHist">
       <element name="exhibHist" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(exhibition history) – A record of public exhibitions, including dates, venues, etc.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.lang.attributes"/>
@@ -18352,6 +18487,7 @@ Suggested values include: 1] cut; 2] rip</a:documentation>
          <zeroOrMore>
             <choice>
                <text/>
+               <ref name="mei_macro.anyXML"/>
             </choice>
          </zeroOrMore>
          <ref name="mei_att.common.attributes"/>
@@ -18363,6 +18499,7 @@ Suggested values include: 1] cut; 2] rip</a:documentation>
    <define name="mei_fileChar">
       <element name="fileChar" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(file characteristics) – Standards or schemes used to encode the file (e.g., ASCII, SGML, etc.), physical characteristics of the file (e.g., recording density, parity, blocking, etc.), and other characteristics that have a bearing on how the file can be processed.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.lang.attributes"/>
@@ -18577,6 +18714,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
    <define name="mei_inscription">
       <element name="inscription" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">An inscription added to an item, such as a bookplate, a note designating the item as a gift, and/or the author's signature.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.lang.attributes"/>
@@ -18800,6 +18938,7 @@ Suggested values include: 1] plaineAndEasie; 2] humdrumKern; 3] parsons</a:docum
    <define name="mei_otherChar">
       <element name="otherChar" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(other distinguishing characteristic) – Any characteristic that serves to differentiate a work or expression from another.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.lang.attributes"/>
@@ -18872,6 +19011,7 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <define name="mei_perfDuration">
       <element name="perfDuration" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(performance duration) – Used to express the duration of performance of printed or manuscript music or the playing time for a sound recording, videorecording, etc.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.facsimile.attributes"/>
@@ -18983,6 +19123,7 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <define name="mei_physMedium">
       <element name="physMedium" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(physical medium) – Records the physical materials used in the source, such as ink and paper.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.authorized.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
@@ -18993,6 +19134,7 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <define name="mei_plateNum">
       <element name="plateNum" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(plate number) – Designation assigned to a resource by a music publisher, usually printed at the bottom of each page, and sometimes appearing also on the title page.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.facsimile.attributes"/>
@@ -19003,6 +19145,7 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <define name="mei_playingSpeed">
       <element name="playingSpeed" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Playing speed for a sound recording is the speed at which the carrier must be operated to produce the sound intended (e.g., 33 1/3 rpm, 19 cm/s, etc.).</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.lang.attributes"/>
@@ -19138,6 +19281,7 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <define name="mei_scoreFormat">
       <element name="scoreFormat" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Describes the type of score used to represent a musical composition (e.g., short score, full score, condensed score, close score, etc.).</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.authorized.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
@@ -19263,6 +19407,7 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <define name="mei_specRepro">
       <element name="specRepro" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(special reproduction characteristic) – The equalization system, noise reduction system, etc. used in making the recording (e.g., NAB, DBX, Dolby, etc.).</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.authorized.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
@@ -19289,6 +19434,7 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <define name="mei_sysReq">
       <element name="sysReq" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(system requirements) – System requirements for using the electronic item.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.lang.attributes"/>
@@ -19431,6 +19577,7 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <define name="mei_trackConfig">
       <element name="trackConfig" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(track configuration) – Number of physical/input tracks on a sound medium (e.g., eight track, twelve track).</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.authorized.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
@@ -19447,6 +19594,7 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <define name="mei_treatHist">
       <element name="treatHist" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(treatment history) – A record of the treatment the item has undergone (e.g., de-acidification, restoration, etc.).</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.lang.attributes"/>
@@ -19456,6 +19604,7 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <define name="mei_treatSched">
       <element name="treatSched" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(treatment scheduled) – Scheduled treatment, e.g. de-acidification, restoration, etc., for an item.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.lang.attributes"/>
@@ -19475,6 +19624,7 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <define name="mei_useRestrict">
       <element name="useRestrict" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(usage restrictions) – Container for information about the conditions that affect use of a bibliographic item after access has been granted.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.authorized.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
@@ -19485,6 +19635,7 @@ Suggested values include: 1] glue; 2] thread; 3] needle; 4] tape; 5] staple</a:d
    <define name="mei_watermark">
       <element name="watermark" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Contains a description of a watermark or similar device.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.bibl.attributes"/>
          <ref name="mei_att.facsimile.attributes"/>
@@ -26086,6 +26237,20 @@ Suggested values include: 1] smufl</a:documentation>
          <empty/>
       </element>
    </define>
+   <define name="mei_body">
+      <element name="body" ns="http://www.music-encoding.org/ns/mei">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Contains the whole of a single musical text, excluding any front or back matter.</a:documentation>
+         <oneOrMore>
+            <choice>
+               <ref name="mei_model.divLike"/>
+               <ref name="mei_model.mdivLike"/>
+            </choice>
+         </oneOrMore>
+         <ref name="mei_att.common.attributes"/>
+         <ref name="mei_att.metadataPointing.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="mei_caesura">
       <element name="caesura" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Break, pause, or interruption in the normal tempo of a composition. Typically indicated by "railroad tracks", i.e., two diagonal slashes.</a:documentation>
@@ -26517,6 +26682,7 @@ Suggested values include: 1] alt; 2] angle; 3] circum; 4] depth; 5] diameter; 6]
    <define name="mei_dimensions">
       <element name="dimensions" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Information about the physical size of an entity; usually includes numerical data.</a:documentation>
+         <ref name="mei_macro.struc-unstrucContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="edit-tei_mei-cmn-dimensions-check_dimensions-constraint-rule-138">
             <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
@@ -27449,6 +27615,7 @@ Suggested values include: 1] abstract; 2] ack; 3] appendix; 4] bibliography; 5] 
          <zeroOrMore>
             <ref name="mei_model.resourceLike"/>
          </zeroOrMore>
+         <ref name="mei_macro.musicPart"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.meiVersion.attributes"/>
          <ref name="mei_att.metadataPointing.attributes"/>
@@ -27664,6 +27831,7 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
    <define name="mei_pb">
       <element name="pb" ns="http://www.music-encoding.org/ns/mei">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page beginning) – An empty formatting element that forces text to begin on a new page.</a:documentation>
+         <ref name="mei_macro.metaLike.page"/>
          <ref name="mei_att.common.attributes"/>
          <ref name="mei_att.facsimile.attributes"/>
          <ref name="mei_att.pointing.attributes"/>
@@ -27672,6 +27840,23 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
          <ref name="mei_att.pb.ges.attributes"/>
          <ref name="mei_att.pb.log.attributes"/>
          <ref name="mei_att.pb.vis.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="mei_pgDesc">
+      <element name="pgDesc" ns="http://www.music-encoding.org/ns/mei">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page description) – Contains a brief prose description of the appearance or description of the content of a physical page.</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="mei_model.graphicPrimitiveLike"/>
+               <ref name="mei_model.textComponentLike"/>
+               <ref name="mei_model.annotLike"/>
+               <ref name="mei_model.locrefLike"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="mei_att.common.attributes"/>
+         <ref name="mei_att.lang.attributes"/>
          <empty/>
       </element>
    </define>
@@ -28773,6 +28958,7 @@ Suggested values include: 1] person; 2] corporation; 3] location; 4] process; 5]
          <zeroOrMore>
             <choice>
                <text/>
+               <ref name="mei_macro.titlePart"/>
                <ref name="mei_model.editLike"/>
                <ref name="mei_model.transcriptionLike"/>
                <ref name="mei_titlePart"/>
@@ -28867,6 +29053,7 @@ Suggested values include: 1] main; 2] subordinate; 3] abbreviated; 4] alternativ
          <zeroOrMore>
             <choice>
                <text/>
+               <ref name="mei_macro.titlePart"/>
                <ref name="mei_model.editLike"/>
                <ref name="mei_model.titleLike"/>
                <ref name="mei_model.transcriptionLike"/>
@@ -28941,9 +29128,19 @@ Suggested values include: 1] alternative; 2] arrangement; 3] carrier; 4] date; 5
          <empty/>
       </element>
    </define>
+   <define name="mei_model.backLike">
+      <choice>
+         <ref name="mei_back"/>
+      </choice>
+   </define>
    <define name="mei_model.divLike">
       <choice>
          <ref name="mei_div"/>
+      </choice>
+   </define>
+   <define name="mei_model.frontLike">
+      <choice>
+         <ref name="mei_front"/>
       </choice>
    </define>
    <define name="mei_model.lgLike">

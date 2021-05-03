@@ -26,7 +26,7 @@
         </rng:ref>
     </xsl:template>
     
-    <xsl:template match="@*[starts-with(., 'model.') or starts-with(., 'att.') or starts-with(., 'macro.')]">
+    <xsl:template match="@*[starts-with(., 'model.') or starts-with(., 'att.')]">
         <xsl:attribute name="{local-name()}"><xsl:value-of select="concat('mei_', .)"/></xsl:attribute>
     </xsl:template>
     
