@@ -231,29 +231,35 @@
                     <!-- ==== MEI Modules ==== -->
                     <!-- NB. @source *MUST* point to MEI's ODD source-->
                     <moduleRef key="MEI" source="mei-source.xml"/>
-                    <moduleRef key="MEI.shared" source="mei-source.xml"/>
-                    <moduleRef key="MEI.header" source="mei-source.xml"/>
+                    <moduleRef key="MEI.analytical" source="mei-source.xml"/>
                     <moduleRef key="MEI.cmn" source="mei-source.xml"/>
-                    <!--<moduleRef key="MEI.mensural" source="mei-source.xml"/>
-                    <moduleRef key="MEI.neumes" source="mei-source.xml"/>-->
-                    <moduleRef key="MEI.analysis" source="mei-source.xml"/>
                     <moduleRef key="MEI.cmnOrnaments" source="mei-source.xml"/>
                     <moduleRef key="MEI.corpus" source="mei-source.xml"/>
                     <moduleRef key="MEI.critapp" source="mei-source.xml"/>
+                    <moduleRef key="MEI.drama" source="mei-source.xml"/>
                     <moduleRef key="MEI.edittrans" source="mei-source.xml"/>
+                    <moduleRef key="MEI.externalsymbols" source="mei-source.xml"/>
                     <moduleRef key="MEI.facsimile" source="mei-source.xml"/>
                     <moduleRef key="MEI.figtable" source="mei-source.xml"/>
+                    <moduleRef key="MEI.fingering" source="mei-source.xml"/>
                     <moduleRef key="MEI.frbr" source="mei-source.xml"/>
+                    <moduleRef key="MEI.genetic" source="mei-source.xml"/>
+                    <moduleRef key="MEI.gestural" source="mei-source.xml"/>
                     <!--<moduleRef key="MEI.harmony" source="mei-source.xml"/>-->
-                    <moduleRef key="MEI.linkalign" source="mei-source.xml"/>
+                    <moduleRef key="MEI.header" source="mei-source.xml"/>
                     <moduleRef key="MEI.lyrics" source="mei-source.xml"/>
+                    <!--<moduleRef key="MEI.mensural" source="mei-source.xml"/>-->
                     <!--<moduleRef key="MEI.midi" source="mei-source.xml"/>-->
+                    <moduleRef key="MEI.msdDesc" source="mei-source.xml"/>
                     <moduleRef key="MEI.namesdates" source="mei-source.xml"/>
+                    <!--<moduleRef key="MEI.neumes" source="mei-source.xml"/>-->
                     <!--<moduleRef key="MEI.performance" source="mei-source.xml"/>-->
                     <moduleRef key="MEI.ptrref" source="mei-source.xml"/>
-                    <!--<moduleRef key="MEI.tablature" source="mei-source.xml"/>-->
+                    <moduleRef key="MEI.shared" source="mei-source.xml"/>
+                    <!--<moduleRef key="MEI.stringtab" source="mei-source.xml"/>-->
                     <moduleRef key="MEI.text" source="mei-source.xml"/>
                     <moduleRef key="MEI.usersymbols" source="mei-source.xml"/>
+                    <moduleRef key="MEI.visual" source="mei-source.xml"/>
                     
                     <!-- Changes to MEI components -->
                     
