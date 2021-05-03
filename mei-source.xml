@@ -78,7 +78,7 @@
   <moduleSpec ident="MEI">
     <desc>Data type definitions.</desc>
   </moduleSpec>
-  <macroSpec ident="data.ACCIDENTAL.WRITTEN" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.ACCIDENTAL.WRITTEN" module="MEI" type="dt">
     <desc>Written accidental values.</desc>
     <content>
       <valList type="closed">
@@ -158,7 +158,7 @@
       </p>
     </remarks>
   </macroSpec>
-  <macroSpec ident="data.ACCIDENTAL.GESTURAL" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.ACCIDENTAL.GESTURAL" module="MEI" type="dt">
     <desc>Gestural/performed accidental values.</desc>
     <content>
       <valList type="closed">
@@ -192,7 +192,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.ARTICULATION" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.ARTICULATION" module="MEI" type="dt">
     <desc>The following list of articulations mostly corresponds to symbols from the Western Musical
       Symbols portion of the Unicode Standard. The dot and stroke values may be used in cases where
       interpretation is difficult or undesirable.</desc>
@@ -315,7 +315,7 @@
       </constraint>
     </constraintSpec>
   </macroSpec>
-  <macroSpec ident="data.AUGMENTDOT" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.AUGMENTDOT" module="MEI" type="dt">
     <desc>Dots attribute values (number of augmentation dots) (Read, 113-119, ex. 8-21).</desc>
     <content>
       <rng:data type="nonNegativeInteger">
@@ -323,7 +323,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.BARMETHOD" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.BARMETHOD" module="MEI" type="dt">
     <desc>Records where bar lines are drawn. The value 'staff' describes the traditional placement
       of bar lines.</desc>
     <content>
@@ -340,7 +340,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.BARRENDITION" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.BARRENDITION" module="MEI" type="dt">
     <desc>Renderings of bar lines. Some values correspond to the Western Musical Symbols portion of
       the Unicode Standard.</desc>
     <content>
@@ -381,7 +381,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.BEAM" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.BEAM" module="MEI" type="dt">
     <desc>Beam attribute values: initial, medial, terminal. Nested beaming is permitted.</desc>
     <content>
       <rng:data type="token">
@@ -389,7 +389,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.BEAMPLACE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.BEAMPLACE" module="MEI" type="dt">
     <desc>Location of a beam relative to the events it affects.</desc>
     <content>
       <valList type="closed">
@@ -405,7 +405,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.BEAT" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.BEAT" module="MEI" type="dt">
     <desc>A beat location, i.e., [0-9]+(\.?[0-9]*)? The value must fall between 0 and the numerator
       of the time signature + 1, where 0 represents the left bar line and the upper boundary
       represents the right bar line. For example, in 12/8 the value must be in the range from 0 to
@@ -416,7 +416,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.BEATRPT.REND" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.BEATRPT.REND" module="MEI" type="dt">
     <desc>Visual and performance information for a repeated beat symbol.</desc>
     <content>
       <rng:choice>
@@ -429,7 +429,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.BEND.AMOUNT" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.BEND.AMOUNT" module="MEI" type="dt">
     <desc>Either an integer value, a decimal value, or a token. Fractional values are limited to
       .25, .5, .75, while the token value is restricted to 'full'.</desc>
     <content>
@@ -446,7 +446,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.BOOLEAN" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.BOOLEAN" module="MEI" type="dt">
     <desc>Boolean attribute values.</desc>
     <content>
       <valList type="closed">
@@ -459,7 +459,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.CERTAINTY" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.CERTAINTY" module="MEI" type="dt">
     <desc>Values for certainty attribute. Certainty may be expressed by one of the values 'high',
       'medium', or 'low'. The value 'unknown' should be used in cases where the encoder does not
       wish to assert an opinion.</desc>
@@ -480,14 +480,14 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.CLEFLINE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.CLEFLINE" module="MEI" type="dt">
     <desc>Clef line attribute values. The value must be in the range between 1 and the number of
       lines on the staff. The numbering of lines starts with the lowest line of the staff.</desc>
     <content>
       <rng:data type="positiveInteger"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.CLEFSHAPE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.CLEFSHAPE" module="MEI" type="dt">
     <desc>Clef shape attribute values (Read, p.53-56). Some values correspond to the Unicode
       Standard.</desc>
     <content>
@@ -513,7 +513,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.CLUSTER" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.CLUSTER" module="MEI" type="dt">
     <desc>Tone-cluster rendition.</desc>
     <content>
       <valList type="closed">
@@ -529,7 +529,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.CONFIDENCE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.CONFIDENCE" module="MEI" type="dt">
     <desc>Confidence is expressed as a real number between 0 and 1; 0 representing certainly false
       and 1 representing certainly true.</desc>
     <content>
@@ -539,7 +539,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.COLORNAMES" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.COLORNAMES" module="MEI" type="dt">
     <desc>List of SVG-recognized color keyword names described at
       https://www.w3.org/TR/SVG/types.html#ColorKeywords.</desc>
     <content>
@@ -988,7 +988,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.COLORVALUES" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.COLORVALUES" module="MEI" type="dt">
     <desc>Parameterized color values</desc>
     <content>
       <rng:choice>
@@ -1019,7 +1019,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.COLOR" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.COLOR" module="MEI" type="dt">
     <desc>A value in one of the following forms is expected: 1) hexadecimal RRGGBB, 2) hexadecimal
       AARRGGBB, 3) CSS RGB, 4) CSS RGBA, 5) HSL, 6) HSLA, or 7) HTML 4.01 color name.</desc>
     <content>
@@ -1029,7 +1029,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.COMPASSDIRECTION" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.COMPASSDIRECTION" module="MEI" type="dt">
     <desc>Description of direction with respect to an imaginary compass.</desc>
     <content>
       <alternate>
@@ -1038,7 +1038,7 @@
       </alternate>
     </content>
   </macroSpec>
-  <macroSpec ident="data.COMPASSDIRECTION.basic" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.COMPASSDIRECTION.basic" module="MEI" type="dt">
     <desc>Basic compass directions.</desc>
     <content>
       <valList type="closed">
@@ -1057,7 +1057,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.COMPASSDIRECTION.extended" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.COMPASSDIRECTION.extended" module="MEI" type="dt">
     <desc>Additional compass directions.</desc>
     <content>
       <valList type="closed">
@@ -1076,7 +1076,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.DEGREES" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.DEGREES" module="MEI" type="dt">
     <desc>360th-unit measure of a circle's circumference; optionally signed decimal number between
       -360 and 360.</desc>
     <content>
@@ -1086,7 +1086,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.DURATION" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.DURATION" module="MEI" type="dt">
     <desc>Logical, that is, written, duration attribute values.</desc>
     <content>
       <rng:choice>
@@ -1095,7 +1095,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.DURATION.gestural" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.DURATION.gestural" module="MEI" type="dt">
     <desc>Performed duration attribute values.</desc>
     <content>
       <rng:choice>
@@ -1104,7 +1104,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.ENCLOSURE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.ENCLOSURE" module="MEI" type="dt">
     <desc>Enclosures for editorial notes and accidentals.</desc>
     <content>
       <valList type="closed">
@@ -1117,7 +1117,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.EVENTREL" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.EVENTREL" module="MEI" type="dt">
     <desc>Location of musical material relative to a symbol on a staff instead of the staff.</desc>
     <content>
       <alternate>
@@ -1126,7 +1126,7 @@
       </alternate>
     </content>
   </macroSpec>
-  <macroSpec ident="data.EVENTREL.basic" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.EVENTREL.basic" module="MEI" type="dt">
     <desc>Location of musical material relative to a symbol other than a staff.</desc>
     <content>
       <valList type="closed">
@@ -1145,7 +1145,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.EVENTREL.extended" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.EVENTREL.extended" module="MEI" type="dt">
     <desc>Location of musical material relative to a symbol other than a staff.</desc>
     <content>
       <valList type="closed">
@@ -1164,7 +1164,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.FILL" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FILL" module="MEI" type="dt">
     <desc>Describes how a graphical object, such as a note head, should be filled. The relative
       values — top, bottom, left, and right — indicate these locations *after* rotation is
       applied.</desc>
@@ -1191,7 +1191,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.FINGER.FRET" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FINGER.FRET" module="MEI" type="dt">
     <desc>In a guitar chord diagram, a label indicating which finger, if any, should be used to play
       an individual string. The index, middle, ring, and little fingers are represented by the
       values 1-4, while 't' is for the thumb. The values 'x' and 'o' indicate stopped and open
@@ -1208,19 +1208,19 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.FONTFAMILY" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FONTFAMILY" module="MEI" type="dt">
     <desc>Font family (for text) attribute values.</desc>
     <content>
       <rng:data type="token"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.FONTNAME" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FONTNAME" module="MEI" type="dt">
     <desc>Font name (for text) attribute values.</desc>
     <content>
       <rng:data type="token"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.FONTSIZE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FONTSIZE" module="MEI" type="dt">
     <desc>Font size expressions.</desc>
     <content>
       <rng:choice>
@@ -1230,7 +1230,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.FONTSIZENUMERIC" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FONTSIZENUMERIC" module="MEI" type="dt">
     <desc>Font size expressed as numbers; i.e. points or virtual units.</desc>
     <content>
       <rng:data type="token">
@@ -1255,7 +1255,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.FONTSIZESCALE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FONTSIZESCALE" module="MEI" type="dt">
     <desc>Relative size of symbol that may begin/end a line.</desc>
     <content>
       <rng:data type="integer">
@@ -1264,7 +1264,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.FONTSIZETERM" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FONTSIZETERM" module="MEI" type="dt">
     <desc>Font size expressed as relative term.</desc>
     <content>
       <valList type="closed">
@@ -1298,7 +1298,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.FONTSTYLE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FONTSTYLE" module="MEI" type="dt">
     <desc>Font style (for text) attribute values.</desc>
     <content>
       <valList type="closed">
@@ -1314,7 +1314,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.FONTWEIGHT" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FONTWEIGHT" module="MEI" type="dt">
     <desc>Font weight (for text) attribute values.</desc>
     <content>
       <valList type="closed">
@@ -1327,14 +1327,14 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.FRETNUMBER" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FRETNUMBER" module="MEI" type="dt">
     <desc>In string tablature, the fret number. The value '0' (zero) indicates the open
       string.</desc>
     <content>
       <rng:data type="nonNegativeInteger"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.FRETNUMBER.limited" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FRETNUMBER.limited" module="MEI" type="dt">
     <desc>In a guitar chord diagram, the fret where the finger should be placed. Since guitar chord
       diagrams are limited to the range of frets that fall under the hand, the values here are a
       subset of those available in data.FRETNUMBER. The pos (position) attribute on the chordDef
@@ -1346,7 +1346,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.GLISSANDO" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.GLISSANDO" module="MEI" type="dt">
     <desc>Analytical glissando attribute values.</desc>
     <content>
       <valList type="closed">
@@ -1362,7 +1362,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.GRACE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.GRACE" module="MEI" type="dt">
     <desc>Do grace notes get time from the current (acc) or previous (unacc) one?</desc>
     <content>
       <valList type="closed">
@@ -1378,7 +1378,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.HEADSHAPE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.HEADSHAPE" module="MEI" type="dt">
     <desc>Note head shapes.</desc>
     <content>
       <rng:choice>
@@ -1388,7 +1388,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.HEADSHAPE.list" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.HEADSHAPE.list" module="MEI" type="dt">
     <desc>Enumerated note head shapes.</desc>
     <content>
       <valList type="closed">
@@ -1443,7 +1443,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.HEXNUM" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.HEXNUM" module="MEI" type="dt">
     <desc>Hexadecimal number.</desc>
     <content>
       <rng:data type="string">
@@ -1451,7 +1451,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.HORIZONTALALIGNMENT" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.HORIZONTALALIGNMENT" module="MEI" type="dt">
     <desc>Data values for attributes that capture horizontal alignment.</desc>
     <content>
       <valList type="closed">
@@ -1470,13 +1470,13 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.IDREF" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.IDREF" module="MEI" type="dt">
     <desc>An ID reference.</desc>
     <content>
       <rng:data type="IDREF"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.INEUMEFORM" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.INEUMEFORM" module="MEI" type="dt">
     <desc>Interrupted neume forms.</desc>
     <content>
       <valList type="closed">
@@ -1488,7 +1488,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.INEUMENAME" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.INEUMENAME" module="MEI" type="dt">
     <desc>Interrupted neume, i.e. neume written as 2 or more sub-neumes.</desc>
     <content>
       <valList type="closed">
@@ -1502,7 +1502,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.INTERVAL.HARMONIC" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.INTERVAL.HARMONIC" module="MEI" type="dt">
     <desc>A token indicating diatonic interval quality and size.</desc>
     <content>
       <rng:choice>
@@ -1512,7 +1512,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.INTERVAL.MELODIC" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.INTERVAL.MELODIC" module="MEI" type="dt">
     <desc>A token indicating direction of the interval but not its precise value, a diatonic
       interval (with optional direction and quality), or a decimal value in half steps. Decimal
       values are permitted to accommodate micro-tuning.</desc>
@@ -1568,7 +1568,7 @@
       </p>
     </remarks>
   </macroSpec>
-  <macroSpec ident="data.ISODATE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.ISODATE" module="MEI" type="dt">
     <desc>ISO date formats.</desc>
     <content>
       <rng:choice>
@@ -1586,14 +1586,14 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.ISOTIME" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.ISOTIME" module="MEI" type="dt">
     <desc>ISO 24-hour time format: HH:MM:SS.ss, i.e.,
       [0-9][0-9]:[0-9][0-9]:[0-9][0-9](\.?[0-9]*)?.</desc>
     <content>
       <rng:data type="time"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.KEYFIFTHS" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.KEYFIFTHS" module="MEI" type="dt">
     <desc>Indicates the location of the tonic in the circle of fifths.</desc>
     <content>
       <rng:data type="token">
@@ -1601,7 +1601,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.LAYERSCHEME" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.LAYERSCHEME" module="MEI" type="dt">
     <desc>Indicates how stems should be drawn when more than one layer is present and stem
       directions are not indicated on the notes/chords themselves. '1' indicates that there is only
       a single layer on a staff. '2o' means there are two layers with opposing stems. '2f' indicates
@@ -1628,7 +1628,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.LIGATUREFORM" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.LIGATUREFORM" module="MEI" type="dt">
     <desc>Ligature forms.</desc>
     <content>
       <valList type="closed">
@@ -1641,7 +1641,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.LINEFORM" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.LINEFORM" module="MEI" type="dt">
     <desc>Visual form of a line.</desc>
     <content>
       <valList type="closed">
@@ -1660,7 +1660,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.LINESTARTENDSYMBOL" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.LINESTARTENDSYMBOL" module="MEI" type="dt">
     <desc>Symbol that may begin/end a line.</desc>
     <content>
       <valList type="closed">
@@ -1731,7 +1731,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.LINEWIDTH" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.LINEWIDTH" module="MEI" type="dt">
     <desc>Datatype of line width measurements.</desc>
     <content>
       <rng:choice>
@@ -1740,7 +1740,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.LINEWIDTHTERM" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.LINEWIDTHTERM" module="MEI" type="dt">
     <desc>Relative width of a line.</desc>
     <content>
       <valList type="closed">
@@ -1756,7 +1756,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MEASUREBEAT" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MEASUREBEAT" module="MEI" type="dt">
     <desc>A count of measures plus a beat location, i.e., [0-9]+m *\+ *[0-9]+(\.?[0-9]*)?. The
       measure count is the number of barlines crossed by the event, while the beat location is a
       timestamp expressed as a beat with an optional fractional part. For example, "1m+3.5"
@@ -1772,7 +1772,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MEASUREBEATOFFSET" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MEASUREBEATOFFSET" module="MEI" type="dt">
     <desc>A count of measures plus a beat location, i.e., (\+|-)?[0-9]+m\+[0-9]+(\.?[0-9]*)?. The
       measure count is the number of barlines crossed by the event, while the beat location is a
       timestamp expressed as a beat with an optional fractional part. The measure number must be in
@@ -1789,7 +1789,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MEASUREMENTABS" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MEASUREMENTABS" module="MEI" type="dt">
     <desc>Measurement expressed in real-world (e.g., centimeters, millimeters, inches, points,
       picas, or pixels) or virtual units (vu). 'vu' is the default value. Unlike
       data.MEASUREMENTREL, which may be used to express relative measures, only positive values are
@@ -1800,7 +1800,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MEASUREMENTREL" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MEASUREMENTREL" module="MEI" type="dt">
     <desc>Measurement expressed in real-world (e.g., centimeters, millimeters, inches, points,
       picas, or pixels) or virtual units (vu). 'vu' is the default value. Unlike
       data.MEASUREMENTABS, in which only positive values are allowed, both positive and negative
@@ -1811,7 +1811,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MELODICFUNCTION" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MELODICFUNCTION" module="MEI" type="dt">
     <desc>Indication of melodic function, i.e., anticipation, lower neighbor, escape tone,
       etc.</desc>
     <content>
@@ -1903,7 +1903,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MENSURATIONSIGN" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MENSURATIONSIGN" module="MEI" type="dt">
     <desc>Mensuration attribute values.</desc>
     <content>
       <valList type="closed">
@@ -1916,7 +1916,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.METERSIGN" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.METERSIGN" module="MEI" type="dt">
     <desc>Meter.sym attribute values for CMN.</desc>
     <content>
       <valList type="closed">
@@ -1929,7 +1929,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MIDICHANNEL" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MIDICHANNEL" module="MEI" type="dt">
     <desc>MIDI channel number. One-based values must be followed by a lower-case letter "o".</desc>
     <content>
       <rng:data type="token">
@@ -1937,21 +1937,21 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MIDIBPM" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MIDIBPM" module="MEI" type="dt">
     <desc>Tempo expressed as "beats" per minute, where "beat" is always defined as a quarter note,
       *not the numerator of the time signature or the metronomic indication*.</desc>
     <content>
       <rng:data type="positiveInteger"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MIDIMSPB" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MIDIMSPB" module="MEI" type="dt">
     <desc>Tempo expressed as microseconds per "beat", where "beat" is always defined as a quarter
       note, *not the numerator of the time signature or the metronomic indication*.</desc>
     <content>
       <rng:data type="positiveInteger"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MIDINAMES" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MIDINAMES" module="MEI" type="dt">
     <desc>General MIDI instrument names.</desc>
     <content>
       <valList type="closed">
@@ -2615,7 +2615,7 @@
       <p>Percussion sounds are available when the MIDI channel is set to "10".</p>
     </remarks>
   </macroSpec>
-  <macroSpec ident="data.MIDIVALUE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MIDIVALUE" module="MEI" type="dt">
     <desc>Generic MIDI value. One-based values must be followed by a lower-case letter "o".</desc>
     <content>
       <rng:data type="token">
@@ -2623,7 +2623,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MIDIVALUE_NAME" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MIDIVALUE_NAME" module="MEI" type="dt">
     <desc>data.MIDIVALUE or data.NCName values.</desc>
     <content>
       <rng:choice>
@@ -2632,7 +2632,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MIDIVALUE_PAN" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MIDIVALUE_PAN" module="MEI" type="dt">
     <desc>data.MIDIVALUE or data.PERCENT.LIMITED values.</desc>
     <content>
       <rng:choice>
@@ -2641,7 +2641,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MODE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MODE" module="MEI" type="dt">
     <desc>Modes.</desc>
     <content>
       <valList type="closed">
@@ -2672,7 +2672,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MODSRELATIONSHIP" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MODSRELATIONSHIP" module="MEI" type="dt">
     <desc>Bibliographic relationship values based on MODS version 3.4.</desc>
     <content>
       <valList type="closed">
@@ -2708,7 +2708,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MODUSMAIOR" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MODUSMAIOR" module="MEI" type="dt">
     <desc>Maxima-long relationship values.</desc>
     <content>
       <rng:data type="positiveInteger">
@@ -2717,7 +2717,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MODUSMINOR" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MODUSMINOR" module="MEI" type="dt">
     <desc>Long-breve relationship values.</desc>
     <content>
       <rng:data type="positiveInteger">
@@ -2726,27 +2726,27 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.MUSICFONT" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.MUSICFONT" module="MEI" type="dt">
     <desc>Music font family.</desc>
     <content>
       <rng:data type="token"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.NCNAME" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.NCNAME" module="MEI" type="dt">
     <desc>"Convenience" datatype that permits combining enumerated values with a user-supplied
       name.</desc>
     <content>
       <rng:data type="NCName"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.NMTOKEN" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.NMTOKEN" module="MEI" type="dt">
     <desc>"Convenience" datatype that permits combining enumerated values with user-supplied
       values.</desc>
     <content>
       <rng:data type="NMTOKEN"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.NONSTAFFPLACE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.NONSTAFFPLACE" module="MEI" type="dt">
     <desc>Non-staff location.</desc>
     <content>
       <valList type="closed">
@@ -2795,7 +2795,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.NOTATIONTYPE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.NOTATIONTYPE" module="MEI" type="dt">
     <desc>Notation type and subtype</desc>
     <content>
       <valList type="closed">
@@ -2828,7 +2828,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.NOTEHEADMODIFIER" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.NOTEHEADMODIFIER" module="MEI" type="dt">
     <desc>Captures any notehead "modifiers"; that is, symbols added to the notehead, such as
       slashes, lines, text, and enclosures, etc.</desc>
     <content>
@@ -2838,7 +2838,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.NOTEHEADMODIFIER.list" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.NOTEHEADMODIFIER.list" module="MEI" type="dt">
     <desc>Enumerated note head modifier values.</desc>
     <content>
       <valList type="closed">
@@ -2875,7 +2875,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.NOTEHEADMODIFIER.pat" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.NOTEHEADMODIFIER.pat" module="MEI" type="dt">
     <desc>Captures text rendered in the center of the notehead.</desc>
     <content>
       <rng:choice>
@@ -2888,7 +2888,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.OCTAVE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.OCTAVE" module="MEI" type="dt">
     <desc>Oct attribute values. The default values conform to Acoustical Society of America
       representation. Read, p. 44.</desc>
     <content>
@@ -2897,7 +2897,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.OCTAVE.DIS" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.OCTAVE.DIS" module="MEI" type="dt">
     <desc>The amount of octave displacement; that is, '8' (as in '8va' for 1 octave), '15' (for 2
       octaves), or rarely '22' (for 3 octaves).</desc>
     <content>
@@ -2906,7 +2906,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.ORIENTATION" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.ORIENTATION" module="MEI" type="dt">
     <desc>Rotation or reflection of base symbol values.</desc>
     <content>
       <rng:data type="token">
@@ -2914,7 +2914,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.OTHERSTAFF" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.OTHERSTAFF" module="MEI" type="dt">
     <desc>For musical material designated to appear on another staff, the location of the staff
       relative to the current one; i.e., the staff above or the staff below.</desc>
     <content>
@@ -2928,7 +2928,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.PAGE.PANELS" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.PAGE.PANELS" module="MEI" type="dt">
     <desc>The number of panels per page.</desc>
     <content>
       <rng:data type="positiveInteger">
@@ -2937,7 +2937,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.PERCENT" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.PERCENT" module="MEI" type="dt">
     <desc>Positive decimal number plus '%', i.e., [0-9]+(\.?[0-9]*)?\%.</desc>
     <content>
       <rng:data type="token">
@@ -2945,7 +2945,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.PERCENT.LIMITED" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.PERCENT.LIMITED" module="MEI" type="dt">
     <desc>Positive decimal number between 0 and 100, followed by a percent sign "%".</desc>
     <content>
       <rng:data type="token">
@@ -2953,7 +2953,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.PERCENT.LIMITED.SIGNED" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.PERCENT.LIMITED.SIGNED" module="MEI" type="dt">
     <desc>Positive decimal number between -100 and 100, followed by a percent sign "%".</desc>
     <content>
       <rng:data type="token">
@@ -2961,7 +2961,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.PGSCALE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.PGSCALE" module="MEI" type="dt">
     <desc>Page scale factor; a percentage of the values in page.height and page.width.</desc>
     <content>
       <rng:choice>
@@ -2969,7 +2969,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.PITCHCLASS" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.PITCHCLASS" module="MEI" type="dt">
     <desc>Pclass (pitch class) attribute values.</desc>
     <content>
       <rng:data type="nonNegativeInteger">
@@ -2977,7 +2977,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.PITCHNAME" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.PITCHNAME" module="MEI" type="dt">
     <desc>The pitch names (gamut) used within a single octave. The default values conform to
       Acoustical Society of America representation.</desc>
     <content>
@@ -2986,7 +2986,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.PITCHNAME.GES" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.PITCHNAME.GES" module="MEI" type="dt">
     <desc>Gestural pitch names need an additional value for when the notated pitch is not to be
       sounded.</desc>
     <content>
@@ -2995,13 +2995,13 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.PITCHNUMBER" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.PITCHNUMBER" module="MEI" type="dt">
     <desc>Pnum (pitch number, e.g. MIDI) attribute values.</desc>
     <content>
       <rng:data type="nonNegativeInteger"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.PLACEMENT" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.PLACEMENT" module="MEI" type="dt">
     <desc>Location information.</desc>
     <content>
       <rng:choice>
@@ -3019,7 +3019,7 @@
       </constraint>
     </constraintSpec>
   </macroSpec>
-  <macroSpec ident="data.PROLATIO" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.PROLATIO" module="MEI" type="dt">
     <desc>Semibreve-minim relationship values.</desc>
     <content>
       <rng:data type="positiveInteger">
@@ -3028,7 +3028,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.RATIO" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.RATIO" module="MEI" type="dt">
     <desc>A ratio, i.e., [0-9]+(\.?[0-9]*)?:[0-9]+(\.?[0-9]*)? For example, "40:7.2319".</desc>
     <content>
       <rng:data type="token">
@@ -3036,7 +3036,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.RELATIONSHIP" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.RELATIONSHIP" module="MEI" type="dt">
     <desc>General-purpose relationships</desc>
     <content>
       <rng:choice>
@@ -3046,7 +3046,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.ROTATION" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.ROTATION" module="MEI" type="dt">
     <desc>Rotation.</desc>
     <content>
       <rng:choice>
@@ -3055,7 +3055,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.ROTATIONDIRECTION" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.ROTATIONDIRECTION" module="MEI" type="dt">
     <desc>Rotation term.</desc>
     <content>
       <valList type="closed">
@@ -3083,7 +3083,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.SCALEDEGREE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.SCALEDEGREE" module="MEI" type="dt">
     <desc>Scale degree values.</desc>
     <content>
       <rng:data type="token">
@@ -3091,7 +3091,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.SLASH" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.SLASH" module="MEI" type="dt">
     <desc>The number of slashes to be rendered for tremolandi.</desc>
     <content>
       <rng:data type="positiveInteger">
@@ -3100,7 +3100,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.SLUR" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.SLUR" module="MEI" type="dt">
     <desc>i=initial, m=medial, t=terminal. Number is used to match endpoints of the slur when slurs
       are nested or overlap.</desc>
     <content>
@@ -3116,7 +3116,7 @@
         </egXML>
     </exemplum>
   </macroSpec>
-  <macroSpec ident="data.STAFFITEM" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STAFFITEM" module="MEI" type="dt">
     <desc>Items that may be printed above, below, or between staves.</desc>
     <content>
       <rng:choice>
@@ -3127,7 +3127,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.STAFFITEM.basic" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STAFFITEM.basic" module="MEI" type="dt">
     <desc>Items in all repertoires that may be printed near a staff.</desc>
     <content>
       <valList type="closed">
@@ -3166,7 +3166,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.STAFFLOC" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STAFFLOC" module="MEI" type="dt">
     <desc>Staff location. The value '0' indicates the bottom line of the current staff; positive
       values are used for positions above the bottom line and negative values for the positions
       below. For example, in treble clef, 1 = F4, 2 = G4, 3 = A4, etc. and -1 = D4, -2 = C4, and so
@@ -3175,7 +3175,7 @@
       <rng:data type="integer"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.STAFFREL" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STAFFREL" module="MEI" type="dt">
     <desc>Location of musical material relative to a staff.</desc>
     <content>
       <rng:choice>
@@ -3197,7 +3197,7 @@
       </constraint>
     </constraintSpec>
   </macroSpec>
-  <macroSpec ident="data.STAFFREL.basic" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STAFFREL.basic" module="MEI" type="dt">
     <desc>Location of symbol relative to a staff.</desc>
     <content>
       <valList type="closed">
@@ -3210,7 +3210,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.STAFFREL.extended" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STAFFREL.extended" module="MEI" type="dt">
     <desc>Location of symbol relative to a staff.</desc>
     <content>
       <valList type="closed">
@@ -3223,7 +3223,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.STEMDIRECTION" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STEMDIRECTION" module="MEI" type="dt">
     <desc>Stem direction.</desc>
     <content>
       <rng:choice>
@@ -3232,7 +3232,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.STEMDIRECTION.basic" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STEMDIRECTION.basic" module="MEI" type="dt">
     <desc>Common stem directions.</desc>
     <content>
       <valList type="closed">
@@ -3245,7 +3245,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.STEMDIRECTION.extended" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STEMDIRECTION.extended" module="MEI" type="dt">
     <desc>Additional stem directions.</desc>
     <content>
       <valList type="closed">
@@ -3270,7 +3270,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.STEMMODIFIER" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STEMMODIFIER" module="MEI" type="dt">
     <desc>Stem modification.</desc>
     <content>
       <valList type="closed">
@@ -3304,7 +3304,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.STEMPOSITION" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STEMPOSITION" module="MEI" type="dt">
     <desc>Position of a note's stem relative to the head of the note.</desc>
     <content>
       <valList type="closed">
@@ -3320,13 +3320,13 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.STRINGNUMBER" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STRINGNUMBER" module="MEI" type="dt">
     <desc>In string tablature, the number of the string to be played, i.e., [1-9]+.</desc>
     <content>
       <rng:data type="positiveInteger"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.TEMPERAMENT" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.TEMPERAMENT" module="MEI" type="dt">
     <desc>Temperament or tuning system.</desc>
     <content>
       <valList type="closed">
@@ -3345,13 +3345,13 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.TEMPOVALUE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.TEMPOVALUE" module="MEI" type="dt">
     <desc>Beats (meter signature denominator) per minute, e.g. 120.</desc>
     <content>
       <rng:data type="decimal"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.TEMPUS" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.TEMPUS" module="MEI" type="dt">
     <desc>Breve-semibreve relationship values.</desc>
     <content>
       <rng:data type="positiveInteger">
@@ -3360,7 +3360,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.TEXTRENDITIONLIST" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.TEXTRENDITIONLIST" module="MEI" type="dt">
     <desc>Closed list of text rendition values.</desc>
     <content>
       <valList type="closed">
@@ -3458,7 +3458,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.TEXTRENDITIONPAR" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.TEXTRENDITIONPAR" module="MEI" type="dt">
     <desc>Parameterized text rendition values.</desc>
     <content>
       <rng:choice>
@@ -3471,7 +3471,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.TEXTRENDITION" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.TEXTRENDITION" module="MEI" type="dt">
     <desc>Text rendition values.</desc>
     <content>
       <rng:choice>
@@ -3480,7 +3480,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="data.TIE" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.TIE" module="MEI" type="dt">
     <desc>Tie attribute values: initial, medial, terminal.</desc>
     <content>
       <rng:data type="token">
@@ -3488,14 +3488,14 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.TSTAMPOFFSET" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.TSTAMPOFFSET" module="MEI" type="dt">
     <desc>A positive or negative offset from the value given in the tstamp attribute in terms of
       musical time, i.e., beats[.fractional beat part].</desc>
     <content>
       <rng:data type="decimal"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.TUPLET" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.TUPLET" module="MEI" type="dt">
     <desc>Tuplet attribute values: initial, medial, terminal.</desc>
     <content>
       <rng:data type="token">
@@ -3503,7 +3503,7 @@
       </rng:data>
     </content>
   </macroSpec>
-  <macroSpec ident="data.UNEUMEFORM" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.UNEUMEFORM" module="MEI" type="dt">
     <desc>Basic, i.e., single, uninterrupted, neume forms.</desc>
     <content>
       <valList type="closed">
@@ -3517,7 +3517,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.UNEUMENAME" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.UNEUMENAME" module="MEI" type="dt">
     <desc>Basic, i.e., single, uninterrupted, neume names.</desc>
     <content>
       <valList type="closed">
@@ -3537,13 +3537,13 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.URI" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.URI" module="MEI" type="dt">
     <desc>A Uniform Resource Identifier, see [RFC2396].</desc>
     <content>
       <rng:data type="anyURI"/>
     </content>
   </macroSpec>
-  <macroSpec ident="data.VERTICALALIGNMENT" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.VERTICALALIGNMENT" module="MEI" type="dt">
     <desc>Data values for attributes that capture vertical alignment.</desc>
     <content>
       <valList type="closed">
@@ -3562,7 +3562,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.WORD" module="MEI" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.WORD" module="MEI" type="dt">
     <desc>A single "word" that contains only letters, digits, punctuation characters, or symbols. It
       cannot contain whitespace.</desc>
     <content>
@@ -4120,7 +4120,7 @@
   <moduleSpec ident="MEI.cmn">
     <desc>Common Music Notation (CMN) repertoire component declarations.</desc>
   </moduleSpec>
-  <macroSpec ident="data.DURATION.cmn" module="MEI.cmn" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.DURATION.cmn" module="MEI.cmn" type="dt">
     <desc>Logical, that is, written, duration attribute values for the CMN repertoire.</desc>
     <content>
       <valList type="closed">
@@ -4169,7 +4169,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.STAFFITEM.cmn" module="MEI.cmn" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STAFFITEM.cmn" module="MEI.cmn" type="dt">
     <desc>Items in the CMN repertoire that may be printed near a staff.</desc>
     <content>
       <valList type="closed">
@@ -6514,7 +6514,7 @@
   <moduleSpec ident="MEI.cmnOrnaments">
     <desc>CMN ornament component declarations.</desc>
   </moduleSpec>
-  <macroSpec ident="data.ORNAM.cmn" module="MEI.cmnOrnaments" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.ORNAM.cmn" module="MEI.cmnOrnaments" type="dt">
     <desc>CMN ornam attribute values: A = appogiatura (upper neighbor); a = acciaccatura (lower
       neighbor); b = bebung; I = ascending slide; i = descending slide; k = delayed turn; K = 5-note
       turn; m = mordent (alternation with lower neighbor); M = inverted mordent (alternation with
@@ -8654,7 +8654,7 @@
   <moduleSpec ident="MEI.frbr">
     <desc>FRBR (Functional Requirements for Bibliographic Records) declarations.</desc>
   </moduleSpec>
-  <macroSpec ident="data.FRBRRELATIONSHIP" module="MEI.frbr" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.FRBRRELATIONSHIP" module="MEI.frbr" type="dt">
     <desc>Relationships between FRBR entities.</desc>
     <content>
       <valList type="closed">
@@ -10226,7 +10226,7 @@
   <moduleSpec ident="MEI.header">
     <desc>Metadata header component declarations.</desc>
   </moduleSpec>
-  <macroSpec ident="mei_macro.availabilityPart" module="MEI.header" type="pe">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="mei_macro.availabilityPart" module="MEI.header" type="pe">
     <desc>Groups elements that may appear as part of a description of the availability of and access
       to a bibliographic item.</desc>
     <content>
@@ -10252,7 +10252,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="mei_macro.bibldescPart" module="MEI.header" type="pe">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="mei_macro.bibldescPart" module="MEI.header" type="pe">
     <desc>Groups manifestation- and item-specific elements that may appear as part of a
       bibliographic description.</desc>
     <content>
@@ -13177,7 +13177,7 @@
   <moduleSpec ident="MEI.mensural">
     <desc>Mensural repertoire component declarations.</desc>
   </moduleSpec>
-  <macroSpec ident="data.DURATION.mensural" module="MEI.mensural" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.DURATION.mensural" module="MEI.mensural" type="dt">
     <desc>Logical, that is, written, duration attribute values for the mensural repertoire.</desc>
     <content>
       <valList type="closed">
@@ -13208,7 +13208,7 @@
       </valList>
     </content>
   </macroSpec>
-  <macroSpec ident="data.STAFFITEM.mensural" module="MEI.mensural" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STAFFITEM.mensural" module="MEI.mensural" type="dt">
     <desc>Items in the Mensural repertoire that may be printed near a staff.</desc>
     <content>
       <valList type="closed">
@@ -15414,7 +15414,7 @@
   <moduleSpec ident="MEI.neumes">
     <desc>Neume repertoire component declarations.</desc>
   </moduleSpec>
-  <macroSpec ident="data.STAFFITEM.neumes" module="MEI.neumes" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.STAFFITEM.neumes" module="MEI.neumes" type="dt">
     <desc>Items in the Neume repertoire that may be printed near a staff.</desc>
   </macroSpec>
   <classSpec ident="mei_att.episema.log" module="MEI.neumes" type="atts">
@@ -16224,7 +16224,7 @@
   <moduleSpec ident="MEI.shared">
     <desc>Component declarations that are shared between two or more modules.</desc>
   </moduleSpec>
-  <macroSpec ident="mei_macro.anyXML" module="MEI.shared" type="pe">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="mei_macro.anyXML" module="MEI.shared" type="pe">
     <desc>Permits any XML elements except those from the MEI or SVG namespace.</desc>
     <content>
       <rng:element>
@@ -16248,7 +16248,7 @@
       </rng:element>
     </content>
   </macroSpec>
-  <macroSpec ident="mei_macro.metaLike.page" module="MEI.shared" type="pe">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="mei_macro.metaLike.page" module="MEI.shared" type="pe">
     <desc>Groups elements that contain meta-data about a single page.</desc>
     <content>
       <rng:optional>
@@ -16262,7 +16262,7 @@
       </rng:optional>
     </content>
   </macroSpec>
-  <macroSpec ident="mei_macro.musicPart" module="MEI.shared" type="pe">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="mei_macro.musicPart" module="MEI.shared" type="pe">
     <desc>Groups elements that may appear as part of the music element.</desc>
     <content>
       <rng:optional>
@@ -16279,7 +16279,7 @@
       </rng:optional>
     </content>
   </macroSpec>
-  <macroSpec ident="mei_macro.struc-unstrucContent" module="MEI.shared" type="pe">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="mei_macro.struc-unstrucContent" module="MEI.shared" type="pe">
     <desc>Provides a choice between structured and unstructured/mixed content.</desc>
     <content>
       <rng:choice>
@@ -16300,7 +16300,7 @@
       </rng:choice>
     </content>
   </macroSpec>
-  <macroSpec ident="mei_macro.titlePart" module="MEI.shared" type="pe">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="mei_macro.titlePart" module="MEI.shared" type="pe">
     <desc>Groups elements that may appear as part of a bibliographic title.</desc>
     <content>
       <rng:zeroOrMore>
@@ -16325,7 +16325,7 @@
       </rng:zeroOrMore>
     </content>
   </macroSpec>
-  <macroSpec ident="data.BETYPE" module="MEI.shared" type="dt">
+  <macroSpec prefix="mei_" ns="http://www.music-encoding.org/ns/mei" ident="data.BETYPE" module="MEI.shared" type="dt">
     <desc>Datatypes for values in begin, end, abstype and inttype attributes.</desc>
     <content>
       <valList type="closed">

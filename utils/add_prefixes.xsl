@@ -12,14 +12,14 @@
         </xsl:copy>
     </xsl:template>
     
-    <xsl:template match="tei:elementSpec">
+    <xsl:template match="tei:elementSpec | tei:macroSpec">
         <xsl:element name="{local-name()}" namespace="http://www.tei-c.org/ns/1.0">
             <xsl:attribute name="prefix">mei_</xsl:attribute>
             <xsl:attribute name="ns">http://www.music-encoding.org/ns/mei</xsl:attribute>
             <xsl:apply-templates select="@*|node()"/>
         </xsl:element>                
     </xsl:template>
-    
+        
     <xsl:template match="rng:ref">
         <rng:ref name="mei_{@name}">
             <xsl:apply-templates select="@* except @name|node()"/>
