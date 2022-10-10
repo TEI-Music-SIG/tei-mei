@@ -1183,7 +1183,57 @@ etc.</egXML>
 
           <!-- Changes to TEI components -->
 
-          <xi:include href="cs.xml"/>
+          <elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="figures" ident="notatedMusic" mode="change">
+            <equiv/>
+            <desc>encodes the presence of music notation in a text. Some MEI elements are allowed within.</desc>
+            <classes>
+              <memberOf key="model.global"/>
+              <memberOf key="att.global"/>
+              <memberOf key="att.placement"/>
+              <memberOf key="att.typed"/>
+            </classes>
+            <content>
+              <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+                <choice>
+                  <ref name="model.labelLike"/>
+                  <ref name="model.ptrLike"/>
+                  <ref name="graphic"/>
+                  <ref name="binaryObject"/>
+                </choice>
+              </zeroOrMore>
+              <rng:optional>
+                <rng:choice>
+                  <rng:ref name="mei_mei"/>
+                  <rng:ref name="mei_music"/>
+                  <rng:ref name="mei_mdiv"/>
+                  <rng:ref name="mei_layer"/>
+                </rng:choice>
+              </rng:optional>
+            </content>
+            <exemplum xml:lang="en">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <notatedMusic>
+                  <ptr target="bar1.xml"/>
+                  <graphic url="bar1.jpg"/>
+                  <desc>First bar of Chopin's Scherzo No.3 Op.39</desc>
+                </notatedMusic>
+              </egXML>
+            </exemplum>
+            <remarks> <p>It is possible to describe
+              the content of the notation using elements from the model.labelLike class and it is possible
+              to point to an external representation using elements from model.ptrLike. It is possible to
+              specify the location of digital objects representing the notated music in other media such
+              as images or audio-visual files. The encoder's interpretation of the correspondence between
+              the notated music and these digital objects is not encoded explicitly. We recommend the use
+              of graphic and binaryObject mainly as a fallback mechanism when the notated music format is
+              not displayable by the application using the encoding. The alignment of encoded notated
+              music, images carrying the notation, and audio files is a complex matter for which we refer
+              the encoder to other formats and specifications such as MPEG-SMR.</p>
+              <p>In this TEI with Music Notation customisation, some
+                elements from MEI are allowed to occur within the element to
+                encode the music notation.</p></remarks>
+            
+          </elementSpec>
 
           <!-- Changes to MEI components -->
           
@@ -1197,32 +1247,16 @@ etc.</egXML>
             </constraint>
           </constraintSpec>
           
-           <!-- Add TEI and TEI-ex namespace to macro.anyXML -->
-          <macroSpec ident="mei_macro.anyXML" module="MEI.shared" type="pe" mode="change">
+          <!-- replace macro.anyXML with pureODD solution -->
+          <elementSpec ident="mei_extMeta" mode="change">
             <content>
-              <rng:element>
-                <rng:anyName>
-                  <rng:except>
-                    <rng:nsName ns="http://www.music-encoding.org/ns/mei"/>
-                    <rng:nsName ns="http://www.w3.org/2000/svg"/>
-                    <rng:nsName ns="http://www.tei-c.org/ns/1.0"/>
-                    <rng:name ns="http://www.tei-c.org/ns/Examples">egXML</rng:name>
-                  </rng:except>
-                </rng:anyName>
-                <rng:zeroOrMore>
-                  <rng:attribute>
-                    <rng:anyName/>
-                  </rng:attribute>
-                </rng:zeroOrMore>
-                <rng:zeroOrMore>
-                  <rng:choice>
-                    <rng:text/>
-                    <rng:ref name="mei_macro.anyXML"/>
-                  </rng:choice>
-                </rng:zeroOrMore>
-              </rng:element>
+              <alternate>
+                <textNode/>
+                <anyElement/>
+              </alternate>
             </content>
-          </macroSpec>
+          </elementSpec>
+          <macroSpec ident="mei_macro.anyXML" module="MEI.shared" type="pe" mode="delete" />
            
            <!-- Make @source mandatory when applicable. -->
 

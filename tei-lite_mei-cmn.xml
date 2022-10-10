@@ -186,33 +186,6 @@
                         </attList>
                     </classSpec>
 
-                    <macroSpec xmlns="http://www.tei-c.org/ns/1.0" type="pe" ident="macro.anyXML"
-                        mode="change">
-                        <desc>Exclude both TEI and MEI namespace in examples.</desc>
-                        <content>
-                            <element xmlns="http://relaxng.org/ns/structure/1.0">
-                                <anyName>
-                                    <except>
-                                        <nsName ns="http://www.tei-c.org/ns/1.0"/>
-                                        <nsName ns="http://www.music-encoding.org/ns/mei"/>
-                                        <name ns="http://www.tei-c.org/ns/Examples">egXML</name>
-                                    </except>
-                                </anyName>
-                                <zeroOrMore>
-                                    <attribute>
-                                        <anyName/>
-                                    </attribute>
-                                </zeroOrMore>
-                                <zeroOrMore>
-                                    <choice>
-                                        <text/>
-                                        <ref name="macro.anyXML"/>
-                                    </choice>
-                                </zeroOrMore>
-                            </element>
-                        </content>
-                    </macroSpec>
-
                     <elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="figures" ident="notatedMusic" mode="change">
                         <equiv/>
                         <desc>encodes the presence of music notation in a text. Some MEI elements are allowed within.</desc>
@@ -311,32 +284,16 @@
                         </constraint>
                     </constraintSpec>
                     
-                    <!-- Add TEI and TEI-ex namespace to macro.anyXML -->
-                    <macroSpec ident="mei_macro.anyXML" module="MEI.shared" type="pe" mode="change">
+                    <!-- replace macro.anyXML with pureODD solution -->
+                    <elementSpec ident="mei_extMeta" mode="change">
                         <content>
-                            <rng:element>
-                                <rng:anyName>
-                                    <rng:except>
-                                        <rng:nsName ns="http://www.music-encoding.org/ns/mei"/>
-                                        <rng:nsName ns="http://www.w3.org/2000/svg"/>
-                                        <rng:nsName ns="http://www.tei-c.org/ns/1.0"/>
-                                        <rng:name ns="http://www.tei-c.org/ns/Examples">egXML</rng:name>
-                                    </rng:except>
-                                </rng:anyName>
-                                <rng:zeroOrMore>
-                                    <rng:attribute>
-                                        <rng:anyName/>
-                                    </rng:attribute>
-                                </rng:zeroOrMore>
-                                <rng:zeroOrMore>
-                                    <rng:choice>
-                                        <rng:text/>
-                                        <rng:ref name="mei_macro.anyXML"/>
-                                    </rng:choice>
-                                </rng:zeroOrMore>
-                            </rng:element>
+                            <alternate>
+                                <textNode/>
+                                <anyElement/>
+                            </alternate>
                         </content>
-                    </macroSpec>
+                    </elementSpec>
+                    <macroSpec ident="mei_macro.anyXML" module="MEI.shared" type="pe" mode="delete" />
 
                     <!-- Make @source mandatory when applicable. -->
 
